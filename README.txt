@@ -137,7 +137,8 @@ A couple of promising projects include DotNetKoans and TestMongoKoans.
 Acknowledgments
 ---------------
 
-Thanks go to Joe Weirich and Jim O'Brien for the original Ruby Koans that Python Koans is based on! Also the Ruby Koans in turn borrows from Metakoans so thanks also go to Ara Howard for that!
+Thanks go to Jim Weirich and Joe O'Brien for the original Ruby Koans that Python Koans is based on! Also the Ruby Koans in turn borrows from Metakoans so thanks also go to Ara Howard for that!
+
 
 Also thanks to everyone who helped with the Python Koans conversion! In particular I got a great headstart on the project by forking from this Python Koans startup project:
 
