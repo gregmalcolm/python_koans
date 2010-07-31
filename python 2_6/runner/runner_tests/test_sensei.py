@@ -8,6 +8,7 @@ import re
 from libs.mock import *
 
 from runner.sensei import Sensei
+from runner.writeln_decorator import WritelnDecorator
 from runner.mockable_test_result import MockableTestResult
 
 class AboutParrots:
@@ -82,7 +83,7 @@ First differing element 1:
 class TestSensei(unittest.TestCase):
 
     def setUp(self):
-        self.sensei = Sensei(unittest._WritelnDecorator(sys.stdout))
+        self.sensei = Sensei(WritelnDecorator(sys.stdout))
         self.sensei.stream.writeln = Mock()
         
     def test_that_it_delegates_testing_to_test_cases(self):
