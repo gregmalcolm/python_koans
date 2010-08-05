@@ -19,7 +19,7 @@ class AboutTrueAndFalse(Koan):
     def test_none_is_treated_as_false(self):
         self.assertEqual(__, self.truth_value(None))
 
-    def test_empty_collections_are_treated_as_false(self):
+    def test_zero_is_treated_as_false(self):
         self.assertEqual(__, self.truth_value(0))
 
     def test_empty_collections_are_treated_as_false(self):
