@@ -6,10 +6,11 @@ import sys
 
 from . import path_to_enlightenment
 from .sensei import Sensei
+from .writeln_decorator import WritelnDecorator
 
 class Mountain:
     def __init__(self):
-        self.stream = unittest._WritelnDecorator(sys.stdout)
+        self.stream = WritelnDecorator(sys.stdout)
         self.tests = path_to_enlightenment.koans()
         self.lesson = Sensei(self.stream)
     
