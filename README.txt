@@ -28,7 +28,7 @@ Python Koans is available through Murcurial on bitbucket:
 
 It is also mirrored on github for Git users :
 
-    http://github.com/gregmalcolm/python_koans
+    http://wiki.github.com/gregmalcolm/python_koans
 
 Either site will allow you to download the source as a zip/gz/bz2.
 
@@ -64,7 +64,7 @@ or
 
 In my case I'm using Python 3 with windows, so I fire up my command shell (cmd.exe) and run this:
 
-    C:\>cd "c:\hg\python_koans\python 3_1"
+    C:\>cd "c:\hg\python_koans\python 3"
     C:\hg\python_koans\python 3_1>python contemplate_koans.py
   
     Thinking AboutAsserts
@@ -74,13 +74,13 @@ In my case I'm using Python 3 with windows, so I fire up my command shell (cmd.e
       AssertionError: False is not True
 
     Please meditate on the following code:
-      File "C:\hg\python_koans\python 3_1\koans\about_asserts.py", line 12, in test_
+      File "C:\hg\python_koans\python 3\koans\about_asserts.py", line 12, in test_
     assert_truth
         self.assertTrue(False) # This should be true
 
 
     Beautiful is better than ugly.
-    C:\hg\python_koans\python 3_1>
+    C:\hg\python_koans\python 3>
 
 Apparently a test failed:
 
@@ -99,7 +99,7 @@ Sooner or later you will likely encounter tests where you are not sure what the 
 
 This is where the Python Command Line can come in handy. in this case I can fire up the command line, recreate the scenario and run queries:
 
-    C:\hg\python_koans\python 3_1>python
+    C:\hg\python_koans\python 3>python
     Python 3.1.2 (r312:79149, Mar 21 2010, 00:41:52) [MSC v.1500 32 bit (Intel)] on
     win32
     Type "help", "copyright", "credits" or "license" for more information.
