@@ -16,47 +16,47 @@ class Class(object):
 class AboutMethodBindings(Koan):
     def test_methods_are_bound_to_an_object(self):       
         obj = Class()
-        self.assertEqual(__, obj.method.im_self == obj)
+        self.assertEqual(True, obj.method.im_self == obj)
 
     def test_methods_are_also_bound_to_a_function(self):
         obj = Class()
-        self.assertEqual(__, obj.method())
-        self.assertEqual(__, obj.method.im_func(obj))
+        self.assertEqual('parrot', obj.method())
+        self.assertEqual('parrot', obj.method.im_func(obj))
 
     def test_functions_have_attributes(self):
-        self.assertEqual(__, len(dir(function)))
-        self.assertEqual(__, dir(function) == dir(Class.method.im_func))
+        self.assertEqual(31, len(dir(function)))
+        self.assertEqual(True, dir(function) == dir(Class.method.im_func))
         
     def test_bound_methods_have_different_attributes(self):
         obj = Class()
-        self.assertEqual(__, len(dir(obj.method)))
+        self.assertEqual(23, len(dir(obj.method)))
 
     def test_setting_attributes_on_an_unbound_function(self):
         function.cherries = 3
-        self.assertEqual(__, function.cherries)
+        self.assertEqual(3, function.cherries)
 
     def test_setting_attributes_on_a_bound_method_directly(self):
         obj = Class()
         try:
             obj.method.cherries = 3
         except AttributeError as ex:
-            self.assertMatch(__, ex[0])
+            self.assertMatch("'instancemethod' object has no attribute 'cherries'", ex[0])
  
     def test_setting_attributes_on_methods_by_accessing_the_inner_function(self):
         obj = Class()
         obj.method.im_func.cherries = 3
-        self.assertEqual(__, obj.method.cherries)
+        self.assertEqual(3, obj.method.cherries)
         
     def test_functions_can_have_inner_functions(self):
         function2.get_fruit = function
-        self.assertEqual(__, function2.get_fruit())
+        self.assertEqual('pineapple', function2.get_fruit())
 
     def test_inner_functions_are_unbound(self):
         function2.get_fruit = function
         try:
             cls = function2.get_fruit.im_self
         except AttributeError as ex:
-            self.assertMatch(__, ex[0])           
+            self.assertMatch("'function' object has no attribute 'im_self'", ex[0])           
 
     # ------------------------------------------------------------------
 
@@ -73,8 +73,8 @@ class AboutMethodBindings(Koan):
         #   binding_owner = obj
         #   owner_type = cls
 
-        self.assertEqual(__, type(bound_obj).__name__)
-        self.assertEqual(__, type(binding_owner).__name__)
+        self.assertEqual('BoundClass', type(bound_obj).__name__)
+        self.assertEqual('AboutMethodBindings', type(binding_owner).__name__)
         self.assertEqual(AboutMethodBindings, owner_type)
 
     # ------------------------------------------------------------------
@@ -91,5 +91,5 @@ class AboutMethodBindings(Koan):
     def test_set_descriptor_changes_behavior_of_attribute_assignment_changes(self):
         self.assertEqual(None, self.color.choice)
         self.color = 'purple'
-        self.assertEqual(__, self.color.choice)
+        self.assertEqual('purple', self.color.choice)
      

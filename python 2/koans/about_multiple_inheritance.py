@@ -87,7 +87,7 @@ class AboutMultipleInheritance(Koan):
   
     def test_normal_methods_are_available_in_the_object(self):
         jeff = self.Spiderpig()
-        self.assertMatch(__, jeff.speak())
+        self.assertMatch('This looks like a job for Spiderpig!', jeff.speak())
 
     def test_base_class_methods_are_also_available_in_the_object(self):
         jeff = self.Spiderpig()
@@ -95,22 +95,22 @@ class AboutMultipleInheritance(Koan):
             jeff.set_name("Rover")
         except:
             self.fail("This should not happen")
-        self.assertEqual(____, jeff.can_climb_walls())
+        self.assertEqual(True, jeff.can_climb_walls())
   
     def test_base_class_methods_can_affect_instance_variables_in_the_object(self):
         jeff = self.Spiderpig()
-        self.assertEqual(__, jeff.name)
+        self.assertEqual('Jeff', jeff.name)
         
         jeff.set_name("Rover")
-        self.assertEqual(__, jeff.name)
+        self.assertEqual('Rover', jeff.name)
   
     def test_left_hand_side_inheritance_tends_to_be_higher_priority(self):
         jeff = self.Spiderpig()
-        self.assertEqual(__, jeff.color())
+        self.assertEqual('pink', jeff.color())
 
     def test_super_class_methods_are_higher_priority_than_super_super_classes(self):
         jeff = self.Spiderpig()
-        self.assertEqual(__, jeff.legs())
+        self.assertEqual(8, jeff.legs())
 
     def test_we_can_inspect_the_method_resolution_order(self):
         #
@@ -119,10 +119,10 @@ class AboutMultipleInheritance(Koan):
         mro = type(self.Spiderpig()).__mro__
         self.assertEqual('Spiderpig', mro[0].__name__) 
         self.assertEqual('Pig', mro[1].__name__) 
-        self.assertEqual(__, mro[2].__name__) 
-        self.assertEqual(__, mro[3].__name__) 
-        self.assertEqual(__, mro[4].__name__) 
-        self.assertEqual(__, mro[5].__name__) 
+        self.assertEqual('Spider', mro[2].__name__) 
+        self.assertEqual('Animal', mro[3].__name__) 
+        self.assertEqual('Nameable', mro[4].__name__) 
+        self.assertEqual('object', mro[5].__name__) 
 
     def test_confirm_the_mro_controls_the_calling_order(self):
         jeff = self.Spiderpig()
@@ -132,7 +132,7 @@ class AboutMultipleInheritance(Koan):
         self.assertMatch('Pig', next.here())
 
         next = super(AboutMultipleInheritance.Pig, jeff)
-        self.assertMatch(__, next.here())
+        self.assertMatch('Spider', next.here())
         
         # Hang on a minute?!? That last class name might be a super class of
         # the 'jeff' object, but its hardly a superclass of Pig, is it?

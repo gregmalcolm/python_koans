@@ -11,11 +11,11 @@ class AboutNone(Koan):
 
     def test_none_is_an_object(self):
         "Unlike NULL in a lot of languages"
-        self.assertEqual(__, isinstance(None, object))
+        self.assertEqual(True, isinstance(None, object))
    
     def test_none_is_universal(self):
         "There is only one None"
-        self.assertEqual(__, None is None)
+        self.assertEqual(True, None is None)
 
     def test_what_exception_do_you_get_when_calling_nonexistent_methods_on_None(self):
         """
@@ -30,17 +30,17 @@ class AboutNone(Koan):
             None.some_method_none_does_not_know_about()
         except Exception as ex:
             # What exception has been caught?
-            self.assertEqual(__, ex.__class__.__name__)
+            self.assertEqual('AttributeError', ex.__class__.__name__)
             
             # What message was attached to the exception?
             # (HINT: replace __ with part of the error message.)
-            self.assertMatch(__, ex.args[0])
+            self.assertMatch('NoneType', ex.args[0])
     
     def test_none_is_distinct(self):
         """
         None is distinct from other things which are False.
         """
-        self.assertEqual(____, None is not 0)
-        self.assertEqual(____, None is not False)
+        self.assertEqual(True, None is not 0)
+        self.assertEqual(True, None is not False)
     
         
