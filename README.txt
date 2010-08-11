@@ -2,6 +2,15 @@
 Python Koans
 ============
 
+***********************************************************
+*** NOTE! **
+
+This is a special Python 2.5 version!
+
+For other versions of Python Koans, use the 'normal' branch!
+
+*************************************************************
+
 Python Koans is a port of Edgecase's "Ruby Koans".
 
 Python Koans is an interactive tutorial for learning Python by making tests pass. 
@@ -38,7 +47,7 @@ Installing Python Koans
 
 Aside from downloading or checking out the latest version of Python Koans, all you need to install is Python.
 
-At this time of writing there are two versions of the koans, one for use with Python 2.6 and one for Python 3.1. You should be able to work with newer Python versions, but older ones will likely give you problems. 
+At this time of writing there are two versions of the koans, one for use with Python 2.5 and one for Python 3.1. You should be able to work with newer Python versions, but older ones will likely give you problems. 
 
 You can download Python from here:
 
