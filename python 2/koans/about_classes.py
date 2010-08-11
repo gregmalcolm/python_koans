@@ -79,14 +79,13 @@ class AboutClasses(Koan):
         def name(self):
             return self._name
 
-        @name.setter
-        def name(self, a_name):
+        def set_name(self, a_name):
             self._name = a_name
     
-    def test_creating_properties_with_decorators_is_slightly_easier(self):
+    def test_accessing_properties_with_decorators(self):
         fido = self.Dog4()
       
-        fido.name = "Fido"
+        fido.set_name("Fido")
         self.assertEqual(__, fido.name)
          
     # ------------------------------------------------------------------

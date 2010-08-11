@@ -47,7 +47,7 @@ class AboutModules(Koan):
     def test_modules_hide_attributes_prefixed_by_underscores(self):
         try:
             private_squirrel = _SecretSquirrel()
-        except NameError as ex:
+        except NameError, ex:
             self.assertMatch(__, ex[0])
 
     def test_private_attributes_are_still_accessible_in_modules(self):
@@ -73,5 +73,5 @@ class AboutModules(Koan):
         # SecretDuck? Never heard of her!
         try:
             duck = SecretDuck()
-        except NameError as ex:
+        except NameError, ex:
             self.assertMatch(__, ex[0])

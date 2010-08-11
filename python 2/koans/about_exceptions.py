@@ -19,7 +19,7 @@ class AboutExceptions(Koan):
         result = None
         try:
             self.fail("Oops")
-        except StandardError as ex:
+        except StandardError, ex:
             result = 'exception handled'
         
         self.assertEqual(__, result)
@@ -36,7 +36,7 @@ class AboutExceptions(Koan):
         result = None
         try:
             raise self.MySpecialError, "My Message"
-        except self.MySpecialError as ex:
+        except self.MySpecialError, ex:
             result = 'exception handled'
   
         self.assertEqual(__, result)

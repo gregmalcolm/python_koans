@@ -32,7 +32,7 @@ class AboutMonkeyPatching(Koan):
     def test_most_built_in_classes_cannot_be_monkey_patched(self):
         try:
             int.is_even = lambda self: (self % 2) == 0
-        except StandardError as ex:
+        except StandardError, ex:
             self.assertMatch(__, ex[0])
 
     # ------------------------------------------------------------------

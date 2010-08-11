@@ -21,12 +21,12 @@ if __name__ == '__main__':
             "Did you accidentally use the wrong python script? \nTry:\n\n" +
             "    python contemplate_koans.py\n")
     else:
-        if sys.version_info < (2, 6):
+        if sys.version_info < (2, 5):
             print("\n" +
                 "********************************************************\n" +
                 "WARNING:\n" +
                 "This version of Python Koans was designed for " +
-                "Python 2.6 or greater.\n" +
+                "Python 2.5 or greater.\n" +
                 "Your version of Python is older, so this is unlikely " +
                 "to work!\n\n" +
                 "But lets see how far we get...\n" +

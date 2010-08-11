@@ -42,7 +42,7 @@ class AboutPackages(Koan):
         # Import ./a_normal_folder/
         try:
             import a_normal_folder
-        except ImportError as ex:
+        except ImportError, ex:
             self.assertMatch(__, ex[0])
 
     # ------------------------------------------------------------------

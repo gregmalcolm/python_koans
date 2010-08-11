@@ -17,7 +17,7 @@ class AboutAttributeAccess(Koan):
       
         try:
             typical.foobar()
-        except Exception as exception:
+        except Exception, exception:
             self.assertEqual(__, type(exception).__name__)
             self.assertMatch(__, exception[0])
     
@@ -26,7 +26,7 @@ class AboutAttributeAccess(Koan):
 
         try:
             typical.__getattribute__('foobar')
-        except AttributeError as exception:
+        except AttributeError, exception:
             self.assertMatch(__, exception[0])
     
         # THINK ABOUT IT:
@@ -52,7 +52,7 @@ class AboutAttributeAccess(Koan):
         
         try:
             catcher.foobaz(1)
-        except TypeError as ex:
+        except TypeError, ex:
             self.assertMatch(__, ex[0])
             
         # foobaz returns a string. What happens to the '(1)' part?
@@ -87,7 +87,7 @@ class AboutAttributeAccess(Koan):
       
         try:
             catcher.normal_undefined_attribute
-        except AttributeError as ex:
+        except AttributeError, ex:
             self.assertMatch(__, ex[0])
 
     # ------------------------------------------------------------------

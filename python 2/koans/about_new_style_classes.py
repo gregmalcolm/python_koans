@@ -36,7 +36,7 @@ class AboutNewStyleClasses(Koan):
         
         try:
             cls = self.OldStyleClass.__class__
-        except Exception as ex:
+        except Exception, ex:
             pass
         
         self.assertMatch(__, ex[0])

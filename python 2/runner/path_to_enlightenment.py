@@ -25,7 +25,7 @@ from koans.about_lambdas import AboutLambdas
 from koans.about_scoring_project import AboutScoringProject
 from koans.about_classes import AboutClasses
 from koans.about_new_style_classes import AboutNewStyleClasses
-from koans.about_with_statements import AboutWithStatements
+#from koans.about_with_statements import AboutWithStatements
 from koans.about_monkey_patching import AboutMonkeyPatching
 from koans.about_dice_project import AboutDiceProject
 from koans.about_method_bindings import AboutMethodBindings
@@ -66,7 +66,7 @@ def koans():
     suite.addTests(loader.loadTestsFromTestCase(AboutScoringProject))
     suite.addTests(loader.loadTestsFromTestCase(AboutClasses))
     suite.addTests(loader.loadTestsFromTestCase(AboutNewStyleClasses))
-    suite.addTests(loader.loadTestsFromTestCase(AboutWithStatements))
+ #   suite.addTests(loader.loadTestsFromTestCase(AboutWithStatements))
     suite.addTests(loader.loadTestsFromTestCase(AboutMonkeyPatching))
     suite.addTests(loader.loadTestsFromTestCase(AboutDiceProject))
     suite.addTests(loader.loadTestsFromTestCase(AboutMethodBindings))

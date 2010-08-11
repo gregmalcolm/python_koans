@@ -16,7 +16,7 @@ class AboutDeletingObjects(Koan):
         del lottery_nums
         try:
             win = lottery_nums
-        except Exception as e:
+        except Exception, e:
             pass    
         self.assertMatch(__, e[0])
         
@@ -43,12 +43,12 @@ class AboutDeletingObjects(Koan):
         
         try:
             still_available = crazy_discounts.toilet_brushes()
-        except AttributeError as e:
+        except AttributeError, e:
             err_msg1 = e.args[0]
 
         try:
             still_available = crazy_discounts.hamsters
-        except AttributeError as e:
+        except AttributeError, e:
             err_msg2 = e.args[0]
         
         self.assertMatch(__, err_msg1)
@@ -86,31 +86,6 @@ class AboutDeletingObjects(Koan):
         
     # ====================================================================        
 
-    class Prisoner(object):
-        def __init__(self):
-            self._name = None
-        
-        @property
-        def name(self):
-            return self._name
-
-        @name.setter
-        def name(self, name):
-            self._name = name
-            
-        @name.deleter
-        def name(self):
-            self._name = 'Number Six'
-                        
-    def test_another_way_to_make_a_deletable_property(self):
-        citizen = self.Prisoner()
-        citizen.name = "Patrick"
-        self.assertEqual('Patrick', citizen.name)
-
-        del citizen.name
-        self.assertEqual(__, citizen.name)
-
-    # ====================================================================
         
     class MoreOrganisedClosingSale(ClosingSale):
         def __init__(self):

@@ -12,14 +12,14 @@ class AboutTuples(Koan):
         count_of_three =  (1, 2, 5)
         try:
             count_of_three[2] = "three"
-        except TypeError as ex:
+        except TypeError, ex:
             self.assertMatch(__, ex[0])
         
     def test_tuples_are_immutable_so_appending_is_not_possible(self):
         count_of_three =  (1, 2, 5)
         try:
             count_of_three.append("boom")
-        except Exception as ex:
+        except Exception, ex:
             self.assertEqual(AttributeError, type(ex))
             
             # Note, assertMatch() uses regular expression pattern matching,

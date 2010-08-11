@@ -28,7 +28,7 @@ class AboutNone(Koan):
         """
         try:
             None.some_method_none_does_not_know_about()
-        except Exception as ex:
+        except Exception, ex:
             # What exception has been caught?
             self.assertEqual(__, ex.__class__.__name__)
             

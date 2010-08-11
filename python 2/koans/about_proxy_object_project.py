@@ -6,7 +6,7 @@
 # In this assignment, create a proxy class (one is started for you
 # below).  You should be able to initialize the proxy object with any
 # object.  Any attributes called on the proxy object should be forwarded
-# to the target object.  As each attribute call is sent, the proxy should
+# to the target object. , each attribute call is sent, the proxy should
 # record the name of the attribute sent.
 #
 # The proxy class is started for you.  You will need to add a method
@@ -39,7 +39,7 @@ class AboutProxyObjectProject(Koan):
     def test_tv_methods_still_perform_their_function(self):
         tv = Proxy(Television())
         
-        tv.channel = 10
+        tv.set_channel(10)
         tv.power()
         
         self.assertEqual(10, tv.channel)
@@ -49,9 +49,9 @@ class AboutProxyObjectProject(Koan):
         tv = Proxy(Television())
         
         tv.power()
-        tv.channel = 10
+        tv.set_channel(10)
         
-        self.assertEqual(['power', 'channel='], tv.messages())
+        self.assertEqual(['power', 'set_channel'], tv.messages())
     
     def test_proxy_handles_invalid_messages(self):
         tv = Proxy(Television())
@@ -59,7 +59,7 @@ class AboutProxyObjectProject(Koan):
         ex = None
         try:
             tv.no_such_method()
-        except AttributeError as ex:
+        except AttributeError, ex:
             pass
 
         self.assertEqual(AttributeError, type(ex))
@@ -78,11 +78,11 @@ class AboutProxyObjectProject(Koan):
         tv = Proxy(Television())
         
         tv.power()
-        tv.channel = 48
+        tv.set_channel(48)
         tv.power()
       
         self.assertEqual(2, tv.number_of_times_called('power'))
-        self.assertEqual(1, tv.number_of_times_called('channel='))
+        self.assertEqual(1, tv.number_of_times_called('set_channel'))
         self.assertEqual(0, tv.number_of_times_called('is_on'))
     
     def test_proxy_can_record_more_than_just_tv_objects(self):
@@ -111,8 +111,7 @@ class Television(object):
     def channel(self):
         return self._channel
 
-    @channel.setter
-    def channel(self, value):
+    def set_channel(self, value):
         self._channel = value        
         
     def power(self):
@@ -156,5 +155,5 @@ class TelevisionTest(Koan):
     def test_can_set_the_channel(self):
         tv = Television()
     
-        tv.channel = 11
+        tv.set_channel(11)
         self.assertEqual(11, tv.channel)

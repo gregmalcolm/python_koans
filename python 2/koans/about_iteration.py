@@ -19,11 +19,11 @@ class AboutIteration(Koan):
         stages = iter(['alpha','beta','gamma'])
 
         try:
-            self.assertEqual(__, next(stages))
-            next(stages)
-            self.assertEqual(__, next(stages))
-            next(stages)
-        except StopIteration as ex:
+            self.assertEqual(__, stages.next())
+            stages.next()
+            self.assertEqual(__, stages.next())
+            stages.next()
+        except StopIteration, ex:
             err_msg = 'Ran out of iterations'
             
         self.assertMatch(__, err_msg)

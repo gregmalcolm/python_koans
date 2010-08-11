@@ -95,7 +95,7 @@ class AboutGenerators(Koan):
     
     def test_generators_can_take_coroutines(self):
         generator = self.generator_with_coroutine()
-        next(generator)
+        generator.next()
         self.assertEqual(__, generator.send(1 + 2))
                 
     # ------------------------------------------------------------------
@@ -109,11 +109,11 @@ class AboutGenerators(Koan):
     
     def test_generators_can_see_if_they_have_been_called_with_a_value(self):
         generator = self.yield_tester()
-        next(generator)
+        generator.next()
         self.assertEqual('with value', generator.send('with value'))
                          
         generator2 = self.yield_tester()
-        next(generator2)
-        self.assertEqual(__, next(generator2))
+        generator2.next()
+        self.assertEqual(__, generator2.next())
 
  

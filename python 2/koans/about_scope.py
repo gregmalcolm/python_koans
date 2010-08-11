@@ -18,7 +18,7 @@ class AboutScope(Koan):
     def test_dog_is_not_available_in_the_current_scope(self):
         try:
             fido = Dog()
-        except Exception as ex:
+        except Exception, ex:
             self.assertMatch(__, ex[0])            
   
     def test_you_can_reference_nested_classes_using_the_scope_operator(self):

@@ -21,12 +21,12 @@ class Sensei(MockableTestResult):
             self.prevTestClassName = helper.cls_name(test)
             if not self.failures:
                 self.stream.writeln()
-                self.stream.writeln("Thinking {0}".format(helper.cls_name(test)))
+                self.stream.writeln("Thinking %s" % (helper.cls_name(test)))
 
     def addSuccess(self, test):
         if self.passesCount():            
             MockableTestResult.addSuccess(self, test)
-            self.stream.writeln("  {0} has expanded your awareness.".format(test._testMethodName))
+            self.stream.writeln("  %s has expanded your awareness." % (test._testMethodName))
             self.pass_count += 1
 
     def addError(self, test, err):
@@ -80,11 +80,11 @@ class Sensei(MockableTestResult):
         problem = self.firstFailure()
         if not problem: return 
         test, err = problem 
-        self.stream.writeln("  {0} has damaged your karma.".format(test._testMethodName))        
+        self.stream.writeln("  %s has damaged your karma." % (test._testMethodName))    
 
         self.stream.writeln("")
         self.stream.writeln("You have not yet reached enlightenment ...")
-        self.stream.writeln("  {0}".format(self.scrapeAssertionError(err)))
+        self.stream.writeln("  %s" % (self.scrapeAssertionError(err)))
         self.stream.writeln("")
         self.stream.writeln("Please meditate on the following code:")
         self.stream.writeln(self.scrapeInterestingStackDump(err))

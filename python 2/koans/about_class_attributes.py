@@ -57,7 +57,7 @@ class AboutClassAttributes(Koan):
         
         try:
             rover.wag()
-        except Exception as ex:
+        except Exception, ex:
             self.assertMatch(__, ex[0])
     
     # ------------------------------------------------------------------
@@ -122,7 +122,7 @@ class AboutClassAttributes(Koan):
         fido = self.Dog3()
         try:
             fido.name = "Fido"
-        except Exception as ex:
+        except Exception, ex:
             self.assertMatch(__, ex[0])
  
     def test_classes_and_instances_do_not_share_instance_attributes(self):

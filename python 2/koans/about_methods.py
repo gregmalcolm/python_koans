@@ -19,7 +19,7 @@ class AboutMethods(Koan):
     def test_calling_functions_with_wrong_number_of_arguments(self):
         try:
             my_global_function()
-        except Exception as exception:
+        except Exception, exception:
             self.assertEqual(__, type(exception).__name__)
             self.assertMatch(
                 r'my_global_function\(\) takes exactly 2 arguments \(0 given\)'
@@ -27,7 +27,7 @@ class AboutMethods(Koan):
         
         try:
             my_global_function(1, 2, 3)
-        except Exception as e:
+        except Exception, e:
             
             # Note, watch out for parenthesis. They need slashes in front!
             self.assertMatch(__, e[0])        
@@ -153,7 +153,7 @@ class AboutMethods(Koan):
         try:
             #This may not be possible...
             password = __password() 
-        except Exception as ex:
+        except Exception, ex:
             self.assertEqual(__, type(ex).__name__)
         
         # But this still is!

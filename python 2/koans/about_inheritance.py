@@ -39,7 +39,7 @@ class AboutInheritance(Koan):
         try:
             fido = self.Dog("Fido")
             fido.wag()
-        except StandardError as ex:
+        except StandardError, ex:
             self.assertMatch(__, ex[0])
   
     def test_subclasses_can_modify_existing_behavior(self):
@@ -83,7 +83,7 @@ class AboutInheritance(Koan):
         snoopy = self.Pug("Snoopy")
         try:
             name = snoopy.name
-        except Exception as ex:
+        except Exception, ex:
             self.assertMatch(__, ex[0])
         
     def test_base_init_has_to_be_called_explicitly(self):
