@@ -22,7 +22,7 @@ As well as being a great way to learn some Python, it is also a good way to get 
 Downloading Python Koans
 ------------------------
 
-Python Koans is available through Murcurial on bitbucket:
+Python Koans is available through Mercurial on bitbucket:
 
     http://bitbucket.org/gregmalcolm/python_koans
 
