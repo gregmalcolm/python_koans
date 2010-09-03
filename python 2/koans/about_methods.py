@@ -152,7 +152,7 @@ class AboutMethods(Koan):
         rover = self.Dog()
         try:
             #This may not be possible...
-            password = __password() 
+            password = rover.__password() 
         except Exception as ex:
             self.assertEqual(__, type(ex).__name__)
         
