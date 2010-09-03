@@ -30,9 +30,6 @@ class AboutDictionaries(Koan):
         expected = { 'two': "dos", 'one': __ }
         self.assertDictEqual(expected, babel_fish)
         
-        # Bonus Question: Why was "expected" broken out into a variable
-        # rather than used as a literal?
-        
     def test_dictionary_is_unordered(self):
         dict1 = { 'one': "uno", 'two': "dos" }
         dict2 = { 'two': "dos", 'one': "uno" }
