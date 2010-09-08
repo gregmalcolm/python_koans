@@ -64,11 +64,11 @@ class AboutIteration(Koan):
 
     # ------------------------------------------------------------------
 
-    def add(self,sum,item):
-        return sum + item
+    def add(self, accum, item):
+        return accum + item
 
-    def multiply(self,sum,item):
-        return sum * item
+    def multiply(self, accum, item):
+        return accum * item
         
     def test_reduce_will_blow_your_mind(self):        
         result = reduce(self.add, [2, 3, 4]) 
