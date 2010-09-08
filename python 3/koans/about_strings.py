@@ -21,6 +21,10 @@ class AboutStrings(Koan):
         string = '''Bonjour tout le monde!'''
         self.assertEqual(__, isinstance(string, str))
 
+    def test_raw_strings_are_also_strings(self):
+        string = r"Konnichi wa, world!"
+        self.assertEqual(__, isinstance(string, str))
+
     def test_use_single_quotes_to_create_string_with_double_quotes(self):
         string = 'He said, "Go Away."'
         self.assertEqual(__, string)
@@ -57,7 +61,11 @@ world!
     def test_plus_concatenates_strings(self):
         string = "Hello, " + "world"
         self.assertEqual(__, string)
-    
+
+    def test_adjacent_strings_are_concatenated_automatically(self):
+        string = "Hello" ", " "World"
+        self.assertEqual(__, string)
+        
     def test_plus_will_not_modify_original_strings(self):
         hi = "Hello, "
         there = "world"
@@ -125,7 +133,7 @@ world!
         import re #import python regular expression library
         
         string = "the,rain;in,spain"
-        pattern = re.compile(r',|;')
+        pattern = re.compile(',|;')
         
         words = pattern.split(string)
         
@@ -133,14 +141,21 @@ world!
         
         # Pattern is a Python regular expression pattern which matches ',' or ';'
 
-    def test_regular_expression_strings_do_not_interpret_escape_characters(self):
+    def test_raw_strings_do_not_interpret_escape_characters(self):
         string = r'\n'
         self.assertNotEqual('\n', string)
         self.assertEqual(__, string)
         self.assertEqual(__, len(string))
-        
-        # This is to make patterns easier to read
+
+        # Useful in regular expressions, file paths, URLs, etc.   
       
     def test_strings_can_be_joined(self):
         words = ["Now", "is", "the", "time"]
         self.assertEqual(__, ' '.join(words))
+
+    def test_strings_can_change_case(self):
+        self.assertEqual(__, 'guido'.capitalize())
+        self.assertEqual(__, 'guido'.upper())
+        self.assertEqual(__, 'TimBot'.lower())
+        self.assertEqual(__, 'guido van rossum'.title())
+        self.assertEqual(__, 'ToTaLlY aWeSoMe'.swapcase())
