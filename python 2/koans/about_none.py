@@ -24,7 +24,7 @@ class AboutNone(Koan):
         
         Hint: launch python command console and try the code in the block below.
         
-        Don't worry about what 'try' and 'catch' do, we'll talk about this later
+        Don't worry about what 'try' and 'except' do, we'll talk about this later
         """
         try:
             None.some_method_none_does_not_know_about()
