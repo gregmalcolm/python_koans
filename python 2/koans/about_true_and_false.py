@@ -27,7 +27,7 @@ class AboutTrueAndFalse(Koan):
         self.assertEqual(__, self.truth_value({}))
         self.assertEqual(__, self.truth_value(set()))
 
-    def test_strings_are_treated_as_false(self):
+    def test_blank_strings_are_treated_as_false(self):
         self.assertEqual(__, self.truth_value(""))
         
     def test_everything_else_is_treated_as_true(self):
