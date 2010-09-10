@@ -7,6 +7,10 @@ import re
 import helper
 from mockable_test_result import MockableTestResult
 
+from libs.colorama import init, Fore
+init()
+
+
 class Sensei(MockableTestResult):
     def __init__(self, stream):
         unittest.TestResult.__init__(self)
@@ -21,12 +25,13 @@ class Sensei(MockableTestResult):
             self.prevTestClassName = helper.cls_name(test)
             if not self.failures:
                 self.stream.writeln()
-                self.stream.writeln("Thinking {0}".format(helper.cls_name(test)))
+                self.stream.writeln(Fore.RESET + "Thinking {0}".format(helper.cls_name(test)))
 
     def addSuccess(self, test):
         if self.passesCount():            
             MockableTestResult.addSuccess(self, test)
-            self.stream.writeln("  {0} has expanded your awareness.".format(test._testMethodName))
+            self.stream.writeln(Fore.GREEN + "  {0} has expanded your"
+                                             "awareness.".format(test._testMethodName))
             self.pass_count += 1
 
     def addError(self, test, err):
@@ -80,14 +85,17 @@ class Sensei(MockableTestResult):
         problem = self.firstFailure()
         if not problem: return 
         test, err = problem 
-        self.stream.writeln("  {0} has damaged your karma.".format(test._testMethodName))        
+        self.stream.writeln(Fore.RED + "  {0} has damaged your"
+                                       "karma.".format(test._testMethodName))        
 
         self.stream.writeln("")
-        self.stream.writeln("You have not yet reached enlightenment ...")
-        self.stream.writeln("  {0}".format(self.scrapeAssertionError(err)))
+        self.stream.writeln(Fore.RESET + "You have not yet reached enlightenment ...")
+        self.stream.writeln(Fore.RED + ""
+                                       "{0}".format(self.scrapeAssertionError(err)))
         self.stream.writeln("")
-        self.stream.writeln("Please meditate on the following code:")
-        self.stream.writeln(self.scrapeInterestingStackDump(err))
+        self.stream.writeln(Fore.RESET + "Please meditate on the following code:")
+        self.stream.writeln(Fore.YELLOW +
+                           (self.scrapeInterestingStackDump(err)))
 
     def scrapeAssertionError(self, err):
         if not err: return ""
@@ -139,48 +147,56 @@ class Sensei(MockableTestResult):
     def say_something_zenlike(self):
         if self.failures:
             turn = self.pass_count % 37
-            
+
             if turn == 0:            
-                return "Beautiful is better than ugly."
+                return Fore.CYAN + "Beautiful is better than ugly."
             elif turn == 1 or turn == 2:
-                return "Explicit is better than implicit."
+                return Fore.CYAN + "Explicit is better than implicit."
             elif turn == 3 or turn == 4:
-                return "Simple is better than complex."
+                return Fore.CYAN + "Simple is better than complex."
             elif turn == 5 or turn == 6:
-                return "Complex is better than complicated."
+                return Fore.CYAN + "Complex is better than complicated."
             elif turn == 7 or turn == 8:
-                return "Flat is better than nested."
+                return Fore.CYAN + "Flat is better than nested."
             elif turn == 9 or turn == 10:
-                return "Sparse is better than dense."
+                return Fore.CYAN + "Sparse is better than dense."
             elif turn == 11 or turn == 12:
-                return "Readability counts."
+                return Fore.CYAN + "Readability counts."
             elif turn == 13 or turn == 14:
-                return "Special cases aren't special enough to break the rules."
+                return Fore.CYAN + ("Special cases aren't special enough to"
+                                    "break the rules.")
             elif turn == 15 or turn == 16:
-                return "Although practicality beats purity."
+                return Fore.CYAN + "Although practicality beats purity."
             elif turn == 17 or turn == 18:
-                return "Errors should never pass silently."
+                return Fore.CYAN + "Errors should never pass silently."
             elif turn == 19 or turn == 20:
-                return "Unless explicitly silenced."
+                return Fore.CYAN + "Unless explicitly silenced."
             elif turn == 21 or turn == 22:
-                return "In the face of ambiguity, refuse the temptation to guess."
+                return Fore.CYAN + ("In the face of ambiguity, refuse the"
+                                    "temptation to guess.")
             elif turn == 23 or turn == 24:
-                return "There should be one-- and preferably only one --obvious way to do it."
+                return Fore.CYAN + ("There should be one-- and preferably only"
+                                    "one --obvious way to do it.")
             elif turn == 25 or turn == 26:
-                return "Although that way may not be obvious at first unless you're Dutch."
+                return Fore.CYAN + ("Although that way may not be obvious at"
+                                    "first unless you're Dutch.")
             elif turn == 27 or turn == 28:
-                return "Now is better than never."
+                return Fore.CYAN + "Now is better than never."
             elif turn == 29 or turn == 30:
-                return "Although never is often better than right now."
+                return Fore.CYAN + ("Although never is often better than right"
+                                    "now.")
             elif turn == 31 or turn == 32:
-                return "If the implementation is hard to explain, it's a bad idea."
+                return Fore.CYAN + ("If the implementation is hard to explain,"
+                                    "it's a bad idea.")
             elif turn == 33 or turn == 34:
-                return "If the implementation is easy to explain, it may be a good idea."
+                return Fore.CYAN + ("If the implementation is easy to explain,"
+                                    "it may be a good idea.")
             else: 
-                return "Namespaces are one honking great idea -- let's do more of those!"
+                return Fore.CYAN + ("Namespaces are one honking great idea --"
+                                    "let's do more of those!")
         
         else:
-            return "Nobody ever expects the Spanish Inquisition."
+            return Fore.BLUE + "Nobody ever expects the Spanish Inquisition."
         
         # Hopefully this will never ever happen!
         return "The temple in collapsing! Run!!!"
