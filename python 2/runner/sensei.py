@@ -26,13 +26,15 @@ class Sensei(MockableTestResult):
             if not self.failures:
                 self.stream.writeln()
                 self.stream.writeln("{0}{1}Thinking {2}".format(
-                  Fore.RESET, Style.NORMAL, helper.cls_name(test)))
+                    Fore.RESET, Style.NORMAL, helper.cls_name(test)))
 
     def addSuccess(self, test):
         if self.passesCount():            
             MockableTestResult.addSuccess(self, test)
-            self.stream.writeln("  {0}{1}{2} has expanded your awareness." \
-                .format(Fore.GREEN, Style.BRIGHT, test._testMethodName))
+            self.stream.writeln( \
+                "  {0}{1}{2} has expanded your awareness.{3}{4}" \
+                .format(Fore.GREEN, Style.BRIGHT, test._testMethodName, \
+                Fore.RESET, Style.NORMAL))      
             self.pass_count += 1
 
     def addError(self, test, err):
@@ -202,11 +204,10 @@ class Sensei(MockableTestResult):
             else: 
                 zenness = "Namespaces are one honking great idea -- " \
                           "let's do more of those!"
-            return "{0}{1}".format(Fore.CYAN, zenness); 
+            return "{0}{1}{2}{3}".format(Fore.CYAN, zenness, Fore.RESET, Style.NORMAL); 
         else:
             return "{0}Nobody ever expects the Spanish Inquisition." \
                 .format(Fore.CYAN)
         
         # Hopefully this will never ever happen!
         return "The temple in collapsing! Run!!!"
-    
