@@ -10,6 +10,7 @@ from libs.mock import *
 from runner.sensei import Sensei
 from runner.writeln_decorator import WritelnDecorator
 from runner.mockable_test_result import MockableTestResult
+from runner import path_to_enlightenment
 
 class AboutParrots:
     pass
@@ -85,6 +86,9 @@ class TestSensei(unittest.TestCase):
     def setUp(self):
         self.sensei = Sensei(WritelnDecorator(sys.stdout))
         self.sensei.stream.writeln = Mock()
+        path_to_enlightenment.koans = Mock()
+        self.tests = Mock()
+        self.tests.countTestCases = Mock()
         
     def test_that_it_delegates_testing_to_test_cases(self):
         MockableTestResult.startTest = Mock()
@@ -228,6 +232,15 @@ class TestSensei(unittest.TestCase):
         self.sensei.learn()
         self.assertTrue(self.sensei.stream.writeln.called)
 
+    def test_that_end_report_shows_student_progress(self):
+        self.sensei.errorReport = Mock()
+        self.sensei.total_lessons = Mock()
+        self.sensei.total_koans = Mock()
+
+        self.sensei.learn()
+        self.assertTrue(self.sensei.total_lessons.called)
+        self.assertTrue(self.sensei.total_koans.called)     
+
     def test_that_end_report_shows_the_failure_report(self):
         self.sensei.errorReport = Mock()
         self.sensei.learn()
@@ -370,3 +383,26 @@ class TestSensei(unittest.TestCase):
         
         m = re.search("Beautiful is better than ugly", words)
         self.assertTrue(m and m.group(0))
+
+    def test_that_total_lessons_return_7_if_there_are_7_lessons(self):
+        self.sensei.filter_all_lessons = Mock()
+        self.sensei.filter_all_lessons.return_value = [1,2,3,4,5,6,7]
+
+        self.assertEqual(7, self.sensei.total_lessons())
+
+    def test_that_total_lessons_return_0_if_all_lessons_is_none(self):
+        self.sensei.filter_all_lessons = Mock()
+        self.sensei.filter_all_lessons.return_value = None
+
+        self.assertEqual(0, self.sensei.total_lessons())
+
+    def test_total_koans_return_43_if_there_are_43_test_cases(self):
+        self.sensei.tests.countTestCases = Mock()
+        self.sensei.tests.countTestCases.return_value = 43
+        
+        self.assertEqual(43, self.sensei.total_koans())
+
+    def test_filter_all_lessons_will_discover_test_classes_if_none_have_been_discovered_yet(self):
+        self.sensei.all_lessons = 0
+        self.assertTrue(self.sensei.filter_all_lessons() > 10)
+        self.assertTrue(self.sensei.all_lessons > 10)

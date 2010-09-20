@@ -6,10 +6,10 @@ import re
 
 import helper
 from mockable_test_result import MockableTestResult
+from runner import path_to_enlightenment
 
 from libs.colorama import init, Fore, Style
 import glob
-import path_to_enlightenment
 
 init()
 
@@ -19,13 +19,10 @@ class Sensei(MockableTestResult):
         unittest.TestResult.__init__(self)
         self.stream = stream
         self.prevTestClassName = None
+        self.tests = path_to_enlightenment.koans()        
         self.pass_count = 0
         self.lesson_pass_count  = 0
-        self.tests = path_to_enlightenment.koans()
-        self.all_lessons = glob.glob('koans/about*.py')
-        self.all_lessons.remove('koans/about_extra_credit.py')
-        self.total_lessons = len(self.all_lessons)
-        self.total_koans = self.tests.countTestCases()
+        self.all_lessons = None
 
     def startTest(self, test):
         MockableTestResult.startTest(self, test)
@@ -161,13 +158,11 @@ class Sensei(MockableTestResult):
         return scrape.replace(sep, '\n').strip('\n')
 
     def report_progress(self):
-        lesson_progress = self.total_lessons - self.lesson_pass_count
-        koans_progress = self.total_koans - self.pass_count
         return ("You are now {0}/{1} lessons and {2}/{3} koans away from " \
-                "reaching enlightenment".format(lesson_progress,
-                                                self.total_lessons,
-                                                koans_progress,
-                                                self.total_koans))
+                "reaching enlightenment".format(self.lesson_pass_count,
+                                                self.total_lessons(),
+                                                self.pass_count,
+                                                self.total_koans()))
 
     # Hat's tip to Tim Peters for the zen statements from The Zen
     # of Python (http://www.python.org/dev/peps/pep-0020/)
@@ -233,3 +228,20 @@ class Sensei(MockableTestResult):
         
         # Hopefully this will never ever happen!
         return "The temple in collapsing! Run!!!"
+
+    def total_lessons(self):
+        all_lessons = self.filter_all_lessons()
+        if all_lessons:
+          return len(all_lessons)
+        else:
+          return 0
+
+    def total_koans(self):
+        return self.tests.countTestCases()
+
+    def filter_all_lessons(self):
+        if not self.all_lessons:
+            self.all_lessons = glob.glob('koans/about*.py')
+            self.all_lessons.remove('koans/about_extra_credit.py')
+
+        return self.all_lessons

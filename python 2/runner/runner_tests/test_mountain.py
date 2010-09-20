@@ -14,10 +14,6 @@ class TestMountain(unittest.TestCase):
         self.mountain = Mountain()
         self.mountain.stream.writeln = Mock()
         
-    def test_it_retrieves_some_koans_tests(self):
-        self.mountain.walk_the_path()
-        self.assertTrue(self.mountain.tests, "No test suite")
-        
     def test_it_gets_test_results(self):
         self.mountain.lesson.learn = Mock()
         self.mountain.walk_the_path()
