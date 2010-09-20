@@ -155,11 +155,11 @@ class Sensei(MockableTestResult):
         return scrape.replace(sep, '\n').strip('\n')
 
     def report_progress(self):
-        return ("You are now {0}/{1} lessons and {2}/{3} koans away from " \
-                "reaching enlightenment".format(self.lesson_pass_count,
-                                                self.total_lessons(),
-                                                self.pass_count,
-                                                self.total_koans()))      
+        return ("You are now {0}/{1} koans and {2}/{3} lessons away from " \
+                "reaching enlightenment".format(self.pass_count,
+                                                self.total_koans(),
+                                                self.lesson_pass_count,
+                                                self.total_lessons()))   
 
     # Hat's tip to Tim Peters for the zen statements from The Zen
     # of Python (http://www.python.org/dev/peps/pep-0020/)
