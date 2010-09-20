@@ -3,16 +3,13 @@
 
 import unittest
 import re
+import glob
 
 import helper
 from mockable_test_result import MockableTestResult
 from runner import path_to_enlightenment
 
 from libs.colorama import init, Fore, Style
-import glob
-
-init()
-
 
 class Sensei(MockableTestResult):
     def __init__(self, stream):

@@ -3,19 +3,23 @@
 
 import unittest
 import re
+import glob
 
 from . import helper
 from .mockable_test_result import MockableTestResult
+from runner import path_to_enlightenment
 
 from libs.colorama import init, Fore, Style
-
 
 class Sensei(MockableTestResult):
     def __init__(self, stream):
         unittest.TestResult.__init__(self)
         self.stream = stream
         self.prevTestClassName = None
+        self.tests = path_to_enlightenment.koans()        
         self.pass_count = 0
+        self.lesson_pass_count  = 0
+        self.all_lessons = None
 
     def startTest(self, test):
         MockableTestResult.startTest(self, test)
@@ -26,6 +30,8 @@ class Sensei(MockableTestResult):
                 self.stream.writeln()
                 self.stream.writeln("{0}{1}Thinking {2}".format(
                     Fore.RESET, Style.NORMAL, helper.cls_name(test)))
+                if helper.cls_name(test) != 'AboutAsserts':
+                    self.lesson_pass_count += 1                
 
     def addSuccess(self, test):
         if self.passesCount():            
@@ -76,6 +82,8 @@ class Sensei(MockableTestResult):
     
         self.stream.writeln("")
         self.stream.writeln("")
+        self.stream.writeln(self.report_progress())
+        self.stream.writeln("")        
         self.stream.writeln(self.say_something_zenlike())
         
         if self.failures: return
@@ -102,8 +110,8 @@ class Sensei(MockableTestResult):
         self.stream.writeln("")
         self.stream.writeln("{0}{1}Please meditate on the following code:" \
             .format(Fore.RESET, Style.NORMAL))
-        self.stream.writeln("{0}{1}{2}".format(Fore.YELLOW, Style.BRIGHT, \
-            self.scrapeInterestingStackDump(err)))
+        self.stream.writeln("{0}{1}{2}{3}{4}".format(Fore.YELLOW, Style.BRIGHT, \
+            self.scrapeInterestingStackDump(err), Fore.RESET, Style.NORMAL))
 
     def scrapeAssertionError(self, err):
         if not err: return ""
@@ -145,6 +153,13 @@ class Sensei(MockableTestResult):
             if m and m.group(0):
                 scrape += line + '\n'
         return scrape.replace(sep, '\n').strip('\n')
+
+    def report_progress(self):
+        return ("You are now {0}/{1} lessons and {2}/{3} koans away from " \
+                "reaching enlightenment".format(self.lesson_pass_count,
+                                                self.total_lessons(),
+                                                self.pass_count,
+                                                self.total_koans()))      
 
     # Hat's tip to Tim Peters for the zen statements from The Zen
     # of Python (http://www.python.org/dev/peps/pep-0020/)
@@ -210,3 +225,20 @@ class Sensei(MockableTestResult):
         
         # Hopefully this will never ever happen!
         return "The temple in collapsing! Run!!!"
+
+    def total_lessons(self):
+        all_lessons = self.filter_all_lessons()
+        if all_lessons:
+          return len(all_lessons)
+        else:
+          return 0
+
+    def total_koans(self):
+        return self.tests.countTestCases()
+
+    def filter_all_lessons(self):
+        if not self.all_lessons:
+            self.all_lessons = glob.glob('koans/about*.py')
+            self.all_lessons.remove('koans/about_extra_credit.py')
+
+        return self.all_lessons      
