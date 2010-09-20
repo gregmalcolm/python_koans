@@ -8,6 +8,9 @@ import helper
 from mockable_test_result import MockableTestResult
 
 from libs.colorama import init, Fore, Style
+import glob
+import path_to_enlightenment
+
 init()
 
 
@@ -17,6 +20,12 @@ class Sensei(MockableTestResult):
         self.stream = stream
         self.prevTestClassName = None
         self.pass_count = 0
+        self.lesson_pass_count  = 0
+        self.tests = path_to_enlightenment.koans()
+        self.all_lessons = glob.glob('koans/about*.py')
+        self.all_lessons.remove('koans/about_extra_credit.py')
+        self.total_lessons = len(self.all_lessons)
+        self.total_koans = self.tests.countTestCases()
 
     def startTest(self, test):
         MockableTestResult.startTest(self, test)
@@ -27,6 +36,8 @@ class Sensei(MockableTestResult):
                 self.stream.writeln()
                 self.stream.writeln("{0}{1}Thinking {2}".format(
                     Fore.RESET, Style.NORMAL, helper.cls_name(test)))
+                if helper.cls_name(test) != 'AboutAsserts':
+                    self.lesson_pass_count += 1
 
     def addSuccess(self, test):
         if self.passesCount():            
@@ -78,6 +89,8 @@ class Sensei(MockableTestResult):
     
         self.stream.writeln("")
         self.stream.writeln("")
+        self.stream.writeln(self.report_progress())
+        self.stream.writeln("")
         self.stream.writeln(self.say_something_zenlike())
         
         if self.failures: return
@@ -103,8 +116,8 @@ class Sensei(MockableTestResult):
         self.stream.writeln("")
         self.stream.writeln("{0}{1}Please meditate on the following code:" \
             .format(Fore.RESET, Style.NORMAL))
-        self.stream.writeln("{0}{1}{2}".format(Fore.YELLOW, Style.BRIGHT, \
-            self.scrapeInterestingStackDump(err)))
+        self.stream.writeln("{0}{1}{2}{3}{4}".format(Fore.YELLOW, Style.BRIGHT, \
+            self.scrapeInterestingStackDump(err), Fore.RESET, Style.NORMAL))
 
     def scrapeAssertionError(self, err):
         if not err: return ""
@@ -146,6 +159,15 @@ class Sensei(MockableTestResult):
             if m and m.group(0):
                 scrape += line + '\n'
         return scrape.replace(sep, '\n').strip('\n')
+
+    def report_progress(self):
+        lesson_progress = self.total_lessons - self.lesson_pass_count
+        koans_progress = self.total_koans - self.pass_count
+        return ("You are now {0}/{1} lessons and {2}/{3} koans away from " \
+                "reaching enlightenment".format(lesson_progress,
+                                                self.total_lessons,
+                                                koans_progress,
+                                                self.total_koans))
 
     # Hat's tip to Tim Peters for the zen statements from The Zen
     # of Python (http://www.python.org/dev/peps/pep-0020/)
