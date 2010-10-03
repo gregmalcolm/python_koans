@@ -10,6 +10,7 @@ from mockable_test_result import MockableTestResult
 from runner import path_to_enlightenment
 
 from libs.colorama import init, Fore, Style
+init() # init colorama
 
 class Sensei(MockableTestResult):
     def __init__(self, stream):
@@ -239,6 +240,8 @@ class Sensei(MockableTestResult):
     def filter_all_lessons(self):
         if not self.all_lessons:
             self.all_lessons = glob.glob('koans/about*.py')
-            self.all_lessons.remove('koans/about_extra_credit.py')
-
+            self.all_lessons = filter(lambda filename:
+                                      "about_extra_credit" not in filename,
+                                      self.all_lessons)
+            
         return self.all_lessons
