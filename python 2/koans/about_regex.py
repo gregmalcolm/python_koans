@@ -35,4 +35,37 @@ class AboutRegex(Koan):
         self.assertEqual(len(m),2, "I want to know how many times appears my name")
 
 
+    def test_matching_any_character(self):
+        """
+            Lesson 1 Matching any character
+
+            . matches any character, alphabetic characters, digits and .
+        """
+        string = "pecks.xlx\n"    \
+                + "orders1.xls\n" \
+                + "apec1.xls\n"   \
+                + "na1.xls\n"     \
+                + "na2.xls\n"     \
+                + "sa1.xls"
+
+        #TIP: remember the issue of this lesson
+        self.assertEquals(len(re.findall("a", string)),3, "I want to find all files for North America(na) or South America(sa)")
+
         
+    def test_matching_special_character(self):
+        """
+            Lesson 1 Matching special character
+
+            Uses \ if you want to match special character
+        """
+        string = "sales.xlx\n"    \
+                + "sales1.xls\n"  \
+                + "orders1.xls\n" \
+                + "apac1.xls\n" \
+                + "sales2.xls\n"  \
+                + "na1.xls\n"  \
+                + "na2.xls\n"  \
+                + "sa1.xls"  
+        #TIP you can use the pattern .a. which matches in above test but in this case matches more than you want
+        self.assertEquals(len(re.findall(".a.", string)),3, "I want to find all files for North America(na) or South America(sa)")
+
