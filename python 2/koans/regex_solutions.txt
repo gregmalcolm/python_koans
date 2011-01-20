@@ -1,0 +1,5 @@
+test_matching_literal_text:Felix
+test_matching_literal_text_how_many: findall
+test_matching_any_character: .a OR .a.
+test_matching_special_character: .a.\.
+test_matching_set_character: [ns]a.\.
