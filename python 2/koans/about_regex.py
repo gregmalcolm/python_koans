@@ -65,11 +65,11 @@ class AboutRegex(Koan):
                 + "na2.xls\n"  \
                 + "sa1.xls"  
         #TIP you can use the pattern .a. which matches in above test but in this case matches more than you want
-        self.assertEquals(len(re.findall(".a.", string)),3, "I want to find all files for North America(na) or South America(sa)")
+        self.assertEquals(len(re.findall(__, string)),3, "I want to find all files for North America(na) or South America(sa)")
 
     def test_matching_set_character(self):
         """
-            Lesson 1 Matching sets of characters
+            Lesson 2 Matching sets of characters
 
             A set of characters is defined using the metacharacters [ and ]. Everything between them is part of the set and
             any one of the set members must match (but not all).
@@ -84,5 +84,43 @@ class AboutRegex(Koan):
                 + "sa1.xls\n"  \
                 + "ca1.xls"  
         #TIP you can use the pattern .a. which matches in above test but in this case matches more than you want
-        self.assertEquals(len(re.findall(".a.", string)),3, "I want to find all files for North America(na) or South America(sa), but not (ca)")
+        self.assertEquals(len(re.findall(__, string)),3, "I want to find all files for North America(na) or South America(sa), but not (ca)")
+
+    def test_using_character_set_ranges(self):
+        """
+            Lesson 2 Using character set ranges
+
+            The previous pattern could be [ns]a.\.xls and if a in the list had a file name sam.xls would be matched because the . matches all 
+            characters, not just digits. This can be solved with Character sets.
+            You can use  this pattern [ns]a[0123456789]\.xls but to simplify you can use a special metacharacter: - (hyphen). i.e [0-9]
+
+            - is only a metacharacter when used between [].
+
+        """
+        string = "sales.xlx\n"    \
+                + "sales1.xls\n"  \
+                + "orders3.xls\n" \
+                + "apac1.xls\n" \
+                + "sales2.xls\n"  \
+                + "na1.xls\n"  \
+                + "na2.xls\n"  \
+                + "sa1.xls\n"  \
+                + "sam.xls\n"  \
+                + "ca1.xls"  
+        self.assertEquals(len(re.findall(__, string)),3, "I want to find all files for North America(na) or South America(sa), but not (ca)")
+
+    def test_using_multiple_ranges(self):
+        """
+            Lesson 2 Using character set ranges
+
+            The following are valid ranges:
+                A-Z matches all uppercase characters from A to Z
+                a-z matches all uppercase characters from a to z
+                A-F matches all uppercase characters from A to F
+                A-z matches all uppercase characters from A to z. This pattern also includes characters such as [ and ^
+                Any two ASCII characters may be specified as the range start and end.
+
+        """
+        string = '<BODY BGCOLOR="#336633" TEXT="#FFFFFF" MARGINWIDTH="0" MARGINHEIGHT="0" TOPMARGIN="0" LEFTMARGIN="0">'
+        self.assertEquals(len(re.findall(__, string)),2, "I want to find all the colors in RGB")
 
