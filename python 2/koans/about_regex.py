@@ -124,3 +124,26 @@ class AboutRegex(Koan):
         string = '<BODY BGCOLOR="#336633" TEXT="#FFFFFF" MARGINWIDTH="0" MARGINHEIGHT="0" TOPMARGIN="0" LEFTMARGIN="0">'
         self.assertEquals(len(re.findall(__, string)),2, "I want to find all the colors in RGB")
 
+
+    def test_anything_but_matching(self):
+        """
+            Lesson 2 Using character set ranges
+            Occsionally, you'll want a list of characters that you don't want to match. 
+            Character sets can be negated using the ^ metacharacter.
+
+        """
+        string = "sales.xlx\n"    \
+                + "sales1.xls\n"  \
+                + "orders3.xls\n" \
+                + "apac1.xls\n" \
+                + "sales2.xls\n"  \
+                + "sales3.xls\n"  \
+                + "europe2.xls\n"  \
+                + "sam.xls\n"  \
+                + "na1.xls\n"  \
+                + "na2.xls\n"  \
+                + "sa1.xls\n"  \
+                + "ca1.xls"  
+        m = re.search("[ns]a[^0-9]\.xls", string)
+        self.assertTrue(m and m.group(0) and m.group(0)== 'sam.xls', "I want to find the name sam")
+
