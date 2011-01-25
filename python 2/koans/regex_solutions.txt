@@ -1,5 +1,17 @@
-test_matching_literal_text:Felix
-test_matching_literal_text_how_many: findall
-test_matching_any_character: .a OR .a.
-test_matching_special_character: .a.\.
-test_matching_set_character: [ns]a.\.
+test_matching_literal_text:
+    Felix
+test_matching_literal_text_how_many: 
+    findall
+test_matching_any_character: 
+    .a OR .a.
+test_matching_special_character: 
+    .a.\.
+test_matching_set_character:
+    [ns]a.\. Actually this pattern is not quite right either. If a file named usa1.xls existed, it would match.
+    The solution to this problem involves matching, which will be covered later, in "Position Matching.
+test_using_character_set_ranges: 
+    [ns]a[0-9]\.xls
+test_using_multiple_ranges:
+    #[0-9A-Fa-f][0-9A-Fa-f][0-9A-Fa-f][0-9A-Fa-f][0-9A-Fa-f][0-9A-Fa-f] OR #[0-9A-Fa-f]{6} but the latter will be seen later
+test_anything_but_matching:
+    [ns]a[^0-9]\.xls"
