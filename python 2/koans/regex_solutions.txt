@@ -14,4 +14,10 @@ test_using_character_set_ranges:
 test_using_multiple_ranges:
     #[0-9A-Fa-f][0-9A-Fa-f][0-9A-Fa-f][0-9A-Fa-f][0-9A-Fa-f][0-9A-Fa-f] OR #[0-9A-Fa-f]{6} but the latter will be seen later
 test_anything_but_matching:
-    [ns]a[^0-9]\.xls"
+    [ns]a[^0-9]\.xls
+using_metacharacters_escaping:
+    myArray\[0\]    
+using_metacharacters_macthing_white_spaces:
+    \n\n
+    IMPORTANT: Windows uses a carriage return line fedd combination used as an end-of-line marker, so you need to use \r\n.
+    

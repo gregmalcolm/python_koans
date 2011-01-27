@@ -144,6 +144,42 @@ class AboutRegex(Koan):
                 + "na2.xls\n"  \
                 + "sa1.xls\n"  \
                 + "ca1.xls"  
-        m = re.search("[ns]a[^0-9]\.xls", string)
+        m = re.search(__, string)
         self.assertTrue(m and m.group(0) and m.group(0)== 'sam.xls', "I want to find the name sam")
+
+    def using_metacharacters_escaping(self):
+        """
+            Lesson 3 Using metacharacters
+
+            Metacharacters are characters that have special meaning within regular expressions.
+            
+            Metacharacters can be escaped by preceding them with a backslash, therefore \. matches . 
+        """
+        string = "var myArray = new Array();\n"    \
+                + "if (myArray[0]) { \n"  \
+                + "}" 
+        m = re.search("myArray[0]", string) #TIP: This pattern  matches "myArray0" because [ and ] are metacharacters
+        self.assertTrue(m and m.group(0) and m.group(0)== 'myArray[0]', "I want to find myArray[0]")
+
+    def using_metacharacters_matching_white_spaces(self):
+        """
+            Lesson 3 Matching whitespace character
+
+            Sometimes you'll have to match nonprinting whitespace characters embedded in your text. For example tab characters
+            or line breaks .
+            In this cases you can use these special metacharacters: 
+                [\b]   Backspace
+                \f     Form feed
+                \n     Line feed
+                \r     Carriage return
+                \t     Tab
+                \v     Vertical tab
+            
+        """
+        f = open('koans/regex_cvs', 'r')
+        string = f.read()
+        #This text contains a series of records in comma-delimited format (cvs). Before processing the records, you need
+        # to remove any blank lines in the data. 
+        m = re.search("", string)         
+        self.assertTrue(m and m.group(0) and m.group(0)== '\n\n', "I want to find the blank lines")
 
