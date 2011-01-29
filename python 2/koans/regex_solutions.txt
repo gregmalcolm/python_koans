@@ -2,6 +2,8 @@ test_matching_literal_text:
     Felix
 test_matching_literal_text_how_many: 
     findall
+test_matching_literal_text_not_case_sensitivity:
+    re.findall("felix", string, re.IGNORECASE)   
 test_matching_any_character: 
     .a OR .a.
 test_matching_special_character: 
@@ -20,4 +22,7 @@ using_metacharacters_escaping:
 using_metacharacters_macthing_white_spaces:
     \n\n
     IMPORTANT: Windows uses a carriage return line fedd combination used as an end-of-line marker, so you need to use \r\n.
-    
+using_metacharacters_matching_digits:
+    myArray\[\d\]
+using_metacharacters_matching_alphanumeric_characters:
+    \w\w\w-\w\w\w   

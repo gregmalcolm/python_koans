@@ -9,6 +9,7 @@ class AboutRegex(Koan):
         I found this books very useful so I decided to write a koans in order to practice everything I had learned from it.
         http://www.forta.com/books/0672325667/
     """
+
     def test_matching_literal_text(self):
         """
             Lesson 1 Matching Literal String
@@ -34,6 +35,17 @@ class AboutRegex(Koan):
         m = re.match('Felix', string) #TIP: Maybe match it's not the best option
         self.assertEqual(len(m),2, "I want to know how many times appears my name")
 
+    def test_matching_literal_text_not_case_sensitivity(self):
+        """
+            Lesson 1 Matching Literal String non case sensitivity.
+            Most regex implementations also support matches that are not case sensitive. In python you can use re.IGNORECASE, in
+            Javascript you can specify the optional i flag.
+            In Ben's book you can see more languages.
+
+        """
+        string = "Hello, my name is Felix or felix and this koans are based on the Ben's book: Regular Expressions in 10 minutes."
+        self.assertEqual(len(re.findall("felix", string,__)),2, "I want my name")
+                                              
     def test_matching_any_character(self):
         """
             Lesson 1 Matching any character
@@ -183,3 +195,44 @@ class AboutRegex(Koan):
         m = re.search("", string)         
         self.assertTrue(m and m.group(0) and m.group(0)== '\n\n', "I want to find the blank lines")
 
+    def using_metacharacters_matching_digits(self):
+        """
+            Lesson 3 Using metacharacters
+
+            As you have seen in Lesson 2, [0-9] is a shorcut for [0123456789] and is used to match any digit. 
+            To match anything other than a digit, the set can be negated as [^0-9].
+            With the next metacharacters you can do the same:
+                \d match any digit (same as [0-9])
+                \D match any nondigit (same as [0-9])
+        """
+        string = "var myArray = new Array();\n"    \
+                + "if (myArray[0]) { \n"  \
+                + "    alert('Learning regex'); \n" \
+                + "} \n"   \
+                + "if (myArray[1]) { \n"  \
+                + "    alert('With this great book');\n" \
+                + "} \n"  
+        
+        self.assertEquals( len(re.findall(__, string)), 2, "I want to find all uses of myArray")
+
+
+    def using_metacharacters_matching_alphanumeric_characters(self):
+        """
+            Lesson 3 Using metacharacters
+
+            Like with the digits you have special characters for alphanumeric characters:
+                \w Any alphanumeric character in uppercase or lowercase and underscore: [a-zA-Z0-9_]
+                \W Any nonalphanumeric or underscore character: [^a-zA-Z0-9_]
+            
+            Here you have a list of IDs made of 3 characters/digits/underscores, 1 hyphen and 3 characters/digits/underscores: 
+                A1A-B_A or BA_-2e3 or 1_2-34R
+        """
+        string = "A_1-DRA\n" \
+                +"A01-2ER\n" \
+                +"A01-(4d\n" \
+                +"B11=223\n" \
+                +"A1A-B_A\n" \
+                +"1_2-34R\n" \
+                +"BA_-2e3"
+
+        self.assertEquals( len(re.findall(__, string)), 5, "I want to find the ids") 
