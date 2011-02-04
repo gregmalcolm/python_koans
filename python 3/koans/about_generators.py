@@ -84,7 +84,7 @@ class AboutGenerators(Koan):
         for num in seq:
             # The local state of 'value' will be retained between iterations
             value += num
-        yield value
+            yield value
 
     def test_generator_keeps_track_of_local_variables(self):
         result = self.sum_it(range(2,5))
