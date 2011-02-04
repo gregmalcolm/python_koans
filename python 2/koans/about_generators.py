@@ -95,7 +95,14 @@ class AboutGenerators(Koan):
     
     def test_generators_can_take_coroutines(self):
         generator = self.generator_with_coroutine()
+
+        # THINK ABOUT IT:
+        # Why is this line necessary?
+        #
+        # Hint: Read the "Specification: Sending Values into Generators"
+        #       section of http://www.python.org/dev/peps/pep-0342/
         next(generator)
+
         self.assertEqual(__, generator.send(1 + 2))
                 
     # ------------------------------------------------------------------
