@@ -69,12 +69,12 @@ class AboutGenerators(Koan):
         
     # ------------------------------------------------------------------
 
-    def cube_me(self, seq):
+    def square_me(self, seq):
         for x in seq:
             yield x * x
 
     def test_generator_method_with_parameter(self):
-        result = self.cube_me(range(2,5))
+        result = self.square_me(range(2,5))
         self.assertEqual(__, list(result))
 
     # ------------------------------------------------------------------
