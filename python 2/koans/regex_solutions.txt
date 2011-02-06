@@ -1,0 +1,28 @@
+test_matching_literal_text:
+    Felix
+test_matching_literal_text_how_many: 
+    findall
+test_matching_literal_text_not_case_sensitivity:
+    re.findall("felix", string, re.IGNORECASE)   
+test_matching_any_character: 
+    .a OR .a.
+test_matching_special_character: 
+    .a.\.
+test_matching_set_character:
+    [ns]a.\. Actually this pattern is not quite right either. If a file named usa1.xls existed, it would match.
+    The solution to this problem involves matching, which will be covered later, in "Position Matching.
+test_using_character_set_ranges: 
+    [ns]a[0-9]\.xls
+test_using_multiple_ranges:
+    #[0-9A-Fa-f][0-9A-Fa-f][0-9A-Fa-f][0-9A-Fa-f][0-9A-Fa-f][0-9A-Fa-f] OR #[0-9A-Fa-f]{6} but the latter will be seen later
+test_anything_but_matching:
+    [ns]a[^0-9]\.xls
+using_metacharacters_escaping:
+    myArray\[0\]    
+using_metacharacters_macthing_white_spaces:
+    \n\n
+    IMPORTANT: Windows uses a carriage return line fedd combination used as an end-of-line marker, so you need to use \r\n.
+using_metacharacters_matching_digits:
+    myArray\[\d\]
+using_metacharacters_matching_alphanumeric_characters:
+    \w\w\w-\w\w\w   
