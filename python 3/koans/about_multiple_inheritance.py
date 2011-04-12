@@ -137,5 +137,5 @@ class AboutMultipleInheritance(Koan):
         # Hang on a minute?!? That last class name might be a super class of
         # the 'jeff' object, but its hardly a superclass of Pig, is it?
         #
-        # To avoid confusion it may help to thing of super() as next_mro().
+        # To avoid confusion it may help to think of super() as next_mro().
         

@@ -65,3 +65,8 @@ class AboutScoringProject(Koan):
     def test_score_of_mixed_is_sum(self):
         self.assertEqual(250, score([2,5,2,2,3]))
         self.assertEqual(550, score([5,5,5,5]))
+        self.assertEqual(1150, score([1,1,1,5,1]))
+        
+    def test_ones_not_left_out(self):
+        self.assertEqual(300, score([1,2,2,2]))
+        self.assertEqual(350, score([1,5,2,2,2]))
