@@ -32,6 +32,7 @@ from koans.about_decorating_with_functions import AboutDecoratingWithFunctions
 from koans.about_decorating_with_classes import AboutDecoratingWithClasses
 from koans.about_inheritance import AboutInheritance
 from koans.about_multiple_inheritance import AboutMultipleInheritance
+from koans.about_regex import AboutRegex
 from koans.about_scope import AboutScope
 from koans.about_modules import AboutModules
 from koans.about_packages import AboutPackages
