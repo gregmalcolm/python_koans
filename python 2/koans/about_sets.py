@@ -15,7 +15,7 @@ class AboutSets(Koan):
         self.assertEqual(set([__, __, __, __, __]), set('12345'))
         
     def test_convert_the_set_into_a_list_to_sort_it(self):
-        self.assertEqual(__, sorted(set('12345')))
+        self.assertEqual(__, sorted(set('13245')))
         
 
     # ------------------------------------------------------------------
