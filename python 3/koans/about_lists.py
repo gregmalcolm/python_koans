@@ -72,7 +72,7 @@ class AboutLists(Koan):
         self.assertEqual(__, knight)  
             
     def test_popping_lists(self):
-        stack = [10, 20, 30]
+        stack = [10, 20, 30, 40]
         stack.append('last')
         
         self.assertEqual(__, stack)
