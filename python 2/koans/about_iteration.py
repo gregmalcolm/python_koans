@@ -40,7 +40,8 @@ class AboutIteration(Koan):
         self.assertEqual(__, mapped_seq)
         
     def test_filter_selects_certain_items_from_a_list(self):
-        def is_even(item): return (item % 2) == 0
+        def is_even(item):
+            return (item % 2) == 0
 
         seq = [1, 2, 3, 4, 5, 6]
    
@@ -48,7 +49,8 @@ class AboutIteration(Koan):
         self.assertEqual(__, even_numbers)
     
     def test_just_return_first_item_found(self):
-        def is_big_name(item): return len(item) > 4
+        def is_big_name(item):
+            return len(item) > 4
         
         names = ["Jim", "Bill", "Clarence", "Doug", "Eli"]
     
@@ -70,7 +72,7 @@ class AboutIteration(Koan):
     def multiply(self, accum, item):
         return accum * item
         
-    def test_reduce_will_blow_your_mind(self):        
+    def test_reduce_will_blow_your_mind(self):
         result = reduce(self.add, [2, 3, 4]) 
         self.assertEqual(__, result)
     
@@ -82,7 +84,7 @@ class AboutIteration(Koan):
     
     # ------------------------------------------------------------------
 
-    def test_creating_lists_with_list_comprehensions(self):        
+    def test_creating_lists_with_list_comprehensions(self):
         feast = ['lambs', 'sloths', 'orangutans', 'breakfast cereals', 'fruit bats']
         
         comprehension = [delicacy.capitalize() for delicacy in feast]
@@ -107,7 +109,8 @@ class AboutIteration(Koan):
             # Files act like a collection of lines
             file = open("example_file.txt")
     
-            def make_upcase(line) : return line.strip().upper()
+            def make_upcase(line):
+                return line.strip().upper()
             upcase_lines = map(make_upcase, file.readlines())
             self.assertEqual(__, list(upcase_lines))
             
@@ -116,4 +119,5 @@ class AboutIteration(Koan):
         finally:
             # Arg, this is ugly.
             # We will figure out how to fix this later.
-            if file: file.close()
+            if file:
+                file.close()
