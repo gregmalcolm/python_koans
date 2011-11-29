@@ -53,7 +53,8 @@ class AboutIteration(Koan):
         # python 3. In python 2 map() would give you a list.
         
     def test_filter_selects_certain_items_from_a_list(self):
-        def is_even(item): return (item % 2) == 0
+        def is_even(item):
+            return (item % 2) == 0
 
         seq = [1, 2, 3, 4, 5, 6]
         even_numbers = list()
@@ -64,7 +65,8 @@ class AboutIteration(Koan):
         self.assertEqual(__, even_numbers)
     
     def test_just_return_first_item_found(self):
-        def is_big_name(item): return len(item) > 4
+        def is_big_name(item):
+            return len(item) > 4
         
         names = ["Jim", "Bill", "Clarence", "Doug", "Eli"]
         name = None
@@ -130,7 +132,8 @@ class AboutIteration(Koan):
             # Files act like a collection of lines
             file = open("example_file.txt")
     
-            def make_upcase(line) : return line.strip().upper()
+            def make_upcase(line):
+                return line.strip().upper()
             upcase_lines = map(make_upcase, file.readlines())
             self.assertEqual(__, list(upcase_lines))
             
@@ -139,4 +142,5 @@ class AboutIteration(Koan):
         finally:
             # Arg, this is ugly.
             # We will figure out how to fix this later.
-            if file: file.close()
+            if file:
+                file.close()
