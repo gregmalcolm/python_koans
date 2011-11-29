@@ -109,7 +109,7 @@ class AboutIteration(Koan):
             # Files act like a collection of lines
             file = open("example_file.txt")
     
-            def make_upcase(line) :
+            def make_upcase(line):
                 return line.strip().upper()
             upcase_lines = map(make_upcase, file.readlines())
             self.assertEqual(__, list(upcase_lines))
