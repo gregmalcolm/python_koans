@@ -14,12 +14,11 @@ from runner.koan import *
 # contemplate_koans.py
 # koans/
 #     __init__.py
-#         __init__.py
-#         about_asserts.py
-#         about_attribute_access.py
-#         about_class_attributes.py
-#         about_classes.py
-#         ... 
+#     about_asserts.py
+#     about_attribute_access.py
+#     about_class_attributes.py
+#     about_classes.py
+#     ... 
 #     a_package_folder/
 #         __init__.py
 #         a_module.py
