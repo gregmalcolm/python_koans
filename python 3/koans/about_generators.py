@@ -114,7 +114,9 @@ class AboutGenerators(Koan):
         try:
             generator.send(1+2)
         except TypeError as ex:
-            self.assertMatch(__, ex[0])
+          ex2 = ex
+        
+        self.assertRegexpMatches(ex2.args[0], __)
                 
     # ------------------------------------------------------------------
     
