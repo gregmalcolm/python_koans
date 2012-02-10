@@ -4,10 +4,11 @@
 from runner.koan import *
 
 import functools
-        
+
+
 class AboutDecoratingWithClasses(Koan):
     def maximum(self, a, b):
-        if a>b:
+        if a > b:
             return a
         else:
             return b
@@ -18,9 +19,9 @@ class AboutDecoratingWithClasses(Koan):
         the partial.
         """
         max = functools.partial(self.maximum)
-                
-        self.assertEqual(__, max(7,23))
-        self.assertEqual(__, max(10,-10))
+        
+        self.assertEqual(__, max(7, 23))
+        self.assertEqual(__, max(10, -10))
         
     def test_partial_that_wrappers_first_arg(self):
         max0 = functools.partial(self.maximum, 0)
@@ -28,7 +29,7 @@ class AboutDecoratingWithClasses(Koan):
         self.assertEqual(__, max0(-4))
         self.assertEqual(__, max0(5))
 
-    def test_partial_that_wrappers_all_args(self):        
+    def test_partial_that_wrappers_all_args(self):
         always99 = functools.partial(self.maximum, 99, 20)
         always20 = functools.partial(self.maximum, 9, 20)
 
@@ -50,7 +51,7 @@ class AboutDecoratingWithClasses(Koan):
                 return self
             else:
                 # Decorating a bound method
-                return functools.partial(self, obj)        
+                return functools.partial(self, obj)
 
     @doubleit
     def foo(self):
@@ -70,7 +71,7 @@ class AboutDecoratingWithClasses(Koan):
     # ------------------------------------------------------------------
 
     def sound_check(self):
-        #Note: no decorator        
+        #Note: no decorator
         return "Testing..."
 
     def test_what_a_decorator_is_doing_to_a_function(self):
@@ -98,10 +99,11 @@ class AboutDecoratingWithClasses(Koan):
     @documenter("Increments a value by one. Kind of.")
     def count_badly(self, num):
         num += 1
-        if num==3:
-            return 5 
+        if num == 3:
+            return 5
         else:
             num
+
     @documenter("Does nothing")
     def idler(self, num):
         "Idler"
@@ -125,4 +127,3 @@ class AboutDecoratingWithClasses(Koan):
     def test_we_can_chain_decorators(self):
         self.assertEqual(__, self.homer())
         self.assertEqual(__, self.homer.__doc__)
-    

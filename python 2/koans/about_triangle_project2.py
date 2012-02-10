@@ -6,6 +6,7 @@ from runner.koan import *
 # You need to finish implementing triangle() in the file 'triangle.py'
 from triangle import *
 
+
 class AboutTriangleProject2(Koan):
     # The first assignment did not talk about how to handle errors.
     # Let's handle that part now.
@@ -15,4 +16,4 @@ class AboutTriangleProject2(Koan):
         
         self.assertRaises(TriangleError, triangle, 3, 4, -5)
         self.assertRaises(TriangleError, triangle, 1, 1, 3)
-        self.assertRaises(TriangleError, triangle, 2, 4, 2) 
+        self.assertRaises(TriangleError, triangle, 2, 4, 2)

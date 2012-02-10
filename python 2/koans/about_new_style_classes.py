@@ -3,6 +3,7 @@
 
 from runner.koan import *
 
+
 class AboutNewStyleClasses(Koan):
     class OldStyleClass:
         "An old style class"
@@ -26,7 +27,8 @@ class AboutNewStyleClasses(Koan):
         self.assertEqual(__, self.OldStyleClass.__module__)
     
         self.assertEqual(__, len(dir(self.NewStyleClass)))
-        # To examine the available attributes, run 'dir(<Class name goes here>)'
+        # To examine the available attributes, run
+        # 'dir(<Class name goes here>)'
         # from a python console
 
     # ------------------------------------------------------------------
@@ -44,7 +46,9 @@ class AboutNewStyleClasses(Koan):
     def test_new_style_classes_have_same_class_as_type(self):
         new_style = self.NewStyleClass()
         self.assertEqual(__, type(self.NewStyleClass).__name__)
-        self.assertEqual(__, type(self.NewStyleClass) == self.NewStyleClass.__class__)
+        self.assertEqual(
+            __,
+            type(self.NewStyleClass) == self.NewStyleClass.__class__)
         
     # ------------------------------------------------------------------
         

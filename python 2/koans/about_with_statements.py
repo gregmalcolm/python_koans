@@ -7,7 +7,8 @@
 
 from runner.koan import *
 
-import re # For regular expression string comparisons
+import re  # For regular expression string comparisons
+
 
 class AboutWithStatements(Koan):
     def count_lines(self, file_name):
@@ -30,7 +31,8 @@ class AboutWithStatements(Koan):
         try:
             for line in file.readlines():
                 match = re.search('e', line)
-                if match: return line
+                if match:
+                    return line
         finally:
             if file: file.close()
     
@@ -100,7 +102,7 @@ class AboutWithStatements(Koan):
         with open(file_name) as file:
             count = 0
             for line in file.readlines():
-              count += 1
+                count += 1
             return count
     
     def test_open_already_has_its_own_built_in_context_manager(self):

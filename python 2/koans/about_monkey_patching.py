@@ -7,6 +7,7 @@
 
 from runner.koan import *
 
+
 class AboutMonkeyPatching(Koan):
     class Dog(object):
         def bark(self):
@@ -18,9 +19,11 @@ class AboutMonkeyPatching(Koan):
 
     # ------------------------------------------------------------------
     
-    # Add a new method to an existing class.      
+    # Add a new method to an existing class.
     def test_after_patching_dogs_can_both_wag_and_bark(self):
-        def wag(self): return "HAPPY"
+        def wag(self):
+            return "HAPPY"
+
         self.Dog.wag = wag
 
         fido = self.Dog()
@@ -37,12 +40,11 @@ class AboutMonkeyPatching(Koan):
 
     # ------------------------------------------------------------------
 
-    class MyInt(int): pass
+    class MyInt(int):
+        pass
     
     def test_subclasses_of_built_in_classes_can_be_be_monkey_patched(self):
         self.MyInt.is_even = lambda self: (self % 2) == 0
     
         self.assertEqual(____, self.MyInt(1).is_even())
         self.assertEqual(____, self.MyInt(2).is_even())
-            
- 

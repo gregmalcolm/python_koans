@@ -7,6 +7,7 @@
 
 from runner.koan import *
 
+
 class AboutLists(Koan):
     def test_creating_lists(self):
         empty_list = list()
@@ -68,7 +69,7 @@ class AboutLists(Koan):
         self.assertEqual(__, knight)
 
         knight.insert(0, 'Arthur')
-        self.assertEqual(__, knight)  
+        self.assertEqual(__, knight)
             
     def test_popping_lists(self):
         stack = [10, 20, 30, 40]

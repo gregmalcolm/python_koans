@@ -3,10 +3,11 @@
 
 from runner.koan import *
 
-import jims 
+import jims
 import joes
 
-counter = 0 # Global
+counter = 0  # Global
+
 
 class AboutScope(Koan):
     #
@@ -19,7 +20,7 @@ class AboutScope(Koan):
         try:
             fido = Dog()
         except Exception as ex:
-            self.assertMatch(__, ex[0])            
+            self.assertMatch(__, ex[0])
   
     def test_you_can_reference_nested_classes_using_the_scope_operator(self):
         fido = jims.Dog()
@@ -89,4 +90,3 @@ class AboutScope(Koan):
     
     def test_global_attributes_can_be_created_in_the_middle_of_a_class(self):
         self.assertEqual(__, deadly_bingo[5])
-    

@@ -7,12 +7,14 @@
 
 from runner.koan import *
 
-def my_global_function(a,b):
+
+def my_global_function(a, b):
     return a + b
+
 
 class AboutMethods(Koan):
     def test_calling_an_global_function(self):
-        self.assertEqual(__, my_global_function(2,3))
+        self.assertEqual(__, my_global_function(2, 3))
   
     # NOTE: Wrong number of arguments is not a SYNTAX error, but a
     # runtime error.
@@ -22,15 +24,15 @@ class AboutMethods(Koan):
         except Exception as exception:
             self.assertEqual(__, type(exception).__name__)
             self.assertMatch(
-                r'my_global_function\(\) takes exactly 2 arguments \(0 given\)'
-                , exception[0])
+                r'my_global_function\(\) takes exactly 2 arguments \(0 given\)',
+                exception[0])
         
         try:
             my_global_function(1, 2, 3)
         except Exception as e:
             
             # Note, watch out for parenthesis. They need slashes in front!
-            self.assertMatch(__, e[0])        
+            self.assertMatch(__, e[0])
     
     # ------------------------------------------------------------------
     
@@ -58,7 +60,7 @@ class AboutMethods(Koan):
 
     def test_calling_with_variable_arguments(self):
         self.assertEqual(__, self.method_with_var_args())
-        self.assertEqual(('one',), self.method_with_var_args('one'))
+        self.assertEqual(('one', ), self.method_with_var_args('one'))
         self.assertEqual(__, self.method_with_var_args('one', 'two'))
 
     # ------------------------------------------------------------------
@@ -70,13 +72,13 @@ class AboutMethods(Koan):
         def function_with_the_same_name(a, b):
             return a * b
 
-        self.assertEqual(__, function_with_the_same_name(3,4))
+        self.assertEqual(__, function_with_the_same_name(3, 4))
     
     def test_calling_methods_in_same_class_with_explicit_receiver(self):
         def function_with_the_same_name(a, b):
             return a * b
 
-        self.assertEqual(__, self.function_with_the_same_name(3,4))
+        self.assertEqual(__, self.function_with_the_same_name(3, 4))
 
     # ------------------------------------------------------------------
 
@@ -111,7 +113,8 @@ class AboutMethods(Koan):
 
     # ------------------------------------------------------------------
 
-    def one_line_method(self): return 'Madagascar'
+    def one_line_method(self):
+        return 'Madagascar'
         
     def test_no_indentation_required_for_one_line_statement_bodies(self):
         self.assertEqual(__, self.one_line_method())
@@ -136,7 +139,7 @@ class AboutMethods(Koan):
             return "wagging"
 
         def __password(self):
-            return 'password' # Genius!
+            return 'password'  # Genius!
 
     def test_calling_methods_in_other_objects(self):
         rover = self.Dog()
@@ -148,11 +151,13 @@ class AboutMethods(Koan):
         # This is a little rude, but legal
         self.assertEqual(__, rover._tail())
 
-    def test_attributes_with_double_underscore_prefixes_are_subject_to_name_mangling(self):
+    def test_double_underscore_attribute_prefixes_cause_name_mangling(self):
+        """Attributes names that start with a double underscore get
+        mangled when an instance is created."""
         rover = self.Dog()
         try:
             #This may not be possible...
-            password = rover.__password() 
+            password = rover.__password()
         except Exception as ex:
             self.assertEqual(__, type(ex).__name__)
         
@@ -161,4 +166,3 @@ class AboutMethods(Koan):
         
         # Name mangling exists to avoid name clash issues when subclassing.
         # It is not for providing effective access protection
-

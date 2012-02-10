@@ -10,28 +10,31 @@
 
 from runner.koan import *
 
+
 class AboutGenerators(Koan):
         
     def test_generating_values_on_the_fly(self):
         result = list()
-        bacon_generator = (n + ' bacon' for n in ['crunchy','veggie','danish'])
+        bacon_generator = (n + ' bacon' for \
+                n in ['crunchy', 'veggie', 'danish'])
         for bacon in bacon_generator:
             result.append(bacon)
         self.assertEqual(__, result)
             
     def test_generators_are_different_to_list_comprehensions(self):
-        num_list = [x*2 for x in range(1,3)]
-        num_generator = (x*2 for x in range(1,3))
+        num_list = [x * 2 for x in range(1, 3)]
+        num_generator = (x * 2 for x in range(1, 3))
         
         self.assertEqual(2, num_list[0])
         
         # A generator has to be iterated through.
-        self.assertRaises(___, num_generator, [0]) # Evaluates num_generator[0]
+        self.assertRaises(___, num_generator[0]) # Evaluates num_generator[0]
         self.assertEqual(__, list(num_generator)[0]) # This works though
         
-        # Both list comprehensions and generators can be iterated though. However, a generator
-        # function is only called on the first iteration. The values are generated on the fly
-        # instead of stored.
+        # Both list comprehensions and generators can be iterated
+        # though. However, a generator function is only called on the
+        # first iteration. The values are generated on the fly instead
+        # of stored.
         #
         # Generators are more memory friendly, but less versatile
 
@@ -71,7 +74,7 @@ class AboutGenerators(Koan):
             yield x * x
 
     def test_generator_method_with_parameter(self):
-        result = self.square_me(range(2,5))
+        result = self.square_me(range(2, 5))
         self.assertEqual(__, list(result))
 
     # ------------------------------------------------------------------
@@ -84,7 +87,7 @@ class AboutGenerators(Koan):
             yield value
 
     def test_generator_keeps_track_of_local_variables(self):
-        result = self.sum_it(range(2,5))
+        result = self.sum_it(range(2, 5))
         self.assertEqual(__, list(result))
 
     # ------------------------------------------------------------------
@@ -109,7 +112,7 @@ class AboutGenerators(Koan):
         generator = self.generator_with_coroutine()
 
         try:
-            generator.send(1+2)
+            generator.send(1 + 2)
         except TypeError as ex:
             self.assertMatch(__, ex[0])
 
@@ -137,5 +140,3 @@ class AboutGenerators(Koan):
         next(generator)
         # 'next(generator)' is exactly equivelant to 'generator.send(None)'
         self.assertEqual(__, generator.send(None))
-
- 

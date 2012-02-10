@@ -3,18 +3,22 @@
 
 from runner.koan import *
 
+
 def function():
     return "pineapple"
+
 
 def function2():
     return "tractor"
 
+
 class Class(object):
     def method(self):
-        return "parrot" 
+        return "parrot"
+
 
 class AboutMethodBindings(Koan):
-    def test_methods_are_bound_to_an_object(self):       
+    def test_methods_are_bound_to_an_object(self):
         obj = Class()
         self.assertEqual(__, obj.method.im_self == obj)
 
@@ -56,7 +60,7 @@ class AboutMethodBindings(Koan):
         try:
             cls = function2.get_fruit.im_self
         except AttributeError as ex:
-            self.assertMatch(__, ex[0])           
+            self.assertMatch(__, ex[0])
 
     # ------------------------------------------------------------------
 
@@ -88,8 +92,7 @@ class AboutMethodBindings(Koan):
 
     color = SuperColor()
             
-    def test_set_descriptor_changes_behavior_of_attribute_assignment_changes(self):
+    def test_set_descriptor_changes_behavior_of_attribute_assignment(self):
         self.assertEqual(None, self.color.choice)
         self.color = 'purple'
         self.assertEqual(__, self.color.choice)
-     

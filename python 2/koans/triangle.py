@@ -3,7 +3,8 @@
 
 # Triangle Project Code.
 
-# Triangle analyzes the lengths of the sides of a triangle
+
+# triangle(a, b, c) analyzes the lengths of the sides of a triangle
 # (represented by a, b and c) and returns the type of triangle.
 #
 # It returns:
@@ -19,6 +20,7 @@
 def triangle(a, b, c):
     # DELETE 'PASS' AND WRITE THIS CODE
     pass
+
 
 # Error class used in part 2.  No need to change this code.
 class TriangleError(StandardError):

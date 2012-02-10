@@ -15,7 +15,7 @@ class AboutDecoratingWithFunctions(Koan):
                 
     def test_decorators_can_modify_a_function(self):
         self.assertMatch(__, self.mediocre_song())
-        self.assertEqual(__, self.mediocre_song.wow_factor)    
+        self.assertEqual(__, self.mediocre_song.wow_factor)
     
     # ------------------------------------------------------------------
 
@@ -30,4 +30,3 @@ class AboutDecoratingWithFunctions(Koan):
     
     def test_decorators_can_change_a_function_output(self):
         self.assertEqual(__, self.render_tag('llama'))
-

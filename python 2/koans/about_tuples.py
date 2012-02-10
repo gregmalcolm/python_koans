@@ -3,33 +3,34 @@
 
 from runner.koan import *
 
+
 class AboutTuples(Koan):
     def test_creating_a_tuple(self):
-        count_of_three =  (1, 2, 5)
+        count_of_three = (1, 2, 5)
         self.assertEqual(__, count_of_three[2])
         
     def test_tuples_are_immutable_so_item_assignment_is_not_possible(self):
-        count_of_three =  (1, 2, 5)
+        count_of_three = (1, 2, 5)
         try:
             count_of_three[2] = "three"
         except TypeError as ex:
             self.assertMatch(__, ex[0])
         
     def test_tuples_are_immutable_so_appending_is_not_possible(self):
-        count_of_three =  (1, 2, 5)
+        count_of_three = (1, 2, 5)
         try:
             count_of_three.append("boom")
         except Exception as ex:
             self.assertEqual(AttributeError, type(ex))
             
             # Note, assertMatch() uses regular expression pattern matching,
-            # so you don't have to copy the whole message. 
+            # so you don't have to copy the whole message.
             self.assertMatch(__, ex[0])
         
         # Tuples are less flexible than lists, but faster.
 
     def test_tuples_can_only_be_changed_through_replacement(self):
-        count_of_three =  (1, 2, 5)
+        count_of_three = (1, 2, 5)
         
         list_count = list(count_of_three)
         list_count.append("boom")
@@ -46,8 +47,8 @@ class AboutTuples(Koan):
         self.assertEqual(__, tuple("Surprise!"))
 
     def test_creating_empty_tuples(self):
-        self.assertEqual(__ , ())
-        self.assertEqual(__ , tuple()) #Sometimes less confusing
+        self.assertEqual(__, ())
+        self.assertEqual(__, tuple())  # Sometimes less confusing
         
     def test_tuples_can_be_embedded(self):
         lat = (37, 14, 6, 'N')
@@ -61,10 +62,9 @@ class AboutTuples(Koan):
             ("Stargate B", (41, 10, 43.92, 'N'), (1, 49, 34.29, 'W')),
         ]
         
-        locations.append( ("Cthulu", (26, 40, 1, 'N'), (70, 45, 7, 'W')) )
+        locations.append( 
+            ("Cthulhu", (26, 40, 1, 'N'), (70, 45, 7, 'W'))
+        )
         
         self.assertEqual(__, locations[2][0])
         self.assertEqual(__, locations[0][1][2])
-        
-        
-        

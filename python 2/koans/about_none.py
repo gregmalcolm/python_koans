@@ -7,6 +7,7 @@
 
 from runner.koan import *
 
+
 class AboutNone(Koan):
 
     def test_none_is_an_object(self):
@@ -17,14 +18,16 @@ class AboutNone(Koan):
         "There is only one None"
         self.assertEqual(__, None is None)
 
-    def test_what_exception_do_you_get_when_calling_nonexistent_methods_on_None(self):
+    def test_what_exception_do_you_get_when_calling_nonexistent_methods(self):
         """
         What is the Exception that is thrown when you call a method that does
         not exist?
         
-        Hint: launch python command console and try the code in the block below.
+        Hint: launch python command console and try the code in the
+        block below.
         
-        Don't worry about what 'try' and 'except' do, we'll talk about this later
+        Don't worry about what 'try' and 'except' do, we'll talk about
+        this later
         """
         try:
             None.some_method_none_does_not_know_about()
@@ -42,5 +45,3 @@ class AboutNone(Koan):
         """
         self.assertEqual(____, None is not 0)
         self.assertEqual(____, None is not False)
-    
-        

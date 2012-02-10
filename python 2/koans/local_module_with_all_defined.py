@@ -2,19 +2,22 @@
 # -*- coding: utf-8 -*-
 
 __all__ = (
-    'Goat', 
+    'Goat',
     '_Velociraptor'
 )
+
 
 class Goat(object):
     @property
     def name(self):
         return "George"
 
+
 class _Velociraptor(object):
     @property
     def name(self):
         return "Cuddles"
+
 
 class SecretDuck(object):
     @property

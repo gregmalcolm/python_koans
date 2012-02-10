@@ -3,9 +3,10 @@
 
 from runner.koan import *
 
+
 class AboutInheritance(Koan):
     class Dog(object):
-        def __init__(self, name): 
+        def __init__(self, name):
             self._name = name
 
         @property
@@ -72,11 +73,11 @@ class AboutInheritance(Koan):
     # ---------------------------------------------------------
     
     class Pug(Dog):
-        def __init__(self, name): 
+        def __init__(self, name):
             pass
         
     class Greyhound(Dog):
-        def __init__(self, name): 
+        def __init__(self, name):
             super(AboutInheritance.Greyhound, self).__init__(name)
 
     def test_base_init_does_not_get_called_automatically(self):

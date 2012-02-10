@@ -5,11 +5,12 @@ from runner.koan import *
 
 import random
 
+
 class DiceSet(object):
     def __init__(self):
         self._values = None
     
-    @property    
+    @property
     def values(self):
         return self._values
               
@@ -17,6 +18,7 @@ class DiceSet(object):
         # Needs implementing!
         # Tip: random.randint(min, max) can be used to generate random numbers
         pass
+
 
 class AboutDiceProject(Koan):
     def test_can_create_a_dice_set(self):
@@ -30,7 +32,9 @@ class AboutDiceProject(Koan):
         self.assertTrue(isinstance(dice.values, list), "should be a list")
         self.assertEqual(5, len(dice.values))
         for value in dice.values:
-            self.assertTrue(value >= 1 and value <= 6, "value " + str(value) + " must be between 1 and 6")
+            self.assertTrue(
+                value >= 1 and value <= 6,
+                "value " + str(value) + " must be between 1 and 6")
         
     def test_dice_values_do_not_change_unless_explicitly_rolled(self):
         dice = DiceSet()

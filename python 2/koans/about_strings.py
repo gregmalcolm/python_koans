@@ -3,6 +3,7 @@
 
 from runner.koan import *
 
+
 class AboutStrings(Koan):
     
     def test_double_quoted_strings_are_strings(self):
@@ -55,7 +56,7 @@ world!
         b = """Hello "world"."""
         self.assertEqual(__, (a == b))
     
-    def but_you_still_have_to_be_careful_at_the_end_of_a_triple_quoted_string(self):
+    def but_quotes_at_the_end_of_a_triple_quoted_string_are_still_tricky(self):
         string = """Hello "world\""""
     
     def test_plus_concatenates_strings(self):
@@ -105,7 +106,7 @@ world!
         self.assertEqual(__, string)
     
     def test_any_python_expression_may_be_interpolated(self):
-        import math # import a standard python module with math functions
+        import math  # import a standard python module with math functions
         
         decimal_places = 4
         string = "The square root of 5 is {0:.{1}f}".format(math.sqrt(5), \
@@ -121,7 +122,7 @@ world!
         self.assertEqual(__, string[1])
     
     def test_single_characters_can_be_represented_by_integers(self):
-        self.assertEqual(__, ord('a'))      
+        self.assertEqual(__, ord('a'))
         self.assertEqual(__, ord('b') == (ord('a') + 1))
     
     def test_strings_can_be_split(self):
@@ -130,7 +131,7 @@ world!
         self.assertEqual([__, __, __], words)
     
     def test_strings_can_be_split_with_different_patterns(self):
-        import re #import python regular expression library
+        import re  # import python regular expression library
         
         string = "the,rain;in,spain"
         pattern = re.compile(',|;')
@@ -139,7 +140,8 @@ world!
         
         self.assertEqual([__, __, __, __], words)
         
-        # Pattern is a Python regular expression pattern which matches ',' or ';'
+        # `pattern` is a Python regular expression pattern which matches
+        # ',' or ';'
 
     def test_raw_strings_do_not_interpret_escape_characters(self):
         string = r'\n'
@@ -147,7 +149,7 @@ world!
         self.assertEqual(__, string)
         self.assertEqual(__, len(string))
 
-        # Useful in regular expressions, file paths, URLs, etc.        
+        # Useful in regular expressions, file paths, URLs, etc.
                     
     def test_strings_can_be_joined(self):
         words = ["Now", "is", "the", "time"]

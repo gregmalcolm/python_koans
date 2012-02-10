@@ -3,6 +3,7 @@
 
 from runner.koan import *
 
+
 class AboutExceptions(Koan):
 
     class MySpecialError(RuntimeError):

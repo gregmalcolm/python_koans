@@ -3,6 +3,7 @@
 
 from runner.koan import *
 
+
 class AboutDeletingObjects(Koan):
     def test_del_can_remove_slices(self):
         lottery_nums = [4, 8, 15, 16, 23, 42]
@@ -17,10 +18,10 @@ class AboutDeletingObjects(Koan):
         try:
             win = lottery_nums
         except Exception as e:
-            pass    
+            pass
         self.assertMatch(__, e[0])
         
-    # ====================================================================
+    # --------------------------------------------------------------------
         
     class ClosingSale(object):
         def __init__(self):
@@ -54,7 +55,7 @@ class AboutDeletingObjects(Koan):
         self.assertMatch(__, err_msg1)
         self.assertMatch(__, err_msg2)
 
-    # ====================================================================
+    # --------------------------------------------------------------------
 
     class ClintEastwood(object):
         def __init__(self):
@@ -83,8 +84,7 @@ class AboutDeletingObjects(Koan):
         del cowboy.name
         self.assertEqual(__, cowboy.name)
         
-        
-    # ====================================================================        
+    # --------------------------------------------------------------------
 
     class Prisoner(object):
         def __init__(self):
@@ -110,7 +110,7 @@ class AboutDeletingObjects(Koan):
         del citizen.name
         self.assertEqual(__, citizen.name)
 
-    # ====================================================================
+    # --------------------------------------------------------------------
         
     class MoreOrganisedClosingSale(ClosingSale):
         def __init__(self):
