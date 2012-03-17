@@ -129,18 +129,17 @@ class AboutIteration(Koan):
         self.assertEqual(__, list(result))
 
         try:
-            # Files act like a collection of lines
             file = open("example_file.txt")
-    
-            def make_upcase(line):
-                return line.strip().upper()
-            upcase_lines = map(make_upcase, file.readlines())
-            self.assertEqual(__, list(upcase_lines))
-            
-            # NOTE: You can create your own collections that work with each,
-            # map, select, etc.
-        finally:
-            # Arg, this is ugly.
-            # We will figure out how to fix this later.
-            if file:
+
+            try:
+                def make_upcase(line):
+                    return line.strip().upper()
+                upcase_lines = map(make_upcase, file.readlines())
+                self.assertEqual(__, list(upcase_lines))
+            finally:
+                # Arg, this is ugly.
+                # We will figure out how to fix this later.
                 file.close()
+        except IOError:
+            # should never happen
+            self.fail()
