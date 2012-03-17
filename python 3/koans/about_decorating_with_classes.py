@@ -101,7 +101,7 @@ class AboutDecoratingWithClasses(Koan):
         if num==3:
             return 5 
         else:
-            num
+            return num
     @documenter("Does nothing")
     def idler(self, num):
         "Idler"
