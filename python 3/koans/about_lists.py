@@ -106,5 +106,5 @@ class AboutLists(Koan):
         # Note, for Python 2 popping from the left hand side of a list is
         # inefficient. Use collections.deque instead.
         
-        # This is not as issue for Python 3 through
+        # This is not an issue for Python 3 through
         
