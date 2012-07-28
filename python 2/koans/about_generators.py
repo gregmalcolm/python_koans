@@ -28,8 +28,7 @@ class AboutGenerators(Koan):
         self.assertEqual(2, num_list[0])
         
         # A generator has to be iterated through.
-        self.assertRaises(___, num_generator[0]) # Evaluates num_generator[0]
-        self.assertEqual(__, list(num_generator)[0]) # This works though
+        self.assertEqual(__, list(num_generator)[0])
         
         # Both list comprehensions and generators can be iterated
         # though. However, a generator function is only called on the
