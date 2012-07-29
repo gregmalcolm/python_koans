@@ -13,7 +13,7 @@ def my_global_function(a, b):
 
 
 class AboutMethods(Koan):
-    def test_calling_an_global_function(self):
+    def test_calling_a_global_function(self):
         self.assertEqual(__, my_global_function(2, 3))
   
     # NOTE: Wrong number of arguments is not a SYNTAX error, but a
@@ -113,8 +113,7 @@ class AboutMethods(Koan):
 
     # ------------------------------------------------------------------
 
-    def one_line_method(self):
-        return 'Madagascar'
+    def one_line_method(self): return 'Madagascar'
         
     def test_no_indentation_required_for_one_line_statement_bodies(self):
         self.assertEqual(__, self.one_line_method())
