@@ -113,8 +113,7 @@ class AboutMethods(Koan):
 
     # ------------------------------------------------------------------
 
-    def one_line_method(self):
-        return 'Madagascar'
+    def one_line_method(self): return 'Madagascar'
         
     def test_no_indentation_required_for_one_line_statement_bodies(self):
         self.assertEqual(__, self.one_line_method())
