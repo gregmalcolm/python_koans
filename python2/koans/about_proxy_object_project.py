@@ -13,7 +13,7 @@
 # missing handler and any other supporting methods.  The specification
 # of the Proxy class is given in the AboutProxyObjectProject koan.
 
-# Note: This is a bit trickier that it's Ruby Koans counterpart, but you
+# Note: This is a bit trickier that its Ruby Koans counterpart, but you
 # can do it!
 
 from runner.koan import *
