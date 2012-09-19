@@ -56,7 +56,14 @@ If you have problems, this may help:
 Getting Started
 ---------------
 
-From a *nix terminal or windows command prompt go to the python koans\python_<b>VERSION</b> folder and run::
+Jake Hebbert has created a couple of screencasts available here:
+
+.. "Getting started using Python Koans": http://vimeo.com/48330033
+.. "Python Koans about_asserts.py": http://vimeo.com/48387395
+
+Or if you prefer to read:
+
+From a *nix terminal or windows command prompt go to the python koans\python_**VERSION** folder and run::
 
     python contemplate_koans.py
 
