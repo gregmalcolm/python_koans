@@ -58,8 +58,9 @@ Getting Started
 
 Jake Hebbert has created a couple of screencasts available here:
 
-  http://vimeo.com/48330033
-  http://vimeo.com/48387395
+http://vimeo.com/48330033
+
+http://vimeo.com/48387395
 
 Or if you prefer to read:
 
