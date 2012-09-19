@@ -53,7 +53,7 @@ class AboutProxyObjectProject(Koan):
         tv.power()
         tv.channel = 10
         
-        self.assertEqual(['power', 'channel='], tv.messages())
+        self.assertEqual(['power', 'channel'], tv.messages())
     
     def test_proxy_handles_invalid_messages(self):
         tv = Proxy(Television())
@@ -83,7 +83,7 @@ class AboutProxyObjectProject(Koan):
         tv.power()
       
         self.assertEqual(2, tv.number_of_times_called('power'))
-        self.assertEqual(1, tv.number_of_times_called('channel='))
+        self.assertEqual(1, tv.number_of_times_called('channel'))
         self.assertEqual(0, tv.number_of_times_called('is_on'))
     
     def test_proxy_can_record_more_than_just_tv_objects(self):
