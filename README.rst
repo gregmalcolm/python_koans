@@ -58,8 +58,11 @@ Getting Started
 
 Jake Hebbert has created a couple of screencasts available here:
 
-.. _Getting started using Python Koans: http://vimeo.com/48330033
-.. _Python Koans about_asserts.py: http://vimeo.com/48387395
+  `Getting started using Python Koan` _vimeo_getting_started
+  `Python Koans about_asserts.py` _vimeo_about_asserts
+
+.. _vimeo_getting_started: http://vimeo.com/48330033
+.. _vimeo_about_asserts: http://vimeo.com/48387395
 
 Or if you prefer to read:
 
