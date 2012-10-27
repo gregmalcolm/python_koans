@@ -33,8 +33,8 @@ class AboutSets(Koan):
     # ------------------------------------------------------------------
 
     def test_set_have_arithmetic_operators(self):
-        scotsmen = set(['MacLeod', 'Wallace', 'Willie'])
-        warriors = set(['MacLeod', 'Wallace', 'Leonidas'])
+        scotsmen = {'MacLeod', 'Wallace', 'Willie'}
+        warriors = {'MacLeod', 'Wallace', 'Leonidas'}
 
         self.assertEqual(__, scotsmen - warriors)
         self.assertEqual(__, scotsmen | warriors)
