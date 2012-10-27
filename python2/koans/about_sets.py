@@ -21,17 +21,14 @@ class AboutSets(Koan):
         
     # ------------------------------------------------------------------
 
-    def chars_in(self, a_set):
-        return ''.join(sorted(a_set))
-
     def test_set_have_arithmetic_operators(self):
-        good_guy = set('macleod')
-        bad_guy = set('mutunas')
-        
-        self.assertEqual(__, self.chars_in(good_guy - bad_guy))
-        self.assertEqual(__, self.chars_in(good_guy | bad_guy))
-        self.assertEqual(__, self.chars_in(good_guy & bad_guy))
-        self.assertEqual(__, self.chars_in(good_guy ^ bad_guy))
+        scotsmen = set(["MacLeod","Wallace","Willie"])
+        warriors = set(["MacLeod", "Wallace", "Leonidas"])
+
+        self.assertEqual(__, scotsmen - warriors)
+        self.assertEqual(__, scotsmen | warriors)
+        self.assertEqual(__, scotsmen & warriors)
+        self.assertEqual(__, scotsmen ^ warriors)
 
     # ------------------------------------------------------------------
 
