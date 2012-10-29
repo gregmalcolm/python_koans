@@ -185,6 +185,10 @@ class AboutAttributeAccess(Koan):
 
         self.assertEqual(__, fanboy.a_pie)
 
+        #
+        # NOTE: Change the prefix to make this next assert pass
+        #
+
         prefix = '__'
         self.assertEqual(
             "The Laminator, issue #1",
