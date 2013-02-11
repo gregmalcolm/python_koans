@@ -53,8 +53,8 @@ class AboutWithStatements(Koan):
     ## They both follow the pattern of "sandwich code".
     ##
     ## Sandwich code is code that comes in three parts: (1) the top slice
-    ## of bread, (2) the meat, and (3) the bottom slice of bread.  The
-    ## the bread part of the sandwich almost always goes together, but
+    ## of bread, (2) the meat, and (3) the bottom slice of bread.
+    ## The bread part of the sandwich almost always goes together, but
     ## the meat part changes all the time.
     ##
     ## Because the changing part of the sandwich code is in the middle,
