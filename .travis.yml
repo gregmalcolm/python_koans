@@ -3,6 +3,7 @@ language: python
 python:
     - 2.7
 script:
+    - ls
     - python contemplate_koans.py about_asserts # add further koans here separated by spaces
 notifications:
   email: false
