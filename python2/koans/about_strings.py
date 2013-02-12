@@ -99,7 +99,7 @@ world!
         string = "The values are {0} and {1}".format(value1, value2)
         self.assertEqual(__, string)
 
-    def test_formatted_values_con_be_shown_in_any_order_or_be_repeated(self):
+    def test_formatted_values_can_be_shown_in_any_order_or_be_repeated(self):
         value1 = 'doh'
         value2 = 'DOH'
         string = "The values are {1}, {0}, {0} and {1}!".format(value1, value2)
