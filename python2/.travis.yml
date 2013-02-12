@@ -1,0 +1,13 @@
+language: python
+python:
+    - "2.7"
+script:
+    - python contemplate_koans.py about_asserts
+    # The rest of the koans required to complete session5 of @SciLifeLab http://github.com/pythonkurs
+    #
+    # about_none about_lists about_list_assignments about_dictionaries 
+    # about_strings about_tuples about_methods about_control_statements 
+    # about_true_and_false about_sets
+
+notifications:
+    email: false
