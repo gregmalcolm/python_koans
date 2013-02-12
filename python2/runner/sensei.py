@@ -3,6 +3,7 @@
 
 import unittest
 import re
+import sys
 import glob
 
 import helper
@@ -88,7 +89,7 @@ class Sensei(MockableTestResult):
         self.stream.writeln("")
         self.stream.writeln(self.say_something_zenlike())
         
-        if self.failures: return
+        if self.failures: sys.exit(-1)
         self.stream.writeln(
             "\n{0}**************************************************" \
             .format(Fore.RESET))
