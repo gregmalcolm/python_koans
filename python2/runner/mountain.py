@@ -18,8 +18,9 @@ class Mountain:
         "Run the koans tests with a custom runner output."
         
         if args and len(args) >=2:
-            self.tests = unittest.TestLoader().loadTestsFromName("koans." + args[1])
-
-        self.tests(self.lesson)
-        self.lesson.learn()
+	    args.pop(0)
+	    for arg in args:
+            	self.tests = unittest.TestLoader().loadTestsFromName("koans." + arg)
+        	self.tests(self.lesson)
+        	self.lesson.learn()
         return self.lesson
