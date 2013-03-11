@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 __all__ = (
-    'Goat', 
+    'Goat',
     '_Velociraptor'
 )
 

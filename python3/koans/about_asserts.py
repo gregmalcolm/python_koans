@@ -10,7 +10,7 @@ class AboutAsserts(Koan):
         We shall contemplate truth by testing reality, via asserts.
         """
         self.assertTrue(False) # This should be true
-    
+
     def test_assert_with_message(self):
         """
         Enlightenment may be more easily achieved with appropriate messages.
@@ -37,14 +37,14 @@ class AboutAsserts(Koan):
         """
         expected_value = __
         actual_value = 1 + 1
-        
+
         self.assertEqual(expected_value, actual_value)
-    
+
     def test_that_unittest_asserts_work_the_same_way_as_python_asserts(self):
         """
         Knowing how things really work is half the battle
         """
-        
+
         # This throws an AssertionError exception
         assert False
-        
+

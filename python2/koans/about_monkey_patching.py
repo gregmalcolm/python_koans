@@ -12,13 +12,13 @@ class AboutMonkeyPatching(Koan):
     class Dog(object):
         def bark(self):
             return "WOOF"
-    
+
     def test_as_defined_dogs_do_bark(self):
         fido = self.Dog()
         self.assertEqual(__, fido.bark())
 
     # ------------------------------------------------------------------
-    
+
     # Add a new method to an existing class.
     def test_after_patching_dogs_can_both_wag_and_bark(self):
         def wag(self):
@@ -29,9 +29,9 @@ class AboutMonkeyPatching(Koan):
         fido = self.Dog()
         self.assertEqual(__, fido.wag())
         self.assertEqual(__, fido.bark())
-    
+
     # ------------------------------------------------------------------
-    
+
     def test_most_built_in_classes_cannot_be_monkey_patched(self):
         try:
             int.is_even = lambda self: (self % 2) == 0
@@ -42,9 +42,9 @@ class AboutMonkeyPatching(Koan):
 
     class MyInt(int):
         pass
-    
+
     def test_subclasses_of_built_in_classes_can_be_be_monkey_patched(self):
         self.MyInt.is_even = lambda self: (self % 2) == 0
-    
+
         self.assertEqual(____, self.MyInt(1).is_even())
         self.assertEqual(____, self.MyInt(2).is_even())

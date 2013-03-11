@@ -6,7 +6,7 @@ Python Koans is a port of Edgecase's "Ruby Koans".
 
 .. image:: http://i442.photobucket.com/albums/qq150/gregmalcolm/PythonKoansScreenshot.png
 
-Python Koans is an interactive tutorial for learning Python by making tests pass. 
+Python Koans is an interactive tutorial for learning Python by making tests pass.
 
 Most tests are 'fixed' by filling the missing parts of assert functions. Eg:
 
@@ -40,7 +40,7 @@ Installing Python Koans
 
 Aside from downloading or checking out the latest version of Python Koans, all you need to install is Python.
 
-At this time of writing there are two versions of the koans, one for use with Python 2.6 and one for Python 3.1. You should be able to work with newer Python versions, but older ones will likely give you problems. 
+At this time of writing there are two versions of the koans, one for use with Python 2.6 and one for Python 3.1. You should be able to work with newer Python versions, but older ones will likely give you problems.
 
 You can download Python from here:
 
@@ -99,11 +99,11 @@ Getting the Most From the Koans
 
 Quoting the Ruby Koans instructions::
 
-	"In test-driven development the mantra has always been, red, green, 
+	"In test-driven development the mantra has always been, red, green,
 	refactor. Write a failing test and run it (red), make the test pass
 	(green), then refactor it (that is look at the code and see if you
 	can make it any better. In this case you will need to run the koan
-	and see it fail (red), make the test pass (green), then take a 
+	and see it fail (red), make the test pass (green), then take a
 	moment and reflect upon the test to see what it is teaching you
 	and improve the code to better communicate its intent (refactor)."
 
