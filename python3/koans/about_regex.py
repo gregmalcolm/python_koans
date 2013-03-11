@@ -29,7 +29,7 @@ class AboutRegex(Koan):
                 search()   -->  Scan through a string, looking for any location where this RE matches.
                 findall()  -->  Find all substrings where the RE matches, and returns them as a list.
                 finditer() -->  Find all substrings where the RE matches, and returns them as an iterator.
-                
+
         """
         string = "Hello, my name is Felix and this koans are based on the Ben's book: Regular Expressions in 10 minutes. Repeat My name is Felix"
         m = re.match('Felix', string) #TIP: Maybe match it's not the best option
@@ -49,7 +49,7 @@ class AboutRegex(Koan):
 
         self.assertEqual(re.findall("felix", string, 20), __)
         self.assertEqual(re.findall("felix", string, 10), __)
-                                              
+
     def test_matching_any_character(self):
         """
             Lesson 1 Matching any character
@@ -64,7 +64,7 @@ class AboutRegex(Koan):
                 + "sa1.xls"
 
         # TIP: remember the name of this lesson
-       
+
         change_this_search_string = 'a..xlx' # <-- I want to find all uses of myArray
         self.assertEquals(len(re.findall(change_this_search_string, string)),3)
 
@@ -83,7 +83,7 @@ class AboutRegex(Koan):
                 + "na1.xls\n"  \
                 + "na2.xls\n"  \
                 + "sa1.xls\n"  \
-                + "ca1.xls"  
+                + "ca1.xls"
         # I want to find all files for North America(na) or South America(sa), but not (ca)
         # TIP you can use the pattern .a. which matches in above test but in this case matches more than you want
         change_this_search_string = '[nsc]a[2-9].xls'
@@ -92,7 +92,7 @@ class AboutRegex(Koan):
     def test_anything_but_matching(self):
         """
             Lesson 2 Using character set ranges
-            Occsionally, you'll want a list of characters that you don't want to match. 
+            Occsionally, you'll want a list of characters that you don't want to match.
             Character sets can be negated using the ^ metacharacter.
 
         """
@@ -107,10 +107,10 @@ class AboutRegex(Koan):
                 + "na1.xls\n"  \
                 + "na2.xls\n"  \
                 + "sa1.xls\n"  \
-                + "ca1.xls"  
+                + "ca1.xls"
 
-        # I want to find the name sam 
+        # I want to find the name sam
         change_this_search_string = '[^nc]am'
-        self.assertEquals(re.findall(change_this_search_string, string), ['sam.xls'])        
+        self.assertEquals(re.findall(change_this_search_string, string), ['sam.xls'])
 
 

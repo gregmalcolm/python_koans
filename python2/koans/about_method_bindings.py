@@ -30,7 +30,7 @@ class AboutMethodBindings(Koan):
     def test_functions_have_attributes(self):
         self.assertEqual(__, len(dir(function)))
         self.assertEqual(__, dir(function) == dir(Class.method.im_func))
-        
+
     def test_bound_methods_have_different_attributes(self):
         obj = Class()
         self.assertEqual(__, len(dir(obj.method)))
@@ -45,12 +45,12 @@ class AboutMethodBindings(Koan):
             obj.method.cherries = 3
         except AttributeError as ex:
             self.assertMatch(__, ex[0])
- 
+
     def test_setting_attributes_on_methods_by_accessing_the_inner_function(self):
         obj = Class()
         obj.method.im_func.cherries = 3
         self.assertEqual(__, obj.method.cherries)
-        
+
     def test_functions_can_have_inner_functions(self):
         function2.get_fruit = function
         self.assertEqual(__, function2.get_fruit())
@@ -69,7 +69,7 @@ class AboutMethodBindings(Koan):
             return (self, obj, cls)
 
     binding = BoundClass()
-            
+
     def test_get_descriptor_resolves_attribute_binding(self):
         bound_obj, binding_owner, owner_type = self.binding
         # Look at BoundClass.__get__():
@@ -91,7 +91,7 @@ class AboutMethodBindings(Koan):
             self.choice = val
 
     color = SuperColor()
-            
+
     def test_set_descriptor_changes_behavior_of_attribute_assignment(self):
         self.assertEqual(None, self.color.choice)
         self.color = 'purple'

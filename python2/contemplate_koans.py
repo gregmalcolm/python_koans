@@ -14,7 +14,7 @@ import unittest
 import sys
 
 
-if __name__ == '__main__':        
+if __name__ == '__main__':
     if sys.version_info >= (3, 0):
         print("\nThis is the Python 2 version of Python Koans, but you are " +
             "running it with Python 3 or newer!\n\n"
@@ -31,7 +31,7 @@ if __name__ == '__main__':
                 "to work!\n\n" +
                 "But lets see how far we get...\n" +
                 "********************************************************\n")
-        
+
         from runner.mountain import Mountain
 
         Mountain().walk_the_path(sys.argv)

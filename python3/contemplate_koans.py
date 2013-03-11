@@ -19,7 +19,7 @@ if __name__ == '__main__':
             "running it with Python 2 or older!\n\n"
             "Did you accidentally use the wrong python script? \nTry:\n\n" +
             "    python3 contemplate_koans.py\n")
-    else:        
+    else:
         from runner.mountain import Mountain
 
         Mountain().walk_the_path(sys.argv)

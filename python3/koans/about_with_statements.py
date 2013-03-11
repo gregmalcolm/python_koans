@@ -23,12 +23,12 @@ class AboutWithStatements(Koan):
         except IOError:
             # should never happen
             self.fail()
-    
+
     def test_counting_lines(self):
         self.assertEqual(__, self.count_lines("example_file.txt"))
-    
+
     # ------------------------------------------------------------------
-        
+
     def find_line(self, file_name):
         try:
             file = open(file_name)
@@ -42,10 +42,10 @@ class AboutWithStatements(Koan):
         except IOError:
             # should never happen
             self.fail()
-    
+
     def test_finding_lines(self):
         self.assertEqual(__, self.find_line("example_file.txt"))
-    
+
     ## ------------------------------------------------------------------
     ## THINK ABOUT IT:
     ##
@@ -68,49 +68,49 @@ class AboutWithStatements(Koan):
     ## Python solves the problem using Context Managers. Consider the
     ## following code:
     ##
-    
+
     class FileContextManager():
         def __init__(self, file_name):
             self._file_name = file_name
             self._file = None
-        
+
         def __enter__(self):
             self._file = open(self._file_name)
             return self._file
-        
+
         def __exit__(self, cls, value, tb):
             self._file.close()
-    
+
     # Now we write:
-    
+
     def count_lines2(self, file_name):
         with self.FileContextManager(file_name) as file:
             count = 0
             for line in file.readlines():
                 count += 1
         return count
-    
+
     def test_counting_lines2(self):
         self.assertEqual(__, self.count_lines2("example_file.txt"))
-    
+
     # ------------------------------------------------------------------
-    
+
     def find_line2(self, file_name):
-        # Rewrite find_line using the Context Manager.      
+        # Rewrite find_line using the Context Manager.
         pass
-    
+
     def test_finding_lines2(self):
         self.assertEqual(__, self.find_line2("example_file.txt"))
         self.assertNotEqual(__, self.find_line2("example_file.txt"))
-    
+
     # ------------------------------------------------------------------
-    
+
     def count_lines3(self, file_name):
         with open(file_name) as file:
             count = 0
             for line in file.readlines():
               count += 1
             return count
-    
+
     def test_open_already_has_its_own_built_in_context_manager(self):
         self.assertEqual(__, self.count_lines3("example_file.txt"))

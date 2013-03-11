@@ -13,7 +13,7 @@ class Hamster(object):
     def name(self):
         return "Phil"
 
-    
+
 class _SecretSquirrel(object):
     @property
     def name(self):

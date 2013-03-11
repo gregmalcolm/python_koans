@@ -10,7 +10,7 @@ class Hamster:
     @property
     def name(self):
         return "Phil"
-    
+
 class _SecretSquirrel:
     @property
     def name(self):
