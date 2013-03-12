@@ -17,7 +17,7 @@ class AboutControlStatements(Koan):
         if True:
             result = 'true value'
         self.assertEqual(__, result)
-                
+
     def test_while_statement(self):
         i = 1
         result = 1
@@ -25,7 +25,7 @@ class AboutControlStatements(Koan):
             result = result * i
             i += 1
         self.assertEqual(__, result)
-    
+
     def test_break_statement(self):
         i = 1
         result = 1
@@ -34,26 +34,26 @@ class AboutControlStatements(Koan):
             result = result * i
             i += 1
         self.assertEqual(__, result)
-    
+
     def test_continue_statement(self):
         i = 0
         result = []
         while i < 10:
             i += 1
             if (i % 2) == 0: continue
-            result.append(i) 
+            result.append(i)
         self.assertEqual(__, result)
-    
+
     def test_for_statement(self):
         phrase = ["fish", "and", "chips"]
         result = []
         for item in phrase:
             result.append(item.upper())
         self.assertEqual([__, __, __], result)
-        
+
     def test_for_statement_with_tuples(self):
         round_table = [
-            ("Lancelot", "Blue"),            
+            ("Lancelot", "Blue"),
             ("Galahad", "I don't know!"),
             ("Robin", "Blue! I mean Green!"),
             ("Arthur", "Is that an African Swallow or Amazonian Swallow?")
@@ -61,12 +61,11 @@ class AboutControlStatements(Koan):
         result = []
         for knight, answer in round_table:
             result.append("Contestant: '" + knight + "'   Answer: '" + answer + "'")
-        
+
         text = __
-        
+
         self.assertRegexpMatches(result[2], text)
-        
+
         self.assertNoRegexpMatches(result[0], text)
         self.assertNoRegexpMatches(result[1], text)
         self.assertNoRegexpMatches(result[3], text)
-        

@@ -10,6 +10,6 @@ notifications:
 
 # Some other koans (see runner/sensei.py or "ls koans" to see the light):
 #
-# about_none about_lists about_list_assignments about_dictionaries 
-# about_strings about_tuples about_methods about_control_statements 
+# about_none about_lists about_list_assignments about_dictionaries
+# about_strings about_tuples about_methods about_control_statements
 # about_true_and_false about_sets ...

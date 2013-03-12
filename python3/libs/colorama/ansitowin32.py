@@ -118,7 +118,7 @@ class AnsiToWin32(object):
             self.wrapped.flush()
         if self.autoreset:
             self.reset_all()
-        
+
 
     def reset_all(self):
         if self.convert:

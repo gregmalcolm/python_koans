@@ -26,7 +26,7 @@ __version__ = '0.6.0 modified by Greg Malcolm'
 class SentinelObject(object):
     def __init__(self, name):
         self.name = name
-        
+
     def __repr__(self):
         return '<SentinelObject "{0!s}">'.format(self.name)
 
@@ -34,11 +34,11 @@ class SentinelObject(object):
 class Sentinel(object):
     def __init__(self):
         self._sentinels = {}
-        
+
     def __getattr__(self, name):
         return self._sentinels.setdefault(name, SentinelObject(name))
-    
-    
+
+
 sentinel = Sentinel()
 
 DEFAULT = sentinel.DEFAULT
@@ -58,21 +58,21 @@ def _copy(value):
 
 class Mock(object):
 
-    def __init__(self, spec=None, side_effect=None, return_value=DEFAULT, 
+    def __init__(self, spec=None, side_effect=None, return_value=DEFAULT,
                  name=None, parent=None, wraps=None):
         self._parent = parent
         self._name = name
         if spec is not None and not isinstance(spec, list):
             spec = [member for member in dir(spec) if not _is_magic(member)]
-        
+
         self._methods = spec
         self._children = {}
         self._return_value = return_value
         self.side_effect = side_effect
         self._wraps = wraps
-        
+
         self.reset_mock()
-        
+
 
     def reset_mock(self):
         self.called = False
@@ -84,16 +84,16 @@ class Mock(object):
             child.reset_mock()
         if isinstance(self._return_value, Mock):
             self._return_value.reset_mock()
-        
-    
+
+
     def __get_return_value(self):
         if self._return_value is DEFAULT:
             self._return_value = Mock()
         return self._return_value
-    
+
     def __set_return_value(self, value):
         self._return_value = value
-        
+
     return_value = property(__get_return_value, __set_return_value)
 
 
@@ -102,7 +102,7 @@ class Mock(object):
         self.call_count += 1
         self.call_args = (args, kwargs)
         self.call_args_list.append((args, kwargs))
-        
+
         parent = self._parent
         name = self._name
         while parent is not None:
@@ -111,44 +111,44 @@ class Mock(object):
                 break
             name = parent._name + '.' + name
             parent = parent._parent
-        
+
         ret_val = DEFAULT
         if self.side_effect is not None:
-            if (isinstance(self.side_effect, Exception) or 
+            if (isinstance(self.side_effect, Exception) or
                 isinstance(self.side_effect, (type, ClassType)) and
                 issubclass(self.side_effect, Exception)):
                 raise self.side_effect
-            
+
             ret_val = self.side_effect(*args, **kwargs)
             if ret_val is DEFAULT:
                 ret_val = self.return_value
-        
+
         if self._wraps is not None and self._return_value is DEFAULT:
             return self._wraps(*args, **kwargs)
         if ret_val is DEFAULT:
             ret_val = self.return_value
         return ret_val
-    
-    
+
+
     def __getattr__(self, name):
         if self._methods is not None:
             if name not in self._methods:
                 raise AttributeError("Mock object has no attribute '{0!s}'".format(name))
         elif _is_magic(name):
             raise AttributeError(name)
-        
+
         if name not in self._children:
             wraps = None
             if self._wraps is not None:
                 wraps = getattr(self._wraps, name)
             self._children[name] = Mock(parent=self, name=name, wraps=wraps)
-            
+
         return self._children[name]
-    
-    
+
+
     def assert_called_with(self, *args, **kwargs):
         assert self.call_args == (args, kwargs), 'Expected: {0!s}\nCalled with: {1!s}'.format((args, kwargs), self.call_args)
-        
+
 
 def _dot_lookup(thing, comp, import_path):
     try:
@@ -199,8 +199,8 @@ class _patch(object):
                     patching.__exit__()
 
         patched.patchings = [self]
-        patched.__name__ = func.__name__ 
-        patched.compat_co_firstlineno = getattr(func, "compat_co_firstlineno", 
+        patched.__name__ = func.__name__
+        patched.compat_co_firstlineno = getattr(func, "compat_co_firstlineno",
                                                 func.func_code.co_firstlineno)
         return patched
 
@@ -209,7 +209,7 @@ class _patch(object):
         target = self.target
         name = self.attribute
         create = self.create
-        
+
         original = DEFAULT
         if _has_local_attr(target, name):
             try:
@@ -221,7 +221,7 @@ class _patch(object):
             raise AttributeError("{0!s} does not have the attribute {1!r}".format(target, name))
         return original
 
-    
+
     def __enter__(self):
         new, spec, = self.new, self.spec
         original = self.get_original()
@@ -247,15 +247,15 @@ class _patch(object):
         else:
             delattr(self.target, self.attribute)
         del self.temp_original
-            
-                
+
+
 def patch_object(target, attribute, new=DEFAULT, spec=None, create=False):
     return _patch(target, attribute, new, spec, create)
 
 
 def patch(target, new=DEFAULT, spec=None, create=False):
     try:
-        target, attribute = target.rsplit('.', 1)    
+        target, attribute = target.rsplit('.', 1)
     except (TypeError, ValueError):
         raise TypeError("Need a valid target to patch. You supplied: {0!r}".format(target,))
     target = _importer(target)

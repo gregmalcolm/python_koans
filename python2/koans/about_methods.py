@@ -15,7 +15,7 @@ def my_global_function(a, b):
 class AboutMethods(Koan):
     def test_calling_a_global_function(self):
         self.assertEqual(__, my_global_function(2, 3))
-  
+
     # NOTE: Wrong number of arguments is not a SYNTAX error, but a
     # runtime error.
     def test_calling_functions_with_wrong_number_of_arguments(self):
@@ -26,16 +26,16 @@ class AboutMethods(Koan):
             self.assertMatch(
                 r'my_global_function\(\) takes exactly 2 arguments \(0 given\)',
                 exception[0])
-        
+
         try:
             my_global_function(1, 2, 3)
         except Exception as e:
-            
+
             # Note, watch out for parenthesis. They need slashes in front!
             self.assertMatch(__, e[0])
-    
+
     # ------------------------------------------------------------------
-    
+
     def pointless_method(self, a, b):
         sum = a + b
 
@@ -43,7 +43,7 @@ class AboutMethods(Koan):
         self.assertEqual(__, self.pointless_method(1, 2))
         # Notice that methods accessed from class scope do not require
         # you to pass the first "self" argument?
-        
+
     # ------------------------------------------------------------------
 
     def method_with_defaults(self, a, b='default_value'):
@@ -67,13 +67,13 @@ class AboutMethods(Koan):
 
     def function_with_the_same_name(self, a, b):
         return a + b
-    
+
     def test_functions_without_self_arg_are_global_functions(self):
         def function_with_the_same_name(a, b):
             return a * b
 
         self.assertEqual(__, function_with_the_same_name(3, 4))
-    
+
     def test_calling_methods_in_same_class_with_explicit_receiver(self):
         def function_with_the_same_name(a, b):
             return a * b
@@ -84,9 +84,9 @@ class AboutMethods(Koan):
 
     def another_method_with_the_same_name(self):
         return 10
-    
+
     link_to_overlapped_method = another_method_with_the_same_name
-    
+
     def another_method_with_the_same_name(self):
         return 42
 
@@ -114,7 +114,7 @@ class AboutMethods(Koan):
     # ------------------------------------------------------------------
 
     def one_line_method(self): return 'Madagascar'
-        
+
     def test_no_indentation_required_for_one_line_statement_bodies(self):
         self.assertEqual(__, self.one_line_method())
 
@@ -123,7 +123,7 @@ class AboutMethods(Koan):
     def method_with_documentation(self):
         "A string placed at the beginning of a function is used for documentation"
         return "ok"
-    
+
     def test_the_documentation_can_be_viewed_with_the_doc_method(self):
         self.assertMatch(__, self.method_with_documentation.__doc__)
 
@@ -132,7 +132,7 @@ class AboutMethods(Koan):
     class Dog(object):
         def name(self):
             return "Fido"
-        
+
         def _tail(self):
             # Prefixing a method with an underscore implies private scope
             return "wagging"
@@ -143,7 +143,7 @@ class AboutMethods(Koan):
     def test_calling_methods_in_other_objects(self):
         rover = self.Dog()
         self.assertEqual(__, rover.name())
-        
+
     def test_private_access_is_implied_but_not_enforced(self):
         rover = self.Dog()
 
@@ -159,9 +159,9 @@ class AboutMethods(Koan):
             password = rover.__password()
         except Exception as ex:
             self.assertEqual(__, type(ex).__name__)
-        
+
         # But this still is!
         self.assertEqual(__, rover._Dog__password())
-        
+
         # Name mangling exists to avoid name clash issues when subclassing.
         # It is not for providing effective access protection

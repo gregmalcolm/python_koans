@@ -16,10 +16,10 @@ class AboutTriangleProject2(Koan):
         with self.assertRaises(TriangleError):
             triangle(3, 4, -5)
 
-        with self.assertRaises(TriangleError):            
+        with self.assertRaises(TriangleError):
             triangle(1, 1, 3)
-            
+
         with self.assertRaises(TriangleError):
             triangle(2, 4, 2)
-            
+
 

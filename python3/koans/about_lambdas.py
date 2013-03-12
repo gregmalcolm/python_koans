@@ -13,14 +13,14 @@ class AboutLambdas(Koan):
         self.assertEqual(__, add_one(10))
 
     # ------------------------------------------------------------------
-    
+
     def make_order(self, order):
         return lambda qty: str(qty) + " " + order + "s"
-            
+
     def test_accessing_lambda_via_assignment(self):
         sausages = self.make_order('sausage')
         eggs = self.make_order('egg')
-        
+
         self.assertEqual(__, sausages(3))
         self.assertEqual(__, eggs(2))
 

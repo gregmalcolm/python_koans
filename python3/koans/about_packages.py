@@ -18,7 +18,7 @@ from runner.koan import *
 #     about_attribute_access.py
 #     about_class_attributes.py
 #     about_classes.py
-#     ... 
+#     ...
 #     a_package_folder/
 #         __init__.py
 #         a_module.py
@@ -27,16 +27,16 @@ class AboutPackages(Koan):
     def test_subfolders_can_form_part_of_a_module_package(self):
         # Import ./a_package_folder/a_module.py
         from .a_package_folder.a_module import Duck
-        
+
         duck = Duck()
         self.assertEqual(__, duck.name)
-        
+
     def test_subfolders_become_modules_if_they_have_an_init_module(self):
         # Import ./a_package_folder/__init__.py
         from .a_package_folder import an_attribute
-        
+
         self.assertEqual(__, an_attribute)
-        
+
     def test_subfolders_without_an_init_module_are_not_part_of_the_package(self):
         # Import ./a_normal_folder/
         with self.assertRaises(___): from a_normal_folder import Duck
@@ -48,7 +48,7 @@ class AboutPackages(Koan):
         import contemplate_koans
 
         self.assertEqual(__, contemplate_koans.__name__)
-        
+
         # contemplate_koans.py is the root module in this package because its
         # the first python module called in koans.
         #
