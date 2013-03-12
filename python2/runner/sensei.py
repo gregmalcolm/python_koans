@@ -4,6 +4,7 @@
 import unittest
 import re
 import sys
+import os
 import glob
 
 import helper
@@ -235,6 +236,7 @@ class Sensei(MockableTestResult):
 
     def total_lessons(self):
         all_lessons = self.filter_all_lessons()
+
         if all_lessons:
           return len(all_lessons)
         else:
@@ -244,10 +246,10 @@ class Sensei(MockableTestResult):
         return self.tests.countTestCases()
 
     def filter_all_lessons(self):
+        cur_dir = os.path.split(os.path.realpath(__file__))[0]
         if not self.all_lessons:
-            self.all_lessons = glob.glob('koans/about*.py')
+            self.all_lessons = glob.glob('{0}/../koans/about*.py'.format(cur_dir))
             self.all_lessons = filter(lambda filename:
                                       "about_extra_credit" not in filename,
                                       self.all_lessons)
-
         return self.all_lessons
