@@ -2,11 +2,11 @@
 Python Koans
 ============
 
-Python Koans is a port of Edgecase's "Ruby Koans".
+Python Koans is a port of Edgecase's "Ruby Koans" which can be found at http://rubykoans.com/.
 
 .. image:: http://i442.photobucket.com/albums/qq150/gregmalcolm/PythonKoansScreenshot.png
 
-Python Koans is an interactive tutorial for learning Python by making tests pass.
+Python Koans is an interactive tutorial for learning the Python programming language by making tests pass.
 
 Most tests are 'fixed' by filling the missing parts of assert functions. Eg:
 
@@ -28,7 +28,7 @@ Python Koans is available through git on Github:
 
     http://github.com/gregmalcolm/python_koans
 
-It is also mirrored on bitbucket for Mercurial users :
+It is also mirrored on bitbucket for Mercurial users:
 
     http://bitbucket.org/gregmalcolm/python_koans
 
@@ -38,19 +38,28 @@ Either site will allow you to download the source as a zip/gz/bz2.
 Installing Python Koans
 -----------------------
 
-Aside from downloading or checking out the latest version of Python Koans, all you need to install is Python.
+Aside from downloading or checking out the latest version of Python Koans, you need to install the Python interpreter.
 
-At this time of writing there are two versions of the koans, one for use with Python 2.6 and one for Python 3.1. You should be able to work with newer Python versions, but older ones will likely give you problems.
+At this time of writing, there are two versions of the Python Koans:
+
+* one for use with Python 2.6 (it also works with Python 2.7)
+* one for Python 3.1. 
+
+You should be able to work with newer Python versions, but older ones will likely give you problems.
 
 You can download Python from here:
 
     http://www.python.org/download
 
-On installing Python make sure the folder containing the python executable is in the system path. In other words, you need to be able to be able to run Python from a command console. With Python 2 it will be called 'python' or 'python.exe' depending on the operating system. For Python 3 it will either be 'python3' or for windows it will be 'python.exe'.
+After installing Python make sure the folder containing the python executable is in the system path. In other words, you need to be able to be able to run Python from a command console. With Python 2 it will be called 'python' or 'python.exe' depending on the operating system. For Python 3 it will either be 'python3' or for windows it will be 'python.exe'.
 
 If you have problems, this may help:
 
     http://www.python.org/about/gettingstarted
+
+Windows users may also want to update the line in the batch file run.bat to set the python path:
+
+    SET PYTHON_PATH=C:\Python27
 
 
 Getting Started
@@ -107,26 +116,41 @@ Quoting the Ruby Koans instructions::
 	moment and reflect upon the test to see what it is teaching you
 	and improve the code to better communicate its intent (refactor)."
 
+
 Content
 -------
 
-Python is a made up of about 2/3 Ruby Koans ported material and 1/3 Python specific tests. The content ported from Ruby Koans includes all the assignment projects.
+The Python Koans is a made up of about 2/3 Ruby Koans ported material and 1/3 Python specific tests. The content ported from Ruby Koans includes all the assignment projects.
 
-Content for Python 3 is a little different to the Python 2 flavor due to big changes between the 2 different languages. For example in the Python 2 variant the differences between old and new style classes are covered. This loses relevance in in the Python 3 version, but there are some extra tests covering new functionality.
+Content for Python 3 is a little different to the Python 2 flavor due to big changes between the two different versions of the language  For example, in the Python 2 variant the differences between old and new style classes are covered. This loses relevance in in the Python 3 version, but there are some extra tests covering new functionality.
 
 
 Finding More Koan Projects
 --------------------------
 
-Right now there are a lot of spinoff Koan projects out there for a great number of languages and frameworks. Many of them do not have that much content, but contributing to them is a great way to learn. At the moment most of them can be found by searching for 'koans' on github.
+Right now there are a lot of spinoff Koan projects out there for a great number of languages and frameworks. Many of them do not have that much content, but contributing to them is a great way to learn. At the moment, most of them can be found by searching for 'koans' on github.
 
-A couple of promising projects include DotNetKoans and TestMongoKoans.
+A couple of promising projects include:
+
+* C# Koans - https://bitbucket.org/srtsolutions/csharpkoans
+    Mentioned here: http://labs.srtsolutions.com/c-koans
+
+* F# Koans - https://github.com/ChrisMarinos/FSharpKoans
+    Mentioned here: http://labs.srtsolutions.com/f-koans
+
+* Scala Koans - http://scalakoans.org/
+    Mentioned here: http://labs.srtsolutions.com/koans
+
+* DotNetKoans - https://github.com/CoryFoy/DotNetKoans
+    Mentioned here: http://blog.coryfoy.com/2009/12/dotnet-koans/
+    
+* TestMongoKoans.
 
 
 Acknowledgments
 ---------------
 
-Thanks go to Jim Weirich and Joe O'Brien for the original Ruby Koans that Python Koans is based on! Also the Ruby Koans in turn borrows from Metakoans so thanks also go to Ara Howard for that!
+Thanks go to Jim Weirich and Joe O'Brien for the original Ruby Koans that the Python Koans is based on! Also the Ruby Koans in turn borrows from Metakoans so thanks also go to Ara Howard for that!
 
 Also thanks to everyone who helped with the Python Koans conversion! In particular I got a great headstart on the project by forking from this Python Koans startup project:
 
