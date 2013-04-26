@@ -122,7 +122,7 @@ Content
 
 The Python Koans is a made up of about 2/3 Ruby Koans ported material and 1/3 Python specific tests. The content ported from Ruby Koans includes all the assignment projects.
 
-Content for Python 3 is a little different to the Python 2 flavor due to big changes between the two different versions of the language  For example, in the Python 2 variant the differences between old and new style classes are covered. This loses relevance in in the Python 3 version, but there are some extra tests covering new functionality.
+Content for Python 3 is a little different to the Python 2 flavor due to big changes between the two different versions of the language.  For example, in the Python 2 variant the differences between old and new style classes are covered. This loses relevance in in the Python 3 version, but there are some extra tests covering new functionality.
 
 
 Finding More Koan Projects
