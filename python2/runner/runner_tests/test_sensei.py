@@ -90,39 +90,6 @@ class TestSensei(unittest.TestCase):
         self.tests = Mock()
         self.tests.countTestCases = Mock()
 
-    def test_that_it_delegates_testing_to_test_cases(self):
-        MockableTestResult.startTest = Mock()
-        self.sensei.startTest(Mock())
-        self.assertTrue(MockableTestResult.startTest.called)
-
-    def test_that_user_is_notified_if_test_involves_a_different_test_class_to_last_time(self):
-        MockableTestResult.startTest = Mock()
-
-        self.sensei.prevTestClassName == 'AboutLumberjacks'
-        nextTest = AboutParrots()
-
-        self.sensei.startTest(nextTest)
-        self.assertTrue(self.sensei.stream.writeln.called)
-
-    def test_that_user_is_not_notified_about_test_class_repeats(self):
-        MockableTestResult.startTest = Mock()
-
-        self.sensei.prevTestClassName == 'AboutParrots'
-        nextTest = AboutParrots()
-
-        self.sensei.startTest(nextTest)
-        self.assertTrue(self.sensei.stream.writeln.called)
-
-    def test_that_cached_classname_updates_after_the_test(self):
-        self.assertEqual(None, self.sensei.prevTestClassName)
-        self.sensei.startTest(Mock())
-        self.assertNotEqual(None, self.sensei.prevTestClassName)
-
-    def test_that_errors_are_diverted_to_the_failures_list(self):
-        MockableTestResult.addFailure = Mock()
-        self.sensei.addError(Mock(), Mock())
-        self.assertTrue(MockableTestResult.addFailure.called)
-
     def test_that_failures_are_handled_in_the_base_class(self):
         MockableTestResult.addFailure = Mock()
         self.sensei.addFailure(Mock(), Mock())
@@ -134,21 +101,6 @@ class TestSensei(unittest.TestCase):
         self.sensei.addSuccess(Mock())
         self.assertTrue(self.sensei.passesCount.called)
 
-    def test_that_if_there_are_failures_and_the_prev_class_is_different_successes_are_not_allowed(self):
-        self.sensei.failures = [(AboutLumberjacks(), Mock())]
-        self.sensei.prevTestClassName = "AboutTheMinitry"
-        self.assertFalse(self.sensei.passesCount())
-
-    def test_that_if_there_are_failures_and_the_prev_class_is_the_same_successes_are_allowed(self):
-        self.sensei.failures = [(AboutLumberjacks(), Mock())]
-        self.sensei.prevTestClassName = "AboutLumberjacks"
-        self.assertTrue(self.sensei.passesCount())
-
-    def test_that_if_there_are_no_failures_successes_are_allowed(self):
-        self.sensei.failures = None
-        self.sensei.prevTestClassName = "AboutLumberjacks"
-        self.assertTrue(self.sensei.passesCount())
-
     def test_that_it_passes_on_add_successes_message(self):
         MockableTestResult.addSuccess = Mock()
         self.sensei.addSuccess(Mock())
@@ -159,11 +111,6 @@ class TestSensei(unittest.TestCase):
         MockableTestResult.addSuccess = Mock()
         self.sensei.addSuccess(Mock())
         self.assertEqual(pass_count + 1, self.sensei.pass_count)
-
-    def test_that_it_displays_each_success(self):
-        MockableTestResult.addSuccess = Mock()
-        self.sensei.addSuccess(Mock())
-        self.assertTrue(self.sensei.stream.writeln.called)
 
     def test_that_nothing_is_returned_as_a_first_result_if_there_are_no_failures(self):
         self.sensei.failures = []
@@ -227,41 +174,6 @@ class TestSensei(unittest.TestCase):
             (AboutFreemasons(),"File 'about_freemasons.py', line 11")
         ]
         self.assertEqual("File 'about_giant_feet.py', line 44", self.sensei.firstFailure()[1])
-
-    def test_that_end_report_displays_something(self):
-        self.sensei.learn()
-        self.assertTrue(self.sensei.stream.writeln.called)
-
-    def test_that_end_report_shows_student_progress(self):
-        self.sensei.errorReport = Mock()
-        self.sensei.total_lessons = Mock()
-        self.sensei.total_koans = Mock()
-
-        self.sensei.learn()
-        self.assertTrue(self.sensei.total_lessons.called)
-        self.assertTrue(self.sensei.total_koans.called)
-
-    def test_that_end_report_shows_the_failure_report(self):
-        self.sensei.errorReport = Mock()
-        self.sensei.learn()
-        self.assertTrue(self.sensei.errorReport.called)
-
-    def test_that_end_report_should_have_something_zenlike_on_it(self):
-        self.sensei.say_something_zenlike = Mock()
-        self.sensei.learn()
-        self.assertTrue(self.sensei.say_something_zenlike.called)
-
-    def test_that_error_report_shows_something_if_there_is_a_failure(self):
-        self.sensei.firstFailure = Mock()
-        self.sensei.firstFailure.return_value = (Mock(), "FAILED Parrot is breathing, Line 42")
-        self.sensei.errorReport()
-        self.assertTrue(self.sensei.stream.writeln.called)
-
-    def test_that_error_report_does_not_show_anything_if_there_is_no_failure(self):
-        self.sensei.firstFailure = Mock()
-        self.sensei.firstFailure.return_value = None
-        self.sensei.errorReport()
-        self.assertFalse(self.sensei.stream.writeln.called)
 
     def test_that_error_report_features_the_assertion_error(self):
         self.sensei.scrapeAssertionError = Mock()
