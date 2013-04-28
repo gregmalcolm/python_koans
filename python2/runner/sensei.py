@@ -168,12 +168,12 @@ class Sensei(MockableTestResult):
                 "reaching enlightenment.".format(koans_remaining, lessons_remaining)
         return sent1+sent2
 
-    # Hat's tip to Tim Peters for the zen statements from The Zen
-    # of Python (http://www.python.org/dev/peps/pep-0020/)
+    # Hat's tip to Tim Peters for the zen statements from The 'Zen
+    # of Python' (http://www.python.org/dev/peps/pep-0020/)
     #
     # Also a hat's tip to Ara T. Howard for the zen statements from his
     # metakoans Ruby Quiz (http://rubyquiz.com/quiz67.html) and
-    # Edgecase's later permatation in the Ruby Koans
+    # Edgecase's later permutation in the Ruby Koans
     def say_something_zenlike(self):
         if self.failures:
             turn = self.pass_count % 37
@@ -231,7 +231,7 @@ class Sensei(MockableTestResult):
                 .format(Fore.CYAN)
 
         # Hopefully this will never ever happen!
-        return "The temple in collapsing! Run!!!"
+        return "The temple is collapsing! Run!!!"
 
     def total_lessons(self):
         all_lessons = self.filter_all_lessons()
