@@ -7,7 +7,7 @@
 # Python Koans is a port of Ruby Koans originally written by Jim Weirich
 # and Joe O'brien of Edgecase. There are some differences and tweaks specific
 # to the Python language, but a great deal of it has been copied wholesale.
-# So thank guys!
+# So thanks guys!
 #
 
 import unittest
