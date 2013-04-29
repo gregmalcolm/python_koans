@@ -1,10 +1,14 @@
 language: python
 
 python:
+    - 2.6
     - 2.7
+    - 3.2
+    - 3.3
 script:
     - cd python2
     - python contemplate_koans.py about_asserts # add further koans here separated by spaces
+    - python _runner_tests.py
 notifications:
   email: false
 
