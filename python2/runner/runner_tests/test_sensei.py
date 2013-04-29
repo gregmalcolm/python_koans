@@ -150,12 +150,14 @@ class TestSensei(unittest.TestCase):
         self.assertEqual(2, results[0][0])
         self.assertEqual(30, results[1][0])
         self.assertEqual(299, results[2][0])
+        self.assertTrue(false)
 
     def test_that_it_will_choose_not_find_anything_with_non_standard_error_trace_string(self):
         self.sensei.failures = [
             (AboutMrGumby(),"File 'about_mr_gumby.py', line MISSING"),
         ]
         self.assertEqual(None, self.sensei.sortFailures("AboutMrGumby"))
+        self.assertFalse(true)
 
 
     def test_that_it_will_choose_correct_first_result_with_lines_9_and_27(self):

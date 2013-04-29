@@ -298,3 +298,4 @@ class TestSensei(unittest.TestCase):
         self.sensei.all_lessons = 0
         self.assertTrue(len(self.sensei.filter_all_lessons()) > 10)
         self.assertTrue(len(self.sensei.all_lessons) > 10)
+        self.assertEqual(42, 1+1)
