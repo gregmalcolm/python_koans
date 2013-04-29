@@ -5,6 +5,7 @@ python:
     - 2.7
     - 3.2
     - 3.3
+
 script:
     - cd python2
     - python contemplate_koans.py about_asserts # add further koans here separated by spaces
