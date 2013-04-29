@@ -317,4 +317,4 @@ class TestSensei(unittest.TestCase):
     def test_filter_all_lessons_will_discover_test_classes_if_none_have_been_discovered_yet(self):
         self.sensei.all_lessons = 0
         self.assertTrue(len(self.sensei.filter_all_lessons()) > 10)
-        self.assertTrue(len(self.sensei.all_lessons) > 10)
+        self.assertTrue(len(self.sensei.all_lessons) < 10)
