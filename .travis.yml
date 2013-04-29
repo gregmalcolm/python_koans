@@ -7,9 +7,17 @@ python:
     - 3.3
 
 script:
-    - cd python2
-    - python contemplate_koans.py about_asserts # add further koans here separated by spaces
+    - PYTHON_VER=`python -c 'import sys; print(sys.version_info[0])'`
+    - cd python$PYTHON_VER
     - python _runner_tests.py
+#   - python contemplate_koans.py                          # Run all the koans
+#   - python contemplate_koans.py about_asserts about_none # Run a subset of
+#                                                          # koans
+#
+#   Working through Python Koans in a fork? Want to use Travis CI to show which
+#   koans you've passed? Then comment out one of the above "contemplate_koans"
+#   lines above!
+#
 notifications:
   email: false
 
