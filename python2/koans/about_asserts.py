@@ -44,8 +44,31 @@ class AboutAsserts(Koan):
 
     def test_that_unittest_asserts_work_the_same_way_as_python_asserts(self):
         """
-        Knowing how things really work is half the battle
+        Understand what lies within.
         """
 
         # This throws an AssertionError exception
         assert False
+
+    def test_that_sometimes_we_need_to_know_the_class_type(self):
+        """
+        What is in a class name?
+        """
+
+        # Sometimes we will ask you what the class type of an object is.
+        #
+        # For example, contemplate the text string "naval". What is it's class type?
+        # The koans runner will include this feedback for this koan:
+        #
+        #   AssertionError: '-=> FILL ME IN! <=-' != <type 'str'>
+        #
+        # So "naval".__class__ is equal to <type 'str'>? No not quite. This
+        # is just what it displays. The answer is simply str.
+        #
+        # See for yourself:
+
+        self.assertEqual(__, "naval".__class__) # It's str, not <type 'str'>
+
+        # Need an illustration? More reading can be found here:
+        #
+        # https://github.com/gregmalcolm/python_koans/wiki/Class-Attribute

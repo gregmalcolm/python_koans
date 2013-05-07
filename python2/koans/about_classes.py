@@ -10,7 +10,7 @@ class AboutClasses(Koan):
 
     def test_instances_of_classes_can_be_created_adding_parentheses(self):
         fido = self.Dog()
-        self.assertEqual(__, type(fido).__name__)
+        self.assertEqual(__, fido.__class__)
 
     def test_classes_have_docstrings(self):
         self.assertMatch(__, self.Dog.__doc__)

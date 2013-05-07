@@ -33,7 +33,11 @@ class AboutNone(Koan):
             None.some_method_none_does_not_know_about()
         except Exception as ex:
             # What exception has been caught?
-            self.assertEqual(__, ex.__class__.__name__)
+            #
+            # Need a recap on how to evaluate __class__ attributes?
+            #   https://github.com/gregmalcolm/python_koans/wiki/Class-Attribute
+
+            self.assertEqual(__, ex.__class__)
 
             # What message was attached to the exception?
             # (HINT: replace __ with part of the error message.)

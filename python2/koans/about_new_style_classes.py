@@ -34,7 +34,7 @@ class AboutNewStyleClasses(Koan):
     # ------------------------------------------------------------------
 
     def test_old_style_classes_have_type_but_no_class_attribute(self):
-        self.assertEqual(__, type(self.OldStyleClass).__name__)
+        self.assertEqual(__, self.OldStyleClass.__class__)
 
         try:
             cls = self.OldStyleClass.__class__
@@ -45,7 +45,7 @@ class AboutNewStyleClasses(Koan):
 
     def test_new_style_classes_have_same_class_as_type(self):
         new_style = self.NewStyleClass()
-        self.assertEqual(__, type(self.NewStyleClass).__name__)
+        self.assertEqual(__, self.NewStyleClass.__class__)
         self.assertEqual(
             __,
             type(self.NewStyleClass) == self.NewStyleClass.__class__)
@@ -54,10 +54,9 @@ class AboutNewStyleClasses(Koan):
 
     def test_in_old_style_instances_class_is_different_to_type(self):
         old_style = self.OldStyleClass()
-        self.assertEqual(__, type(old_style).__name__)
-        self.assertEqual(__, old_style.__class__.__name__)
+        self.assertEqual(__, old_style.__class__)
 
     def test_new_style_instances_have_same_class_as_type(self):
         new_style = self.NewStyleClass()
-        self.assertEqual(__, type(new_style).__name__)
+        self.assertEqual(__, new_style.__class__)
         self.assertEqual(__, type(new_style) == new_style.__class__)
