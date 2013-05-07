@@ -18,10 +18,10 @@ class AboutSets(Koan):
     def test_dictionaries_and_sets_use_same_curly_braces(self):
         # Note: Sets have only started using braces since Python 3
 
-        self.assertEqual(__, type({1, 2, 3}).__name__)
-        self.assertEqual(__, type({'one': 1, 'two': 2}).__name__)
+        self.assertEqual(__, {1, 2, 3}.__class__)
+        self.assertEqual(__, {'one': 1, 'two': 2}.__class__)
 
-        self.assertEqual(__, type({}).__name__)
+        self.assertEqual(__, {}.__class__)
 
     def test_creating_sets_using_strings(self):
         self.assertEqual(__, {'12345'})

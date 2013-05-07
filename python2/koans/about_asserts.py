@@ -10,6 +10,11 @@ class AboutAsserts(Koan):
         """
         We shall contemplate truth by testing reality, via asserts.
         """
+
+        # Confused? This video should help:
+        #
+        #   http://bit.ly/about_asserts
+
         self.assertTrue(False)  # This should be true
 
     def test_assert_with_message(self):
@@ -71,4 +76,4 @@ class AboutAsserts(Koan):
 
         # Need an illustration? More reading can be found here:
         #
-        # https://github.com/gregmalcolm/python_koans/wiki/Class-Attribute
+        #   http://bit.ly/__class__

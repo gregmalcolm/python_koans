@@ -17,7 +17,7 @@ class AboutNone(Koan):
         "There is only one None"
         self.assertEqual(____, None is None)
 
-    def test_what_exception_do_you_get_when_calling_nonexistent_methods_on_None(self):
+    def test_what_exception_do_you_get_when_calling_nonexistent_methods(self):
         """
         What is the Exception that is thrown when you call a method that does
         not exist?
@@ -32,7 +32,12 @@ class AboutNone(Koan):
             ex2 = ex
 
         # What exception has been caught?
-        self.assertEqual(__, ex2.__class__.__name__)
+        #
+        # Need a recap on how to evaluate __class__ attributes?
+        #
+        #     http://bit.ly/__class__
+
+        self.assertEqual(__, ex2.__class__)
 
         # What message was attached to the exception?
         # (HINT: replace __ with part of the error message.)
@@ -44,5 +49,3 @@ class AboutNone(Koan):
         """
         self.assertEqual(__, None is not 0)
         self.assertEqual(__, None is not False)
-
-

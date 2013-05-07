@@ -10,8 +10,8 @@ from koans.about_strings import AboutStrings
 from koans.about_none import AboutNone
 from koans.about_lists import AboutLists
 from koans.about_list_assignments import AboutListAssignments
-from koans.about_string_manipulation import AboutStringManipulation
 from koans.about_dictionaries import AboutDictionaries
+from koans.about_string_manipulation import AboutStringManipulation
 from koans.about_tuples import AboutTuples
 from koans.about_methods import AboutMethods
 from koans.about_control_statements import AboutControlStatements
@@ -53,8 +53,8 @@ def koans():
     suite.addTests(loader.loadTestsFromTestCase(AboutNone))
     suite.addTests(loader.loadTestsFromTestCase(AboutLists))
     suite.addTests(loader.loadTestsFromTestCase(AboutListAssignments))
-    suite.addTests(loader.loadTestsFromTestCase(AboutStringManipulation))
     suite.addTests(loader.loadTestsFromTestCase(AboutDictionaries))
+    suite.addTests(loader.loadTestsFromTestCase(AboutStringManipulation))
     suite.addTests(loader.loadTestsFromTestCase(AboutTuples))
     suite.addTests(loader.loadTestsFromTestCase(AboutMethods))
     suite.addTests(loader.loadTestsFromTestCase(AboutControlStatements))

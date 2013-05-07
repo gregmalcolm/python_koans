@@ -39,8 +39,8 @@ class AboutIteration(Koan):
 
         mapping = map(self.add_ten, seq)
 
-        self.assertNotEqual(list, type(mapping).__name__)
-        self.assertEqual(__, type(mapping).__name__)
+        self.assertNotEqual(list, mapping.__class__)
+        self.assertEqual(__, mapping.__class__)
         # In Python 3 built in iterator funcs return iteratable view objects
         # instead of lists
 
@@ -94,7 +94,7 @@ class AboutIteration(Koan):
         # to the functools module.
 
         result = functools.reduce(self.add, [2, 3, 4])
-        self.assertEqual(__, type(result).__name__)
+        self.assertEqual(__, result.__class__)
         # Reduce() syntax is same as Python 2
 
         self.assertEqual(__, result)
