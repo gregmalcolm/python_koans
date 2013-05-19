@@ -20,7 +20,7 @@ class AboutScope(Koan):
 
     def test_you_can_reference_nested_classes_using_the_scope_operator(self):
         fido = jims.Dog()
-        # name 'jims' module name is taken from jim.py filename
+        # name 'jims' module name is taken from jims.py filename
 
         rover = joes.Dog()
         self.assertEqual(__, fido.identify())
