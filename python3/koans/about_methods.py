@@ -23,8 +23,7 @@ class AboutMethods(Koan):
             msg = exception.args[0]
 
         self.assertRegexpMatches(msg,
-            r'my_global_function\(\) takes exactly 2 ' +
-            r'arguments \(0 given\)')
+            r'my_global_function\(\) missing 2 required positional arguments')
 
         try:
             my_global_function(1, 2, 3)
