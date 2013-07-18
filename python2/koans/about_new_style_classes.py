@@ -41,6 +41,10 @@ class AboutNewStyleClasses(Koan):
         except Exception as ex:
             pass
 
+        #
+        # Let's look at the error message we get when trying to invoke
+        # __class__ on an old style class object
+        #
         self.assertMatch(__, ex[0])
 
     def test_new_style_classes_have_same_class_as_type(self):
