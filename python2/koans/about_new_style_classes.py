@@ -34,17 +34,16 @@ class AboutNewStyleClasses(Koan):
     # ------------------------------------------------------------------
 
     def test_old_style_classes_have_type_but_no_class_attribute(self):
-        self.assertEqual(__, self.OldStyleClass.__class__)
+        # Note: The .__name__ attribute will convert the type into a string
+        # value.
+        #self.assertEqual(__, type(self.OldStyleClass).__name__)
 
         try:
-            cls = self.OldStyleClass.__class__
+            cls = self.OldStyleClass.__class__.__name__
         except Exception as ex:
             pass
 
-        #
-        # Let's look at the error message we get when trying to invoke
-        # __class__ on an old style class object
-        #
+        # What was that error message from the exception?
         self.assertMatch(__, ex[0])
 
     def test_new_style_classes_have_same_class_as_type(self):
@@ -58,9 +57,10 @@ class AboutNewStyleClasses(Koan):
 
     def test_in_old_style_instances_class_is_different_to_type(self):
         old_style = self.OldStyleClass()
-        self.assertEqual(__, old_style.__class__)
+        self.assertEqual(__, old_style.__class__.__name__)
+        self.assertEqual(__, type(old_style).__name__)
 
     def test_new_style_instances_have_same_class_as_type(self):
         new_style = self.NewStyleClass()
-        self.assertEqual(__, new_style.__class__)
+        self.assertEqual(__, new_style.__class__.__name__)
         self.assertEqual(__, type(new_style) == new_style.__class__)
