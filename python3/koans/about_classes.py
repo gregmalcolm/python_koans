@@ -131,6 +131,9 @@ class AboutClasses(Koan):
             return self
 
         def __str__(self):
+            #
+            # Implement this!
+            #
             return __
 
         def __repr__(self):
