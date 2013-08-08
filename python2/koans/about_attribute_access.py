@@ -19,7 +19,7 @@ class AboutAttributeAccess(Koan):
         try:
             typical.foobar()
         except Exception as exception:
-            self.assertEqual(__, exception.__class__)
+            self.assertEqual(__, exception.__class__.__name__)
             self.assertMatch(__, exception[0])
 
     def test_calling_getattribute_causes_an_attribute_error(self):
@@ -160,7 +160,7 @@ class AboutAttributeAccess(Koan):
         catcher.free_pie()
 
         self.assertEqual(__,
-            catcher.give_me_duff_or_give_me_death().__class__)
+            catcher.give_me_duff_or_give_me_death().__class__.__name__)
 
         self.assertEqual(__, catcher.no_of_getattr_calls)
 

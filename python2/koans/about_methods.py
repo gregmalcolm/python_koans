@@ -22,7 +22,9 @@ class AboutMethods(Koan):
         try:
             my_global_function()
         except Exception as exception:
-            self.assertEqual(__, exception.__class__)
+            # NOTE: The .__name__ attribute will convert the class
+            # into a string value.
+            self.assertEqual(__, exception.__class__.__name__)
             self.assertMatch(
                 r'my_global_function\(\) takes exactly 2 arguments \(0 given\)',
                 exception[0])
@@ -158,7 +160,7 @@ class AboutMethods(Koan):
             #This may not be possible...
             password = rover.__password()
         except Exception as ex:
-            self.assertEqual(__, ex.__class__)
+            self.assertEqual(__, ex.__class__.__name__)
 
         # But this still is!
         self.assertEqual(__, rover._Dog__password())
