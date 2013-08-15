@@ -65,6 +65,7 @@ def koans():
     suite.addTests(loader.loadTestsFromTestCase(AboutExceptions))
     suite.addTests(loader.loadTestsFromTestCase(AboutTriangleProject2))
     suite.addTests(loader.loadTestsFromTestCase(AboutIteration))
+    suite.addTests(loader.loadTestsFromTestCase(AboutComprehension))
     suite.addTests(loader.loadTestsFromTestCase(AboutGenerators))
     suite.addTests(loader.loadTestsFromTestCase(AboutLambdas))
     suite.addTests(loader.loadTestsFromTestCase(AboutScoringProject))
