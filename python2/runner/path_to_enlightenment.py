@@ -21,6 +21,7 @@ from koans.about_triangle_project import AboutTriangleProject
 from koans.about_exceptions import AboutExceptions
 from koans.about_triangle_project2 import AboutTriangleProject2
 from koans.about_iteration import AboutIteration
+from koans.about_comprehension import AboutComprehension
 from koans.about_generators import AboutGenerators
 from koans.about_lambdas import AboutLambdas
 from koans.about_scoring_project import AboutScoringProject
