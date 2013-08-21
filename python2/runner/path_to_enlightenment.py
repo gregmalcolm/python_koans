@@ -21,6 +21,7 @@ from koans.about_triangle_project import AboutTriangleProject
 from koans.about_exceptions import AboutExceptions
 from koans.about_triangle_project2 import AboutTriangleProject2
 from koans.about_iteration import AboutIteration
+from koans.about_comprehension import AboutComprehension
 from koans.about_generators import AboutGenerators
 from koans.about_lambdas import AboutLambdas
 from koans.about_scoring_project import AboutScoringProject
@@ -64,6 +65,7 @@ def koans():
     suite.addTests(loader.loadTestsFromTestCase(AboutExceptions))
     suite.addTests(loader.loadTestsFromTestCase(AboutTriangleProject2))
     suite.addTests(loader.loadTestsFromTestCase(AboutIteration))
+    suite.addTests(loader.loadTestsFromTestCase(AboutComprehension))
     suite.addTests(loader.loadTestsFromTestCase(AboutGenerators))
     suite.addTests(loader.loadTestsFromTestCase(AboutLambdas))
     suite.addTests(loader.loadTestsFromTestCase(AboutScoringProject))
