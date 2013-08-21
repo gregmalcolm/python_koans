@@ -52,8 +52,8 @@ need to install the Python interpreter.
 
 At this time of writing, there are two versions of the Python Koans:
 
-* one for use with Python 2.6 (it also works with Python 2.7)
-* one for Python 3.1.
+* one for use with Python 2.7 (earlier versions are no longer supported)
+* one for Python 3.1+.
 
 You should be able to work with newer Python versions, but older ones will
 likely give you problems.
