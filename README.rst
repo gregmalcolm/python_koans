@@ -87,8 +87,8 @@ http://www.youtube.com/watch?v=e2WXgXEjbHY&list=PL5Up_u-XkWgNcunP_UrTJG_3EXgbK2B
 
 Or if you prefer to read:
 
-From a *nix terminal or windows command prompt go to the python
-koans\python_VERSION folder and run::
+From a \*nix terminal or windows command prompt go to the python
+koans\\python_VERSION folder and run::
 
     python contemplate_koans.py
 
@@ -106,7 +106,7 @@ Apparently a test failed::
     AssertionError: False is not True
 
 It also tells me exactly where the problem in, its an assert on line 12
-of .\koans\about_asserts.py. This one is easy, just change False to True to
+of .\\koans\\about_asserts.py. This one is easy, just change False to True to
 make the test pass.
 
 Sooner or later you will likely encounter tests where you are not sure what the
