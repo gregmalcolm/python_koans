@@ -13,7 +13,7 @@ at http://rubykoans.com/.
 Python Koans is an interactive tutorial for learning the Python programming
 language by making tests pass.
 
-Most tests are 'fixed' by filling the missing parts of assert functions. Eg:
+Most tests are *fixed* by filling the missing parts of assert functions. Eg:
 
     self.assertEqual(__, 1+2)
 
@@ -53,7 +53,7 @@ need to install the Python interpreter.
 At this time of writing, there are two versions of the Python Koans:
 
 * one for use with Python 2.7 (earlier versions are no longer supported)
-* one for Python 3.1+.
+* one for Python 3.1+
 
 You should be able to work with newer Python versions, but older ones will
 likely give you problems.
@@ -64,16 +64,16 @@ You can download Python from here:
 
 After installing Python make sure the folder containing the python executable
 is in the system path. In other words, you need to be able to be able to run
-Python from a command console. With Python 2 it will be called 'python'
-or 'python.exe' depending on the operating system. For Python 3 it will either
-be 'python3' or for windows it will be 'python.exe'.
+Python from a command console. With Python 2 it will be called `python`
+or `python.exe` depending on the operating system. For Python 3 it will either
+be `python3` or for windows it will be `python.exe`.
 
 If you have problems, this may help:
 
     http://www.python.org/about/gettingstarted
 
-Windows users may also want to update the line in the batch file run.bat to
-set the python path:
+Windows users may also want to update the line in the batch file `run.bat` to
+set the python path::
 
     SET PYTHON_PATH=C:\Python27
 
@@ -87,8 +87,8 @@ http://www.youtube.com/watch?v=e2WXgXEjbHY&list=PL5Up_u-XkWgNcunP_UrTJG_3EXgbK2B
 
 Or if you prefer to read:
 
-From a *nix terminal or windows command prompt go to the python
-koans\python_VERSION folder and run::
+From a \*nix terminal or windows command prompt go to the python
+koans\\python_VERSION folder and run::
 
     python contemplate_koans.py
 
@@ -106,7 +106,7 @@ Apparently a test failed::
     AssertionError: False is not True
 
 It also tells me exactly where the problem in, its an assert on line 12
-of .\koans\about_asserts.py. This one is easy, just change False to True to
+of .\\koans\\about_asserts.py. This one is easy, just change False to True to
 make the test pass.
 
 Sooner or later you will likely encounter tests where you are not sure what the
@@ -119,7 +119,7 @@ expected value should be. For example::
         fido = self.Dog()
         self.assertEqual(__, isinstance(fido, object))
 
-This is where the Python Command Line can come in handy. in this case I can
+This is where the Python Command Line can come in handy. In this case I can
 fire up the command line, recreate the scenario and run queries:
 
 .. image:: http://i442.photobucket.com/albums/qq150/gregmalcolm/DebuggingPython.png
@@ -133,7 +133,7 @@ Quoting the Ruby Koans instructions::
 	"In test-driven development the mantra has always been, red, green,
 	refactor. Write a failing test and run it (red), make the test pass
 	(green), then refactor it (that is look at the code and see if you
-	can make it any better. In this case you will need to run the koan
+	can make it any better). In this case you will need to run the koan
 	and see it fail (red), make the test pass (green), then take a
 	moment and reflect upon the test to see what it is teaching you
 	and improve the code to better communicate its intent (refactor)."
