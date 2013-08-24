@@ -13,7 +13,7 @@ at http://rubykoans.com/.
 Python Koans is an interactive tutorial for learning the Python programming
 language by making tests pass.
 
-Most tests are 'fixed' by filling the missing parts of assert functions. Eg:
+Most tests are *fixed* by filling the missing parts of assert functions. Eg:
 
     self.assertEqual(__, 1+2)
 
@@ -53,7 +53,7 @@ need to install the Python interpreter.
 At this time of writing, there are two versions of the Python Koans:
 
 * one for use with Python 2.7 (earlier versions are no longer supported)
-* one for Python 3.1+.
+* one for Python 3.1+
 
 You should be able to work with newer Python versions, but older ones will
 likely give you problems.
@@ -64,16 +64,16 @@ You can download Python from here:
 
 After installing Python make sure the folder containing the python executable
 is in the system path. In other words, you need to be able to be able to run
-Python from a command console. With Python 2 it will be called 'python'
-or 'python.exe' depending on the operating system. For Python 3 it will either
-be 'python3' or for windows it will be 'python.exe'.
+Python from a command console. With Python 2 it will be called `python`
+or `python.exe` depending on the operating system. For Python 3 it will either
+be `python3` or for windows it will be `python.exe`.
 
 If you have problems, this may help:
 
     http://www.python.org/about/gettingstarted
 
-Windows users may also want to update the line in the batch file run.bat to
-set the python path:
+Windows users may also want to update the line in the batch file `run.bat` to
+set the python path::
 
     SET PYTHON_PATH=C:\Python27
 
