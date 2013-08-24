@@ -119,7 +119,7 @@ expected value should be. For example::
         fido = self.Dog()
         self.assertEqual(__, isinstance(fido, object))
 
-This is where the Python Command Line can come in handy. in this case I can
+This is where the Python Command Line can come in handy. In this case I can
 fire up the command line, recreate the scenario and run queries:
 
 .. image:: http://i442.photobucket.com/albums/qq150/gregmalcolm/DebuggingPython.png
