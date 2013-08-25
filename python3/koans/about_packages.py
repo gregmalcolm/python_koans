@@ -37,10 +37,6 @@ class AboutPackages(Koan):
 
         self.assertEqual(__, an_attribute)
 
-    def test_subfolders_without_an_init_module_are_not_part_of_the_package(self):
-        # Import ./a_normal_folder/
-        with self.assertRaises(___): from a_normal_folder import Duck
-
     # ------------------------------------------------------------------
 
     def test_use_absolute_imports_to_import_upper_level_modules(self):

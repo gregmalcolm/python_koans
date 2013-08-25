@@ -22,6 +22,8 @@ class AboutMethods(Koan):
         except TypeError as exception:
             msg = exception.args[0]
 
+        # Note, the text comparison works for Python 3.2
+        # It has changed in the past and may change in the future
         self.assertRegexpMatches(msg,
             r'my_global_function\(\) missing 2 required positional arguments')
 
