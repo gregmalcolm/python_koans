@@ -87,6 +87,8 @@ class Sensei(MockableTestResult):
         self.stream.writeln("")
         self.stream.writeln("")
         self.stream.writeln(self.report_progress())
+        if self.failures:
+          self.stream.writeln(self.report_remaining())
         self.stream.writeln("")
         self.stream.writeln(self.say_something_zenlike())
 
@@ -138,36 +140,46 @@ class Sensei(MockableTestResult):
 
         sep = '@@@@@SEP@@@@@'
 
-        scrape = ""
+        stack_text = ""
         for line in lines:
             m = re.search("^  File .*$",line)
             if m and m.group(0):
-                scrape += '\n' + line
+                stack_text += '\n' + line
 
             m = re.search("^    \w(\w)+.*$",line)
             if m and m.group(0):
-                scrape += sep + line
+                stack_text += sep + line
 
-        lines = scrape.splitlines()
+        lines = stack_text.splitlines()
 
-        scrape = ""
+        stack_text = ""
         for line in lines:
             m = re.search("^.*[/\\\\]koans[/\\\\].*$",line)
             if m and m.group(0):
-                scrape += line + '\n'
-        return scrape.replace(sep, '\n').strip('\n')
+                stack_text += line + '\n'
+
+
+        stack_text = stack_text.replace(sep, '\n').strip('\n')
+        stack_text = re.sub(r'(about_\w+.py)',
+                r"{0}\1{1}".format(Fore.BLUE, Fore.YELLOW), stack_text)
+        stack_text = re.sub(r'(line \d+)',
+                r"{0}\1{1}".format(Fore.BLUE, Fore.YELLOW), stack_text)
+        return stack_text
 
     def report_progress(self):
-        koans_complete = self.pass_count
-        lessons_complete = self.lesson_pass_count
-        koans_remaining = self.total_koans() - koans_complete
-        lessons_remaining = self.total_lessons() - lessons_complete
+        return "You have completed {0} koans and " \
+            "{1} lessons.".format(
+                self.pass_count,
+                self.lesson_pass_count)
 
-        sent1 = "You have completed {0} koans and " \
-                "{1} lessons.\n".format(koans_complete, lessons_complete)
-        sent2 = "You are now {0} koans and {1} lessons away from " \
-                "reaching enlightenment.".format(koans_remaining, lessons_remaining)
-        return sent1+sent2
+    def report_remaining(self):
+        koans_remaining = self.total_koans() - self.pass_count
+        lessons_remaining = self.total_lessons() - self.pass_count
+
+        return "You are now {0} koans and {1} lessons away from " \
+            "reaching enlightenment.".format(
+                koans_remaining,
+                lessons_remaining)
 
     # Hat's tip to Tim Peters for the zen statements from The 'Zen
     # of Python' (http://www.python.org/dev/peps/pep-0020/)
