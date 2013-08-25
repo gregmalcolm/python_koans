@@ -32,7 +32,7 @@ class AboutFreemasons:
     pass
 
 error_assertion_with_message = """Traceback (most recent call last):
-  File "/Users/Greg/hg/python_koans/koans/about_exploding_trousers.py", line 43, in test_durability
+  File "/Users/Greg/hg/python_koans/koans/about_exploding_trousers.py ", line 43, in test_durability
     self.assertEqual("Steel","Lard", "Another fine mess you've got me into Stanley...")
 AssertionError: Another fine mess you've got me into Stanley..."""
 
@@ -204,30 +204,6 @@ class TestSensei(unittest.TestCase):
 
     def test_that_scraping_a_non_existent_stack_dump_gives_you_nothing(self):
         self.assertEqual("", self.sensei.scrapeInterestingStackDump(None))
-
-    def test_that_scraping_the_stack_dump_only_shows_interesting_lines_for_messaged_assert(self):
-        expected = """  File "/Users/Greg/hg/python_koans/koans/about_exploding_trousers.py", line 43, in test_durability
-    self.assertEqual("Steel","Lard", "Another fine mess you've got me into Stanley...")"""
-        self.assertEqual(expected,
-            self.sensei.scrapeInterestingStackDump(error_assertion_with_message))
-
-    def test_that_scraping_the_stack_dump_only_shows_interesting_lines_for_assert_equals(self):
-        expected = """  File "/Users/Greg/hg/python_koans/koans/about_exploding_trousers.py", line 49, in test_math
-    self.assertEqual(4,99)"""
-        self.assertEqual(expected,
-            self.sensei.scrapeInterestingStackDump(error_assertion_equals))
-
-    def test_that_scraping_the_stack_dump_only_shows_interesting_lines_for_assert_true(self):
-        expected = """  File "/Users/Greg/hg/python_koans/koans/about_armories.py", line 25, in test_weoponary
-    self.assertTrue("Pen" > "Sword")"""
-        self.assertEqual(expected,
-            self.sensei.scrapeInterestingStackDump(error_assertion_true))
-
-    def test_that_scraping_the_stack_dump_only_shows_interesting_lines_for_syntax_error(self):
-        expected = """  File "/Users/Greg/hg/python_koans/koans/about_asserts.py", line 20
-    self.assertTrue(eoe"Pen" > "Sword", "nhnth")"""
-        self.assertEqual(expected,
-            self.sensei.scrapeInterestingStackDump(error_mess))
 
     def test_that_if_there_are_no_failures_say_the_final_zenlike_remark(self):
         self.sensei.failures = None
