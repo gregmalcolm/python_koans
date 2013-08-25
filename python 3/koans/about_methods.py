@@ -13,7 +13,7 @@ def my_global_function(a,b):
 class AboutMethods(Koan):
     def test_calling_a_global_function(self):
         self.assertEqual(5, my_global_function(2,3))
-  
+
     # NOTE: Wrong number of arguments is not a SYNTAX error, but a
     # runtime error.
     def test_calling_functions_with_wrong_number_of_arguments(self):
@@ -22,18 +22,18 @@ class AboutMethods(Koan):
         except TypeError as exception:
             msg = exception.args[0]
 
-        self.assertRegexpMatches(msg, r'my_global_function\(\) takes exactly 2 positional arguments \(0 given\)') #####
-        
+        self.assertRegexpMatches(msg, r'my_global_function\(\) missing 2 required positional arguments') #####
+
         try:
             my_global_function(1, 2, 3)
         except Exception as e:
             msg = e.args[0]
-        
+
         # Note, watch out for parenthesis. They need slashes in front!
-        self.assertRegexpMatches(msg, r'my_global_function\(\) takes exactly 2 positional arguments')        
-    
+        self.assertRegexpMatches(msg, r'my_global_function\(\) takes 2 positional arguments')
+
     # ------------------------------------------------------------------
-    
+
     def pointless_method(self, a, b):
         sum = a + b
 
@@ -41,7 +41,7 @@ class AboutMethods(Koan):
         self.assertEqual(None, self.pointless_method(1, 2))
         # Notice that methods accessed from class scope do not require
         # you to pass the first "self" argument?
-        
+
     # ------------------------------------------------------------------
 
     def method_with_defaults(self, a, b='default_value'):
@@ -65,13 +65,13 @@ class AboutMethods(Koan):
 
     def function_with_the_same_name(self, a, b):
         return a + b
-    
+
     def test_functions_without_self_arg_are_global_functions(self):
         def function_with_the_same_name(a, b):
             return a * b
 
         self.assertEqual(12, function_with_the_same_name(3,4))
-    
+
     def test_calling_methods_in_same_class_with_explicit_receiver(self):
         def function_with_the_same_name(a, b):
             return a * b
@@ -82,9 +82,9 @@ class AboutMethods(Koan):
 
     def another_method_with_the_same_name(self):
         return 10
-    
+
     link_to_overlapped_method = another_method_with_the_same_name
-    
+
     def another_method_with_the_same_name(self):
         return 42
 
@@ -113,7 +113,7 @@ class AboutMethods(Koan):
     # ------------------------------------------------------------------
 
     def one_line_method(self): return 'Madagascar'
-        
+
     def test_no_indentation_required_for_one_line_statement_bodies(self):
         self.assertEqual('Madagascar', self.one_line_method())
 
@@ -122,16 +122,16 @@ class AboutMethods(Koan):
     def method_with_documentation(self):
         "A string placed at the beginning of a funtion is used for documentation"
         return "ok"
-    
+
     def test_the_documentation_can_be_viewed_with_the_doc_method(self):
         self.assertRegexpMatches(self.method_with_documentation.__doc__, 'A string placed at the beginning of a funtion is used for documentation')
 
     # ------------------------------------------------------------------
 
-    class Dog: 
+    class Dog:
         def name(self):
             return "Fido"
-        
+
         def _tail(self):
             # Prefixing a method with an underscore implies private scope
             return "wagging"
@@ -142,7 +142,7 @@ class AboutMethods(Koan):
     def test_calling_methods_in_other_objects_require_explicit_receiver(self):
         rover = self.Dog()
         self.assertEqual('Fido', rover.name())
-        
+
     def test_private_access_is_implied_but_not_enforced(self):
         rover = self.Dog()
 
@@ -151,11 +151,11 @@ class AboutMethods(Koan):
 
     def test_attributes_with_double_underscore_prefixes_are_subject_to_name_mangling(self):
         rover = self.Dog()
-        with self.assertRaises(NameError): password = __password() 
-        
+        with self.assertRaises(NameError): password = __password()
+
         # But this still is!
         self.assertEqual('password', rover._Dog__password())
-        
+
         # Name mangling exists to avoid name clash issues when subclassing.
         # It is not for providing effective access protection
 

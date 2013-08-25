@@ -11,10 +11,10 @@ def function2():
 
 class Class:
     def method(self):
-        return "parrot" 
+        return "parrot"
 
 class AboutMethodBindings(Koan):
-    def test_methods_are_bound_to_an_object(self):       
+    def test_methods_are_bound_to_an_object(self):
         obj = Class()
         self.assertEqual(True, obj.method.__self__ == obj)
 
@@ -22,15 +22,15 @@ class AboutMethodBindings(Koan):
         obj = Class()
         self.assertEqual('parrot', obj.method())
         self.assertEqual('parrot', obj.method.__func__(obj))
-        
+
     def test_functions_have_attributes(self):
         obj = Class()
-        self.assertEqual(32, len(dir(function)))
+        self.assertEqual(34, len(dir(function)))
         self.assertEqual(True, dir(function) == dir(obj.method.__func__))
-        
+
     def test_methods_have_different_attributes(self):
         obj = Class()
-        self.assertEqual(25, len(dir(obj.method)))
+        self.assertEqual(26, len(dir(obj.method)))
 
     def test_setting_attributes_on_an_unbound_function(self):
         function.cherries = 3
@@ -38,13 +38,13 @@ class AboutMethodBindings(Koan):
 
     def test_setting_attributes_on_a_bound_method_directly(self):
         obj = Class()
-        with self.assertRaises(AttributeError): obj.method.cherries = 3 
- 
+        with self.assertRaises(AttributeError): obj.method.cherries = 3
+
     def test_setting_attributes_on_methods_by_accessing_the_inner_function(self):
         obj = Class()
         obj.method.__func__.cherries = 3
         self.assertEqual(3, obj.method.cherries)
-        
+
     def test_functions_can_have_inner_functions(self):
         function2.get_fruit = function
         self.assertEqual('pineapple', function2.get_fruit())
@@ -60,7 +60,7 @@ class AboutMethodBindings(Koan):
             return (self, obj, cls)
 
     binding = BoundClass()
-            
+
     def test_get_descriptor_resolves_attribute_binding(self):
         bound_obj, binding_owner, owner_type = self.binding
         # Look at BoundClass.__get__():
@@ -82,9 +82,9 @@ class AboutMethodBindings(Koan):
             self.choice = val
 
     color = SuperColor()
-            
+
     def test_set_descriptor_changes_behavior_of_attribute_assignment_changes(self):
         self.assertEqual(None, self.color.choice) #####
         self.color = 'purple'
         self.assertEqual('purple', self.color.choice)
-     
+
