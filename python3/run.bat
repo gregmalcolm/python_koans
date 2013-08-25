@@ -5,9 +5,7 @@ REM You don't actually need this script!
 SET RUN_KOANS=python.exe contemplate_koans.py
 
 REM Set this to your python folder:
-SET PYTHON_PATH=C:\Python31
-
-
+SET PYTHON_PATH=C:\Python33
 
 set SCRIPT=
 REM Hunt around for python
