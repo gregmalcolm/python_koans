@@ -1,0 +1,27 @@
+language: python
+
+python:
+    - 2.7
+    - 3.2
+    - 3.3
+
+script:
+    - PYTHON_VER=`python -c 'import sys; print(sys.version_info[0])'`
+    - cd python$PYTHON_VER
+    - python _runner_tests.py
+#   - python contemplate_koans.py                          # Run all the koans
+#   - python contemplate_koans.py about_asserts about_none # Run a subset of
+#                                                          # koans
+#
+#   Working through Python Koans in a fork? Want to use Travis CI to show which
+#   koans you've passed? Then comment out one of the above "contemplate_koans"
+#   lines above!
+#
+notifications:
+  email: true
+
+# Some other koans (see runner/sensei.py or "ls koans" to see the light):
+#
+# about_none about_lists about_list_assignments about_dictionaries
+# about_strings about_tuples about_methods about_control_statements
+# about_true_and_false about_sets ...
