@@ -174,7 +174,7 @@ class Sensei(MockableTestResult):
 
     def report_remaining(self):
         koans_remaining = self.total_koans() - self.pass_count
-        lessons_remaining = self.total_lessons() - self.pass_count
+        lessons_remaining = self.total_lessons() - self.lesson_pass_count
 
         return "You are now {0} koans and {1} lessons away from " \
             "reaching enlightenment.".format(
