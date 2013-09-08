@@ -21,7 +21,7 @@ class AboutStringManipulation(Koan):
         import math # import a standard python module with math functions
 
         decimal_places = 4
-        string = "The square root of 5 is {0:.{1}f}".format(math.sqrt(5), \
+        string = "The square root of 5 is {0:.{1}f}".format(math.sqrt(5),
             decimal_places)
         self.assertEqual(__, string)
 
