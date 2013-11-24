@@ -1,4 +1,4 @@
-
+# Copyright Jonathan Hartley 2013. BSD 3-Clause license, see LICENSE file.
 import re
 import sys
 
@@ -123,7 +123,7 @@ class AnsiToWin32(object):
     def reset_all(self):
         if self.convert:
             self.call_win32('m', (0,))
-        else:
+        elif is_a_tty(self.wrapped):
             self.wrapped.write(Style.RESET_ALL)
 
 
@@ -173,4 +173,17 @@ class AnsiToWin32(object):
                     args = func_args[1:]
                     kwargs = dict(on_stderr=self.on_stderr)
                     func(*args, **kwargs)
+        elif command in ('H', 'f'): # set cursor position
+            func = winterm.set_cursor_position
+            func(params, on_stderr=self.on_stderr)
+        elif command in ('J'):
+            func = winterm.erase_data
+            func(params, on_stderr=self.on_stderr)
+        elif command == 'A':
+            if params == () or params == None:
+                num_rows = 1
+            else:
+                num_rows = params[0]
+            func = winterm.cursor_up
+            func(num_rows, on_stderr=self.on_stderr)
 
