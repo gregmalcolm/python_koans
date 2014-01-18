@@ -109,7 +109,7 @@ class AboutClasses(Koan):
         # THINK ABOUT IT:
         # Why is this so?
 
-    def test_different_objects_have_difference_instance_variables(self):
+    def test_different_objects_have_different_instance_variables(self):
         fido = self.Dog5("Fido")
         rover = self.Dog5("Rover")
 
