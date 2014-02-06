@@ -50,7 +50,7 @@ class AboutMethods(Koan):
     def pointless_method(self, a, b):
         sum = a + b
 
-    def test_which_does_not_return_anything(self):
+    def test_that_which_does_not_return(self):
         self.assertEqual(__, self.pointless_method(1, 2))
 
     # ------------------------------------------------------------------
