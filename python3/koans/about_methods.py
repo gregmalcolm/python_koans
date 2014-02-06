@@ -37,6 +37,16 @@ class AboutMethods(Koan):
 
     # ------------------------------------------------------------------
 
+    def method_which_returns(self, a, b):
+        return a*b
+
+    def test_that_which_returns(self, a, b):
+        self.assertEqual(__, self.method_which_returns(3,4))
+        # Notice that methods accessed from class scope do not require
+        # you to pass the first "self" argument?
+
+    # ------------------------------------------------------------------
+
     def pointless_method(self, a, b):
         sum = a + b
 
