@@ -6,7 +6,7 @@ from runner.koan import *
 class AboutTuples(Koan):
     def test_creating_a_tuple(self):
         count_of_three =  (1, 2, 5)
-        self.assertEqual(5, __)
+        self.assertEqual(__, count_of_three[2])
 
     def test_tuples_are_immutable_so_item_assignment_is_not_possible(self):
         count_of_three =  (1, 2, 5)
