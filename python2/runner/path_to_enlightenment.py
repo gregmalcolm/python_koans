@@ -88,5 +88,6 @@ def koans():
     suite.addTests(loader.loadTestsFromTestCase(AboutProxyObjectProject))
     suite.addTests(loader.loadTestsFromTestCase(TelevisionTest))
     suite.addTests(loader.loadTestsFromTestCase(AboutExtraCredit))
+    suite.addTests(loader.loadTestsFromTestCase(AboutRegex))
 
     return suite
