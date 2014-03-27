@@ -22,7 +22,7 @@ class AboutRegex(Koan):
         """
             Lesson 1 How many matches?
 
-            The default behaviour of most regular extression engines is to return just the first match.
+            The default behaviour of most regular expression engines is to return just the first match.
             In python you have the next options:
 
                 match()    -->  Determine if the RE matches at the beginning of the string.
@@ -92,7 +92,7 @@ class AboutRegex(Koan):
     def test_anything_but_matching(self):
         """
             Lesson 2 Using character set ranges
-            Occsionally, you'll want a list of characters that you don't want to match.
+            Occasionally, you'll want a list of characters that you don't want to match.
             Character sets can be negated using the ^ metacharacter.
 
         """
