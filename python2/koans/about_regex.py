@@ -30,7 +30,7 @@ class AboutRegex(Koan):
         """
             Lesson 1 -- How many matches?
 
-            The default behaviour of most regular extression engines is
+            The default behaviour of most regular expression engines is
             to return just the first match. In python you have the
             following options:
 
