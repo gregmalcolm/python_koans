@@ -83,9 +83,7 @@ class AboutWithStatements(Koan):
 
     def count_lines2(self, file_name):
         with self.FileContextManager(file_name) as f:
-            count = 0
-            for line in f.readlines():
-                count += 1
+            count = len(f.readlines())
         return count
 
     def test_counting_lines2(self):
@@ -105,10 +103,6 @@ class AboutWithStatements(Koan):
 
     def count_lines3(self, file_name):
         with open(file_name) as f:
-            count = 0
-            for line in f.readlines():
-                count += 1
-            return count
-
+           return len(f.readlines()) 
     def test_open_already_has_its_own_built_in_context_manager(self):
         self.assertEqual(__, self.count_lines3("example_file.txt"))
