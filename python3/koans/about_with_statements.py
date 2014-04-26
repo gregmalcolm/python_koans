@@ -14,10 +14,7 @@ class AboutWithStatements(Koan):
         try:
             file = open(file_name)
             try:
-                count = 0
-                for line in file.readlines():
-                    count += 1
-                return count
+                return len(file.readlines())
             finally:
                 file.close()
         except IOError:
