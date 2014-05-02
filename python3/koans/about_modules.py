@@ -34,7 +34,7 @@ class AboutModules(Koan):
 
     def test_importing_all_module_attributes_at_once(self):
         # NOTE Using this module level import declared at the top of this script:
-        #   from .other_local_module import *
+        #   from .another_local_module import *
         #
         # Import wildcard cannot be used from within classes or functions
 
