@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#/usr/bin/env python
 # -*- coding: utf-8 -*-
 
 #
@@ -8,8 +8,11 @@
 from runner.koan import *
 
 
-def my_global_function(a, b):
-    return a + b
+def my_global_function(begin, end):
+    if begin == end:
+        return begin * 2
+    else:
+        return begin + end
 
 
 class AboutMethods(Koan):
@@ -25,9 +28,7 @@ class AboutMethods(Koan):
             # NOTE: The .__name__ attribute will convert the class
             # into a string value.
             self.assertEqual(__, exception.__class__.__name__)
-            self.assertMatch(
-                r'my_global_function\(\) takes exactly 2 arguments \(0 given\)',
-                exception[0])
+            self.assertMatch('rmy_global_function\(\) '), exception[0])
 
         try:
             my_global_function(1, 2, 3)
@@ -115,7 +116,8 @@ class AboutMethods(Koan):
 
     # ------------------------------------------------------------------
 
-    def one_line_method(self): return 'Madagascar'
+    def one_line_method(self):
+        return 'Madagascar'
 
     def test_no_indentation_required_for_one_line_statement_bodies(self):
         self.assertEqual(__, self.one_line_method())
@@ -123,7 +125,7 @@ class AboutMethods(Koan):
     # ------------------------------------------------------------------
 
     def method_with_documentation(self):
-        "A string placed at the beginning of a function is used for documentation"
+        "A string placed at the beginning of a function is used for docntation"
         return "ok"
 
     def test_the_documentation_can_be_viewed_with_the_doc_method(self):
