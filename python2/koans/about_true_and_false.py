@@ -39,3 +39,4 @@ class AboutTrueAndFalse(Koan):
             __,
             self.truth_value("Python is named after Monty Python"))
         self.assertEqual(__, self.truth_value(' '))
+        self.assertEqual(__, self.truth_value('0'))

@@ -56,7 +56,7 @@ class AboutPackages(Koan):
         # contemplate_koans.py is the root module in this package because its
         # the first python module called in koans.
         #
-        # If contemplate_koan.py was based in a_package_folder that would be
+        # If contemplate_koans.py was based in a_package_folder that would be
         # the root folder, which would make reaching the koans folder
         # almost impossible. So always leave the starting python script in
         # a folder which can reach everything else.

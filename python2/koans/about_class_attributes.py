@@ -14,7 +14,7 @@ class AboutClassAttributes(Koan):
 
     def test_new_style_class_objects_are_objects(self):
         # Note: Old style class instances are not objects but they are being
-        # phased out it Python 3.
+        # phased out in Python 3.
 
         fido = self.Dog()
         self.assertEqual(__, isinstance(fido, object))

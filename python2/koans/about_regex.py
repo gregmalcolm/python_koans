@@ -30,7 +30,7 @@ class AboutRegex(Koan):
         """
             Lesson 1 -- How many matches?
 
-            The default behaviour of most regular extression engines is
+            The default behaviour of most regular expression engines is
             to return just the first match. In python you have the
             following options:
 
@@ -63,8 +63,8 @@ class AboutRegex(Koan):
         string = "Hello, my name is Felix or felix and this koan " + \
             "is based on Ben's book: Regular Expressions in 10 minutes."
 
-        self.assertEqual(re.findall("felix", string, 20), __)
-        self.assertEqual(re.findall("felix", string, 10), __)
+        self.assertEqual(re.findall("felix", string), __)
+        self.assertEqual(re.findall("felix", string, re.IGNORECASE), __)
 
     def test_matching_any_character(self):
         """
