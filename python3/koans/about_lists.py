@@ -103,8 +103,6 @@ class AboutLists(Koan):
         self.assertEqual(__, popped_value)
         self.assertEqual(__, queue)
 
-        # Note, for Python 2 popping from the left hand side of a list is
+        # Note, popping from the left hand side of a list is
         # inefficient. Use collections.deque instead.
-
-        # This is not an issue for Python 3 though
 
