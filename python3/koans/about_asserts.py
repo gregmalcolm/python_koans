@@ -60,7 +60,7 @@ class AboutAsserts(Koan):
 
         # Sometimes we will ask you what the class type of an object is.
         #
-        # For example, contemplate the text string "naval". What is it's class type?
+        # For example, contemplate the text string "naval". What is its class type?
         # The koans runner will include this feedback for this koan:
         #
         #   AssertionError: '-=> FILL ME IN! <=-' != <type 'str'>
