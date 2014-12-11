@@ -34,7 +34,6 @@ from koans.about_decorating_with_functions import AboutDecoratingWithFunctions
 from koans.about_decorating_with_classes import AboutDecoratingWithClasses
 from koans.about_inheritance import AboutInheritance
 from koans.about_multiple_inheritance import AboutMultipleInheritance
-from koans.about_regex import AboutRegex
 from koans.about_scope import AboutScope
 from koans.about_modules import AboutModules
 from koans.about_packages import AboutPackages
@@ -42,6 +41,7 @@ from koans.about_class_attributes import AboutClassAttributes
 from koans.about_attribute_access import AboutAttributeAccess
 from koans.about_deleting_objects import AboutDeletingObjects
 from koans.about_proxy_object_project import *
+from koans.about_regex import AboutRegex
 from koans.about_extra_credit import AboutExtraCredit
 
 def koans():
@@ -85,7 +85,7 @@ def koans():
     suite.addTests(loader.loadTestsFromTestCase(AboutDeletingObjects))
     suite.addTests(loader.loadTestsFromTestCase(AboutProxyObjectProject))
     suite.addTests(loader.loadTestsFromTestCase(TelevisionTest))
-    suite.addTests(loader.loadTestsFromTestCase(AboutExtraCredit))
     suite.addTests(loader.loadTestsFromTestCase(AboutRegex))
+    suite.addTests(loader.loadTestsFromTestCase(AboutExtraCredit))
 
     return suite
