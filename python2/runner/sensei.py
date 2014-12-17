@@ -99,7 +99,7 @@ class Sensei(MockableTestResult):
         self.stream.writeln("\n{0}That was the last one, well done!" \
             .format(Fore.MAGENTA))
         self.stream.writeln(
-            "\nIf you want more, take a look at about_extra_credit_task.py")
+            "\nIf you want more, take a look at about_extra_credit.py")
 
     def errorReport(self):
         problem = self.firstFailure()
