@@ -49,7 +49,7 @@ class AboutIteration(Koan):
 
         self.assertEqual(__, mapped_seq)
 
-        # None, iterator methods actually return objects of iter type in
+        # Note, iterator methods actually return objects of iter type in
         # python 3. In python 2 map() would give you a list.
 
     def test_filter_selects_certain_items_from_a_list(self):
