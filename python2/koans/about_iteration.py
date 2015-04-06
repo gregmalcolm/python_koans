@@ -99,17 +99,13 @@ class AboutIteration(Koan):
         self.assertEqual(__, list(result))
 
         try:
-            f = open("example_file.txt")
-
-            try:
-                def make_upcase(line):
-                    return line.strip().upper()
+            def make_upcase(line):
+                return line.strip().upper()
+            
+            with open("example_file.txt") as f:
                 upcase_lines = map(make_upcase, f.readlines())
-                self.assertEqual(__, list(upcase_lines))
-            finally:
-                # Arg, this is ugly.
-                # We will figure out how to fix this later.
-                f.close()
+
+            self.assertEqual(__, list(upcase_lines))
         except IOError:
             # should never happen
             self.fail()
