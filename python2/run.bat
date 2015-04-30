@@ -8,6 +8,9 @@ REM Set this to your python folder:
 SET PYTHON_PATH=C:\Python27
 
 set SCRIPT=
+
+:loop
+
 REM Hunt around for python
 IF EXIST "python.exe" (
   SET SCRIPT=%RUN_KOANS%
@@ -32,4 +35,11 @@ IF NOT "" == "%SCRIPT%" (
   echo   python.exe contemplate_koans.py
   pause
 )
+
+Set /p  keepgoing="Test again? Y or N - "
+if "%keepgoing%" == "y" (
+	goto loop
+	)
+
+
 :end
