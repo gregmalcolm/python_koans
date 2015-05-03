@@ -62,6 +62,7 @@ class AboutLists(Koan):
         self.assertEqual(__, list(range(1, 8, 3)))
         self.assertEqual(__, list(range(5, -7, -4)))
         self.assertEqual(__, list(range(5, -8, -4)))
+        self.assertEqual(__, list(range(5, 3, -1)))
 
     def test_insertions(self):
         knight = ['you', 'shall', 'pass']
