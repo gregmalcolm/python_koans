@@ -124,6 +124,37 @@ fire up the command line, recreate the scenario and run queries:
 
 .. image:: http://i442.photobucket.com/albums/qq150/gregmalcolm/DebuggingPython.png
 
+Sniffer Support
+---------------
+
+Sniffer allows you to run the tests continuously. If you modify any files files
+in the koans directory, it will rerun the tests.
+
+To set this up, you need to install sniffer::
+
+    $ pip install sniffer
+
+You should also run one of these libraries depending on your system. This will
+automatically trigger sniffer when a file changes, otherwise sniffer will have
+to poll to see if the files have changed.
+
+On Linux::
+
+    $ pip install pyinotify
+
+On Windows::
+
+    $ pip install pywin32
+
+On Mac OS X::
+
+    $ pip install MacFSEvents
+
+Once it is set up, you just run::
+
+    $ sniffer
+
+Just modify one of the koans files and you'll see that the tests are triggered automatically. Sniffer is controlled by `scent.py`
 
 Getting the Most From the Koans
 -------------------------------
