@@ -50,7 +50,7 @@ class AboutComprehension(Koan):
 
     def test_creating_a_dictionary_with_dictionary_comprehension(self):
         dict_of_weapons = {'first': 'fear', 'second': 'surprise',
-                           'third':'ruthless efficiency', 'forth':'fanatical devotion',
+                           'third':'ruthless efficiency', 'fourth':'fanatical devotion',
                            'fifth': None}
 
         dict_comprehension = { k.upper(): weapon for k, weapon in dict_of_weapons.items() if weapon}
