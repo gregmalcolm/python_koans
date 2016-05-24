@@ -4,10 +4,11 @@
 import sys
 import os
 
+
 # Taken from legacy python unittest
 class WritelnDecorator:
     """Used to decorate file-like objects with a handy 'writeln' method"""
-    def __init__(self,stream):
+    def __init__(self, stream):
         self.stream = stream
 
     def __getattr__(self, attr):
