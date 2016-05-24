@@ -88,7 +88,7 @@ class Sensei(MockableTestResult):
         self.stream.writeln("")
         self.stream.writeln(self.report_progress())
         if self.failures:
-          self.stream.writeln(self.report_remaining())
+            self.stream.writeln(self.report_remaining())
         self.stream.writeln("")
         self.stream.writeln(self.say_something_zenlike())
 
