@@ -14,7 +14,7 @@ class AboutDecoratingWithFunctions(Koan):
         return "o/~ We all live in a broken submarine o/~"
 
     def test_decorators_can_modify_a_function(self):
-        self.assertRegexpMatches(self.mediocre_song(), __)
+        self.assertRegex(self.mediocre_song(), __)
         self.assertEqual(__, self.mediocre_song.wow_factor)
 
     # ------------------------------------------------------------------
@@ -30,4 +30,3 @@ class AboutDecoratingWithFunctions(Koan):
 
     def test_decorators_can_change_a_function_output(self):
         self.assertEqual(__, self.render_tag('llama'))
-
