@@ -24,7 +24,7 @@ class AboutMethods(Koan):
 
         # Note, the text comparison works for Python 3.2
         # It has changed in the past and may change in the future
-        self.assertRegexpMatches(msg,
+        self.assertRegex(msg,
             r'my_global_function\(\) missing 2 required positional arguments')
 
         try:
@@ -33,7 +33,7 @@ class AboutMethods(Koan):
             msg = e.args[0]
 
         # Note, watch out for parenthesis. They need slashes in front!
-        self.assertRegexpMatches(msg, __)
+        self.assertRegex(msg, __)
 
     # ------------------------------------------------------------------
 
@@ -126,7 +126,7 @@ class AboutMethods(Koan):
         return "ok"
 
     def test_the_documentation_can_be_viewed_with_the_doc_method(self):
-        self.assertRegexpMatches(self.method_with_documentation.__doc__, __)
+        self.assertRegex(self.method_with_documentation.__doc__, __)
 
     # ------------------------------------------------------------------
 
@@ -160,4 +160,3 @@ class AboutMethods(Koan):
 
         # Name mangling exists to avoid name clash issues when subclassing.
         # It is not for providing effective access protection
-

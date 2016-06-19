@@ -35,7 +35,7 @@ class AboutMonkeyPatching(Koan):
         except Exception as ex:
             err_msg = ex.args[0]
 
-        self.assertRegexpMatches(err_msg, __)
+        self.assertRegex(err_msg, __)
 
     # ------------------------------------------------------------------
 
@@ -46,4 +46,3 @@ class AboutMonkeyPatching(Koan):
 
         self.assertEqual(__, self.MyInt(1).is_even())
         self.assertEqual(__, self.MyInt(2).is_even())
-

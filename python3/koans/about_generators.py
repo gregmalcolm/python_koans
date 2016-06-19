@@ -116,7 +116,7 @@ class AboutGenerators(Koan):
         except TypeError as ex:
           ex2 = ex
 
-        self.assertRegexpMatches(ex2.args[0], __)
+        self.assertRegex(ex2.args[0], __)
 
     # ------------------------------------------------------------------
 
@@ -142,5 +142,3 @@ class AboutGenerators(Koan):
         next(generator)
         # 'next(generator)' is exactly equivalent to 'generator.send(None)'
         self.assertEqual(__, generator.send(None))
-
-
