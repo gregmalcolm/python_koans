@@ -65,7 +65,7 @@ class AboutControlStatements(Koan):
             ("Lancelot", "Blue"),
             ("Galahad", "I don't know!"),
             ("Robin", "Blue! I mean Green!"),
-            ("Arthur", "Is that an African Swallow or Amazonian Swallow?")
+            ("Arthur", "Is that an African Swallow or European Swallow?")
         ]
         result = []
         for knight, answer in round_table:
