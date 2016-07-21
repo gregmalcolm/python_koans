@@ -8,12 +8,12 @@ class AboutIteration(Koan):
     def test_iterators_are_a_type(self):
         it = iter(range(1,6))
 
-        fib = 0
+        total = 0
 
         for num in it:
-            fib += num
+            total += num
 
-        self.assertEqual(__ , fib)
+        self.assertEqual(__ , total)
 
     def test_iterating_with_next(self):
         stages = iter(['alpha','beta','gamma'])
