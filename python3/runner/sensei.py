@@ -161,9 +161,9 @@ class Sensei(MockableTestResult):
 
         stack_text = stack_text.replace(sep, '\n').strip('\n')
         stack_text = re.sub(r'(about_\w+.py)',
-                r"{0}\1{1}".format(Fore.BLUE, Fore.YELLOW), stack_text)
+                r"{0}\1{1}".format(Fore.GREEN, Fore.YELLOW), stack_text)
         stack_text = re.sub(r'(line \d+)',
-                r"{0}\1{1}".format(Fore.BLUE, Fore.YELLOW), stack_text)
+                r"{0}\1{1}".format(Fore.GREEN, Fore.YELLOW), stack_text)
         return stack_text
 
     def report_progress(self):

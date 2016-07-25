@@ -16,18 +16,18 @@ class AboutScope(Koan):
     #
 
     def test_dog_is_not_available_in_the_current_scope(self):
-        with self.assertRaises(___): fido = Dog()
+        with self.assertRaises(NameError): fido = Dog()
 
     def test_you_can_reference_nested_classes_using_the_scope_operator(self):
         fido = jims.Dog()
         # name 'jims' module name is taken from jims.py filename
 
         rover = joes.Dog()
-        self.assertEqual(__, fido.identify())
-        self.assertEqual(__, rover.identify())
+        self.assertEqual('jims dog', fido.identify())
+        self.assertEqual('joes dog', rover.identify())
 
-        self.assertEqual(__, type(fido) == type(rover))
-        self.assertEqual(__, jims.Dog == joes.Dog)
+        self.assertEqual(False, type(fido) == type(rover))
+        self.assertEqual(False, jims.Dog == joes.Dog)
 
     # ------------------------------------------------------------------
 
@@ -35,26 +35,26 @@ class AboutScope(Koan):
         pass
 
     def test_bare_bones_class_names_do_not_assume_the_current_scope(self):
-        self.assertEqual(__, AboutScope.str == str)
+        self.assertEqual(False, AboutScope.str == str)
 
     def test_nested_string_is_not_the_same_as_the_system_string(self):
-        self.assertEqual(__, self.str == type("HI"))
+        self.assertEqual(False, self.str == type("HI"))
 
     def test_str_without_self_prefix_stays_in_the_global_scope(self):
-        self.assertEqual(__, str == type("HI"))
+        self.assertEqual(True, str == type("HI"))
 
     # ------------------------------------------------------------------
 
     PI = 3.1416
 
     def test_constants_are_defined_with_an_initial_uppercase_letter(self):
-        self.assertAlmostEqual(_____, self.PI)
+        self.assertAlmostEqual(3.1416, self.PI)
         # Note, floating point numbers in python are not precise.
         # assertAlmostEqual will check that it is 'close enough'
 
     def test_constants_are_assumed_by_convention_only(self):
         self.PI = "rhubarb"
-        self.assertEqual(_____, self.PI)
+        self.assertEqual('rhubarb', self.PI)
         # There aren't any real constants in python. Its up to the developer
         # to keep to the convention and not modify them.
 
@@ -71,13 +71,13 @@ class AboutScope(Koan):
         global counter
         start = counter
         self.increment_using_local_counter(start)
-        self.assertEqual(__, counter == start + 1)
+        self.assertEqual(False, counter == start + 1)
 
     def test_incrementing_with_global_counter(self):
         global counter
         start = counter
         self.increment_using_global_counter()
-        self.assertEqual(__, counter == start + 1)
+        self.assertEqual(True, counter == start + 1)
 
     # ------------------------------------------------------------------
 
@@ -96,10 +96,10 @@ class AboutScope(Koan):
         return from_the_boosh()
 
     def test_getting_something_locally(self):
-        self.assertEqual(__, self.local_access())
+        self.assertEqual('this is a local shop for local people', self.local_access())
 
     def test_getting_something_nonlocally(self):
-        self.assertEqual(__, self.nonlocal_access())
+        self.assertEqual('eels', self.nonlocal_access())
 
     # ------------------------------------------------------------------
 
@@ -107,4 +107,4 @@ class AboutScope(Koan):
     deadly_bingo = [4, 8, 15, 16, 23, 42]
 
     def test_global_attributes_can_be_created_in_the_middle_of_a_class(self):
-        self.assertEqual(__, deadly_bingo[5])
+        self.assertEqual(42, deadly_bingo[5])

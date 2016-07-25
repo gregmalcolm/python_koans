@@ -33,11 +33,27 @@ from runner.koan import *
 # Your goal is to write the score method.
 
 def score(dice):
-    # You need to write this method
-    pass
+    if len(dice) > 5:
+        return None
+
+    numbers = {}.fromkeys(range(1,7), 0)
+    score = 0
+
+    for n in dice:
+        numbers[n] += 1
+
+    score += (numbers[1] // 3) * 1000
+    for n in range(2,7):
+        score += (numbers[n] // 3) * 100 * n
+    score += (numbers[1] % 3) * 100
+    score += (numbers[5] % 3) * 50
+
+    return score
+
 
 class AboutScoringProject(Koan):
     def test_score_of_an_empty_list_is_zero(self):
+        print(score([]))
         self.assertEqual(0, score([]))
 
     def test_score_of_a_single_roll_of_5_is_50(self):
@@ -70,3 +86,4 @@ class AboutScoringProject(Koan):
     def test_ones_not_left_out(self):
         self.assertEqual(300, score([1,2,2,2]))
         self.assertEqual(350, score([1,5,2,2,2]))
+
