@@ -4,6 +4,7 @@
 from runner.koan import *
 
 # You need to write the triangle method in the file 'triangle.py'
+# I hate triangles.... I hope they all burn
 from .triangle import *
 
 class AboutTriangleProject(Koan):

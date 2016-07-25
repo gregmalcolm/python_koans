@@ -22,4 +22,4 @@ class AboutTriangleProject2(Koan):
         with self.assertRaises(TriangleError):
             triangle(2, 5, 2)
 
-
+#seriously, these triangles can go die in a ditch

@@ -22,7 +22,7 @@ class AboutRegex(Koan):
         """
             Lesson 1 How many matches?
 
-            The default behaviour of most regular expression engines is to return just the first match.
+            The default behavior of most regular expression engines is to return just the first match.
             In python you have the next options:
 
                 match()    -->  Determine if the RE matches at the beginning of the string.

@@ -83,6 +83,16 @@ class AboutMultipleInheritance(Koan):
     #              \      |      /
     #                 Spiderpig
     #
+    #
+    #             Spider Pig!
+    #               Spider Pig!
+    #       Does whatever a spider pig does!
+    #       Can he swing from a web?
+    #       No he can't
+    #       He's a pig
+    #       Lookout!
+    #
+    #
     # ------------------------------------------------------------------
 
     def test_normal_methods_are_available_in_the_object(self):

@@ -65,3 +65,4 @@ class AboutTuples(Koan):
         self.assertEqual(15.56, locations[0][1][2])
 
 
+#Cthuhlu is spelled wrong here and it is bothering me sooooooo bad
