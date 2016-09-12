@@ -4,6 +4,8 @@ python:
     - 2.7
     - 3.2
     - 3.3
+    - 3.4
+    - 3.5
 
 script:
     - PYTHON_VER=`python -c 'import sys; print(sys.version_info[0])'`
