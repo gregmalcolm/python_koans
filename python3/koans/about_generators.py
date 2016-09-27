@@ -112,11 +112,9 @@ class AboutGenerators(Koan):
         generator = self.coroutine()
 
         try:
-            generator.send(1+2)
+            generator.send(1 + 2)
         except TypeError as ex:
-          ex2 = ex
-
-        self.assertRegex(ex2.args[0], __)
+            self.assertRegex(ex.args[0], __)
 
     # ------------------------------------------------------------------
 
