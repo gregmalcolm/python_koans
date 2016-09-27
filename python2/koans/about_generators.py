@@ -91,12 +91,12 @@ class AboutGenerators(Koan):
 
     # ------------------------------------------------------------------
 
-    def generator_with_coroutine(self):
+    def coroutine(self):
         result = yield
         yield result
 
-    def test_generators_can_take_coroutines(self):
-        generator = self.generator_with_coroutine()
+    def test_generators_can_act_as_coroutines(self):
+        generator = self.coroutine()
 
         # THINK ABOUT IT:
         # Why is this line necessary?
@@ -108,7 +108,7 @@ class AboutGenerators(Koan):
         self.assertEqual(__, generator.send(1 + 2))
 
     def test_before_sending_a_value_to_a_generator_next_must_be_called(self):
-        generator = self.generator_with_coroutine()
+        generator = self.coroutine()
 
         try:
             generator.send(1 + 2)
