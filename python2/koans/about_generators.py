@@ -60,7 +60,7 @@ class AboutGenerators(Koan):
             result.append(item)
         self.assertEqual(__, result)
 
-    def test_coroutines_can_take_arguments(self):
+    def test_generators_can_be_manually_iterated_and_closed(self):
         result = self.simple_generator_method()
         self.assertEqual(__, next(result))
         self.assertEqual(__, next(result))
