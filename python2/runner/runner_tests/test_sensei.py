@@ -10,7 +10,6 @@ from libs.mock import *
 from runner.sensei import Sensei
 from runner.writeln_decorator import WritelnDecorator
 from runner.mockable_test_result import MockableTestResult
-from runner import path_to_enlightenment
 
 class AboutParrots:
     pass
@@ -84,11 +83,7 @@ First differing element 1:
 class TestSensei(unittest.TestCase):
 
     def setUp(self):
-        self.sensei = Sensei(WritelnDecorator(sys.stdout))
-        self.sensei.stream.writeln = Mock()
-        path_to_enlightenment.koans = Mock()
-        self.tests = Mock()
-        self.tests.countTestCases = Mock()
+        self.sensei = Sensei(WritelnDecorator(Mock()))
 
     def test_that_failures_are_handled_in_the_base_class(self):
         MockableTestResult.addFailure = Mock()
