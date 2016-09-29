@@ -34,7 +34,8 @@ class AboutTrueAndFalse(Koan):
 
     def test_everything_else_is_treated_as_true(self):
         self.assertEqual(__, self.truth_value(1))
-        self.assertEqual(__, self.truth_value(1,))
+        self.assertEqual(__, self.truth_value([0]))
+        self.assertEqual(__, self.truth_value((0,)))
         self.assertEqual(
             __,
             self.truth_value("Python is named after Monty Python"))
