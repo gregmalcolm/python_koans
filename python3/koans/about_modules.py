@@ -11,9 +11,10 @@ from runner.koan import *
 from .another_local_module import *
 from .local_module_with_all_defined import *
 
+
 class AboutModules(Koan):
     def test_importing_other_python_scripts_as_modules(self):
-        from . import local_module # local_module.py
+        from . import local_module  # local_module.py
 
         duck = local_module.Duck()
         self.assertEqual(__, duck.name)
@@ -21,7 +22,7 @@ class AboutModules(Koan):
     def test_importing_attributes_from_classes_using_from_keyword(self):
         from .local_module import Duck
 
-        duck = Duck() # no module qualifier needed this time
+        duck = Duck()  # no module qualifier needed this time
         self.assertEqual(__, duck.name)
 
     def test_we_can_import_multiple_items_at_once(self):
@@ -33,10 +34,11 @@ class AboutModules(Koan):
         self.assertEqual(__, joes_dog.identify())
 
     def test_importing_all_module_attributes_at_once(self):
-        # NOTE Using this module level import declared at the top of this script:
-        #   from .another_local_module import *
-        #
-        # Import wildcard cannot be used from within classes or functions
+        """
+        importing all attributes at once is done like so:
+            from .another_local_module import *
+        The import wildcard cannot be used from within classes or functions.
+        """
 
         goose = Goose()
         hamster = Hamster()
@@ -45,21 +47,24 @@ class AboutModules(Koan):
         self.assertEqual(__, hamster.name)
 
     def test_modules_hide_attributes_prefixed_by_underscores(self):
-        with self.assertRaises(___): private_squirrel = _SecretSquirrel()
+        with self.assertRaises(___):
+            private_squirrel = _SecretSquirrel()
 
     def test_private_attributes_are_still_accessible_in_modules(self):
-        from .local_module import Duck # local_module.py
+        from .local_module import Duck  # local_module.py
 
         duck = Duck()
         self.assertEqual(__, duck._password)
         # module level attribute hiding doesn't affect class attributes
         # (unless the class itself is hidden).
 
-    def test_a_module_can_choose_which_attributes_are_available_to_wildcards(self):
-        # NOTE Using this module level import declared at the top of this script:
-        #   from .local_module_with_all_defined import *
+    def test_a_module_can_limit_wildcard_imports(self):
+        """
+        Examine results of:
+            from .local_module_with_all_defined import *
+        """
 
-        # 'Goat' is on the __ALL__ list
+        # 'Goat' is on the __all__ list
         goat = Goat()
         self.assertEqual(__, goat.name)
 
@@ -68,4 +73,5 @@ class AboutModules(Koan):
         self.assertEqual(__, lizard.name)
 
         # SecretDuck? Never heard of her!
-        with self.assertRaises(___): duck = SecretDuck()
+        with self.assertRaises(___):
+            duck = SecretDuck()

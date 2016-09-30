@@ -60,8 +60,11 @@ class AboutModules(Koan):
         # module level attribute hiding doesn't affect class attributes
         # (unless the class itself is hidden).
 
-    def test_a_modules_XallX_statement_limits_what_wildcards_will_match(self):
-        """Examine results of from local_module_with_all_defined import *"""
+    def test_a_module_can_limit_wildcard_imports(self):
+        """
+        Examine results of:
+            from local_module_with_all_defined import *
+        """
 
         # 'Goat' is on the __all__ list
         goat = Goat()
