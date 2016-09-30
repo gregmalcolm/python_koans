@@ -25,7 +25,7 @@ class AboutInheritance(Koan):
     def test_subclasses_have_the_parent_as_an_ancestor(self):
         self.assertEqual(__, issubclass(self.Chihuahua, self.Dog))
 
-    def test_this_all_classes_in_python_3_ultimately_inherit_from_object_class(self):
+    def test_all_classes_in_python_3_ultimately_inherit_from_object_class(self):
         self.assertEqual(__, issubclass(self.Chihuahua, object))
 
         # Note: This isn't the case in Python 2. In that version you have

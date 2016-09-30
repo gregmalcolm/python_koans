@@ -83,7 +83,7 @@ class AboutMethodBindings(Koan):
 
     color = SuperColor()
 
-    def test_set_descriptor_changes_behavior_of_attribute_assignment_changes(self):
+    def test_set_descriptor_changes_behavior_of_attribute_assignment(self):
         self.assertEqual(None, self.color.choice)
         self.color = 'purple'
         self.assertEqual(__, self.color.choice)
