@@ -63,7 +63,7 @@ You can download Python from here:
     http://www.python.org/download
 
 After installing Python make sure the folder containing the python executable
-is in the system path. In other words, you need to be able to be able to run
+is in the system path. In other words, you need to be able to run
 Python from a command console. With Python 2 it will be called `python`
 or `python.exe` depending on the operating system. For Python 3 it will either
 be `python3` or for windows it will be `python.exe`.
