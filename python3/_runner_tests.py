@@ -7,6 +7,8 @@ import unittest
 from runner.runner_tests.test_mountain import TestMountain
 from runner.runner_tests.test_sensei import TestSensei
 from runner.runner_tests.test_helper import TestHelper
+from runner.runner_tests.test_path_to_enlightenment import TestFilterKoanNames
+from runner.runner_tests.test_path_to_enlightenment import TestKoansSuite
 from runner.runner_tests.test_path_to_enlightenment import TestPathToEnlightenment
 
 
@@ -15,6 +17,8 @@ def suite():
     suite.addTests(unittest.TestLoader().loadTestsFromTestCase(TestMountain))
     suite.addTests(unittest.TestLoader().loadTestsFromTestCase(TestSensei))
     suite.addTests(unittest.TestLoader().loadTestsFromTestCase(TestHelper))
+    suite.addTests(unittest.TestLoader().loadTestsFromTestCase(TestFilterKoanNames))
+    suite.addTests(unittest.TestLoader().loadTestsFromTestCase(TestKoansSuite))
     suite.addTests(unittest.TestLoader().loadTestsFromTestCase(TestPathToEnlightenment))
     return suite
 
