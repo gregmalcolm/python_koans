@@ -47,17 +47,6 @@ from koans.about_proxy_object_project import *
 from koans.about_extra_credit import AboutExtraCredit
 
 
-class TestPathToEnlightenment(unittest.TestCase):
-
-    def test_koans_kjc_should_equal_koans_orig(self):
-        'TEMPORARY TEST:  New test loader should load the same tests as the original.'
-        # FIXME:  Find a better way to test this.
-        expected = list(original_test_suite())
-        received = list(pte.koans())
-        self.assertListEqual(expected, received)
-        return
-
-
 def original_test_suite():
     loader = unittest.TestLoader()
     original_suite = unittest.TestSuite()
@@ -102,3 +91,14 @@ def original_test_suite():
     original_suite.addTests(loader.loadTestsFromTestCase(AboutExtraCredit))
     original_suite.addTests(loader.loadTestsFromTestCase(AboutRegex))
     return original_suite
+
+
+class TestPathToEnlightenment(unittest.TestCase):
+
+    def test_koans_kjc_should_equal_koans_orig(self):
+        'TEMPORARY:  New loader should load the same tests as the original.'
+        # FIXME:  Find a better way to test this.
+        expected = list(original_test_suite())
+        received = list(pte.koans())
+        self.assertListEqual(expected, received)
+        return

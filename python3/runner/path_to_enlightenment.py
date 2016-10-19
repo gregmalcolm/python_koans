@@ -1,36 +1,62 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-# The path to enlightenment starts with the following:
+'''
+Functions to load the test cases ("koans") that make up the
+Path to Enlightenment.
+'''
 
-import importlib
 import io
 import unittest
 
 
-def module_name_and_class_name(full_name):
-    full_name = full_name.strip()
-    module_name, class_name = full_name.rsplit('.', 1)
-    return module_name, class_name
+# The path to enlightenment starts with the following:
+KOANS_FILENAME = 'koans.txt'
 
 
-def koan_names(filename):
-    with io.open(filename, 'rt', encoding='utf8') as f:
-        for full_name in f:
-            yield module_name_and_class_name(full_name)
+def filter_koan_names(lines):
+    '''
+    Strips leading and trailing whitespace, then filters out blank
+    lines and comment lines.
+    '''
+    for line in lines:
+        line = line.strip()
+        if line.startswith('#'):
+            continue
+        if line:
+            yield line
+    return
 
 
-def import_koan(module_name, class_name):
-    module = importlib.import_module(module_name)
-    testcase = getattr(module, class_name)
-    return testcase
+def names_from_file(filename):
+    '''
+    Opens the given ``filename`` and yields the fully-qualified names
+    of TestCases found inside (one per line).
+    '''
+    with io.open(filename, 'rt', encoding='utf8') as names_file:
+        for name in filter_koan_names(names_file):
+            yield name
+    return
 
 
-def koans(filename='koans.txt'):
+def koans_suite(names):
+    '''
+    Returns a ``TestSuite`` loaded with all tests found in the given
+    ``names``, preserving the order in which they are found.
+    '''
     suite = unittest.TestSuite()
     loader = unittest.TestLoader()
     loader.sortTestMethodsUsing = None
-    for module_name, class_name in koan_names(filename):
-        koan = import_koan(module_name, class_name)
-        suite.addTests(loader.loadTestsFromTestCase(koan))
+    for name in names:
+        tests = loader.loadTestsFromName(name)
+        suite.addTests(tests)
     return suite
+
+
+def koans(filename=KOANS_FILENAME):
+    '''
+    Returns a ``TestSuite`` loaded with all the koans (``TestCase``s)
+    listed in ``filename``.
+    '''
+    names = names_from_file(filename)
+    return koans_suite(names)
