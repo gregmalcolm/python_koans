@@ -105,10 +105,6 @@ class AboutAttributeAccess(Koan):
             self.no_of_getattribute_calls = 0
 
         def __getattribute__(self, attr_name):
-            #Uncomment for debugging info:
-            #print 'Debug __getattribute__(' + type(self).__name__ + \
-            #    "." + attr_name + ") dict=" + str(self.__dict__)
-
             # We need something that is outside the scope of this class:
             global stack_depth
             stack_depth += 1

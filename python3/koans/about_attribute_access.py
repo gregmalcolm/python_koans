@@ -93,7 +93,8 @@ class AboutAttributeAccess(Koan):
             self.no_of_getattribute_calls = 0
 
         def __getattribute__(self, attr_name):
-            global stack_depth # We need something that is outside the scope of this class
+            # We need something that is outside the scope of this class:
+            global stack_depth
             stack_depth += 1
 
             if stack_depth<=10: # to prevent a stack overflow
