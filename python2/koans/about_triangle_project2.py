@@ -2,10 +2,15 @@
 # -*- coding: utf-8 -*-
 
 from runner.koan import *
-
-# You need to finish implementing triangle() in the file 'triangle.py'
 from triangle import *
 
+# You need to finish implementing triangle() in the file 'triangle.py'
+
+# Reminder: How to distinguish what are valid and invalid line lengths to make up a triangle:
+# let a = length of shortest line segment
+# let b = length of 2nd shortest line segment
+# let c = length of longest line segment
+# If a + b > c, then you can make a valid triangle out of the three line segments, otherwise you cannot.
 
 class AboutTriangleProject2(Koan):
     # The first assignment did not talk about how to handle errors.
