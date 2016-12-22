@@ -8,7 +8,7 @@
 # and Joe O'brien of Edgecase. There are some differences and tweaks specific
 # to the Python language, but a great deal of it has been copied wholesale.
 # So thank guys!
-#
+#Hi we two gonna share this! Isn't that cool!!!!!!!!!!!!!!!!
 
 import sys
 
