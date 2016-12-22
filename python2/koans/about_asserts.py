@@ -77,3 +77,13 @@ class AboutAsserts(Koan):
         # Need an illustration? More reading can be found here:
         #
         #   http://bit.ly/__class__
+
+    def test_assert_in(self):
+        """
+        Sometimes we want to assert if a container contains a value
+        """
+        # fill in the blank
+        looking_for = ___
+        inside = ['important', 'not']
+        
+        self.assertIn(looking_for, inside)
