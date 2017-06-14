@@ -95,7 +95,10 @@ class AboutWithStatements(Koan):
 
     def test_finding_lines2(self):
         self.assertEqual(__, self.find_line2("example_file.txt"))
-        self.assertNotEqual(__, self.find_line2("example_file.txt"))
+        # The test below is broken as it accepts the default placeholder (__) as
+        # an answer. In fact it accepts anything that is not 'test\n' as an
+        # answer.
+        # self.assertNotEqual(__, self.find_line2("example_file.txt"))
 
     # ------------------------------------------------------------------
 
