@@ -4,3 +4,4 @@ syntax: glob
 .DS_Store
 answers
 .git
+.idea
