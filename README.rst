@@ -149,6 +149,10 @@ On Windows::
 (If that failed, try::
     
     $ pip install pypiwin32
+ 
+ then grab a proper version of pypiwin32 installer and install it::
+ 
+    https://github.com/mhammond/pywin32/releases
 )
 
 On Mac OS X::
