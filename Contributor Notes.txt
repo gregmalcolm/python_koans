@@ -2,7 +2,7 @@
 Testing a specific koan
 ===================================
 
-This will help when adding/modifing koans
+This will help when adding/modifying koans
 
 Running a whole test case:
 
