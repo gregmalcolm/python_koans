@@ -134,12 +134,6 @@ class TestSensei(unittest.TestCase):
             (AboutMessiahs(),"File 'about_messiahs.py', line 844")
         ]
 
-        expected = [
-            (AboutTennis(),"File 'about_tennis.py', line 2"),
-            (AboutTennis(),"File 'about_tennis.py', line 30"),
-            (AboutTennis(),"File 'about_tennis.py', line 299")
-        ]
-
         results = self.sensei.sortFailures("AboutTennis")
         self.assertEqual(3, len(results))
         self.assertEqual(2, results[0][0])
