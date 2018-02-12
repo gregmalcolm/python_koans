@@ -68,8 +68,7 @@ class AboutDecoratingWithClasses(Koan):
         self.assertEqual(__, self.parrot('pieces of eight'))
 
     # ------------------------------------------------------------------
-    # I think this cold be reworked with the previous lesson about decorating with functions
-    
+
     def sound_check(self):
         #Note: no decorator
         return "Testing..."
