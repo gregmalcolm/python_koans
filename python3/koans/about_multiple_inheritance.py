@@ -87,7 +87,7 @@ class AboutMultipleInheritance(Koan):
 
     def test_normal_methods_are_available_in_the_object(self):
         jeff = self.Spiderpig()
-        self.assertRegexpMatches(jeff.speak(), __)
+        self.assertRegex(jeff.speak(), __)
 
     def test_base_class_methods_are_also_available_in_the_object(self):
         jeff = self.Spiderpig()
@@ -126,16 +126,15 @@ class AboutMultipleInheritance(Koan):
 
     def test_confirm_the_mro_controls_the_calling_order(self):
         jeff = self.Spiderpig()
-        self.assertRegexpMatches(jeff.here(), 'Spiderpig')
+        self.assertRegex(jeff.here(), 'Spiderpig')
 
         next = super(AboutMultipleInheritance.Spiderpig, jeff)
-        self.assertRegexpMatches(next.here(), 'Pig')
+        self.assertRegex(next.here(), 'Pig')
 
         next = super(AboutMultipleInheritance.Pig, jeff)
-        self.assertRegexpMatches(next.here(), __)
+        self.assertRegex(next.here(), __)
 
         # Hang on a minute?!? That last class name might be a super class of
         # the 'jeff' object, but its hardly a superclass of Pig, is it?
         #
         # To avoid confusion it may help to think of super() as next_mro().
-

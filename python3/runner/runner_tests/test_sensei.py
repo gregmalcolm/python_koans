@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import sys
 import unittest
 import re
 
@@ -10,7 +9,6 @@ from libs.mock import *
 from runner.sensei import Sensei
 from runner.writeln_decorator import WritelnDecorator
 from runner.mockable_test_result import MockableTestResult
-from runner import path_to_enlightenment
 
 class AboutParrots:
     pass
@@ -32,7 +30,7 @@ class AboutFreemasons:
     pass
 
 error_assertion_with_message = """Traceback (most recent call last):
-  File "/Users/Greg/hg/python_koans/koans/about_exploding_trousers.py ", line 43, in test_durability
+  File "/Users/Greg/hg/python_koans/koans/about_exploding_trousers.py", line 43, in test_durability
     self.assertEqual("Steel","Lard", "Another fine mess you've got me into Stanley...")
 AssertionError: Another fine mess you've got me into Stanley..."""
 
@@ -85,23 +83,19 @@ First differing element 1:
 class TestSensei(unittest.TestCase):
 
     def setUp(self):
-        self.sensei = Sensei(WritelnDecorator(sys.stdout))
-        self.sensei.stream.writeln = Mock()
-        path_to_enlightenment.koans = Mock()
-        self.tests = Mock()
-        self.tests.countTestCases = Mock()
+        self.sensei = Sensei(WritelnDecorator(Mock()))
 
     def test_that_it_successes_only_count_if_passes_are_currently_allowed(self):
-        self.sensei.passesCount = Mock()
-        MockableTestResult.addSuccess = Mock()
-        self.sensei.addSuccess(Mock())
-        self.assertTrue(self.sensei.passesCount.called)
+        with patch('runner.mockable_test_result.MockableTestResult.addSuccess', Mock()):
+            self.sensei.passesCount = Mock()
+            self.sensei.addSuccess(Mock())
+            self.assertTrue(self.sensei.passesCount.called)
 
     def test_that_it_increases_the_passes_on_every_success(self):
-        pass_count = self.sensei.pass_count
-        MockableTestResult.addSuccess = Mock()
-        self.sensei.addSuccess(Mock())
-        self.assertEqual(pass_count + 1, self.sensei.pass_count)
+        with patch('runner.mockable_test_result.MockableTestResult.addSuccess', Mock()):
+            pass_count = self.sensei.pass_count
+            self.sensei.addSuccess(Mock())
+            self.assertEqual(pass_count + 1, self.sensei.pass_count)
 
     def test_that_nothing_is_returned_as_sorted_result_if_there_are_no_failures(self):
         self.sensei.failures = []
@@ -124,12 +118,6 @@ class TestSensei(unittest.TestCase):
             (AboutTennis(),"File 'about_tennis.py', line 2"),
             (AboutMrGumby(),"File 'about_mr_gumby.py', line odd"),
             (AboutMessiahs(),"File 'about_messiahs.py', line 844")
-        ]
-
-        expected = [
-            (AboutTennis(),"File 'about_tennis.py', line 2"),
-            (AboutTennis(),"File 'about_tennis.py', line 30"),
-            (AboutTennis(),"File 'about_tennis.py', line 299")
         ]
 
         results = self.sensei.sortFailures("AboutTennis")
@@ -216,58 +204,50 @@ class TestSensei(unittest.TestCase):
         self.sensei.pass_count = 0
         self.sensei.failures = Mock()
         words = self.sensei.say_something_zenlike()
-
         m = re.search("Beautiful is better than ugly", words)
         self.assertTrue(m and m.group(0))
 
-    def test_that_if_there_is_1_successes_it_will_say_the_second_zen_of_python_koans(self):
+    def test_that_if_there_is_1_success_it_will_say_the_second_zen_of_python_koans(self):
         self.sensei.pass_count = 1
         self.sensei.failures = Mock()
         words = self.sensei.say_something_zenlike()
-
         m = re.search("Explicit is better than implicit", words)
         self.assertTrue(m and m.group(0))
 
-    def test_that_if_there_is_10_successes_it_will_say_the_sixth_zen_of_python_koans(self):
+    def test_that_if_there_are_10_successes_it_will_say_the_sixth_zen_of_python_koans(self):
         self.sensei.pass_count = 10
         self.sensei.failures = Mock()
         words = self.sensei.say_something_zenlike()
-
         m = re.search("Sparse is better than dense", words)
         self.assertTrue(m and m.group(0))
 
-    def test_that_if_there_is_36_successes_it_will_say_the_final_zen_of_python_koans(self):
+    def test_that_if_there_are_36_successes_it_will_say_the_final_zen_of_python_koans(self):
         self.sensei.pass_count = 36
         self.sensei.failures = Mock()
         words = self.sensei.say_something_zenlike()
-
         m = re.search("Namespaces are one honking great idea", words)
         self.assertTrue(m and m.group(0))
 
-    def test_that_if_there_is_37_successes_it_will_say_the_first_zen_of_python_koans_again(self):
+    def test_that_if_there_are_37_successes_it_will_say_the_first_zen_of_python_koans_again(self):
         self.sensei.pass_count = 37
         self.sensei.failures = Mock()
         words = self.sensei.say_something_zenlike()
-
         m = re.search("Beautiful is better than ugly", words)
         self.assertTrue(m and m.group(0))
 
     def test_that_total_lessons_return_7_if_there_are_7_lessons(self):
         self.sensei.filter_all_lessons = Mock()
         self.sensei.filter_all_lessons.return_value = [1,2,3,4,5,6,7]
-
         self.assertEqual(7, self.sensei.total_lessons())
 
     def test_that_total_lessons_return_0_if_all_lessons_is_none(self):
         self.sensei.filter_all_lessons = Mock()
         self.sensei.filter_all_lessons.return_value = None
-
         self.assertEqual(0, self.sensei.total_lessons())
 
     def test_total_koans_return_43_if_there_are_43_test_cases(self):
         self.sensei.tests.countTestCases = Mock()
         self.sensei.tests.countTestCases.return_value = 43
-
         self.assertEqual(43, self.sensei.total_koans())
 
     def test_filter_all_lessons_will_discover_test_classes_if_none_have_been_discovered_yet(self):

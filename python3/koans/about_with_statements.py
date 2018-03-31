@@ -90,12 +90,13 @@ class AboutWithStatements(Koan):
     # ------------------------------------------------------------------
 
     def find_line2(self, file_name):
-        # Rewrite find_line using the Context Manager.
-        pass
+        # Using the context manager self.FileContextManager, rewrite this
+        # function to return the first line containing the letter 'e'.
+        return None
 
     def test_finding_lines2(self):
-        self.assertEqual(__, self.find_line2("example_file.txt"))
-        self.assertNotEqual(__, self.find_line2("example_file.txt"))
+        self.assertNotEqual(None, self.find_line2("example_file.txt"))
+        self.assertEqual('test\n', self.find_line2("example_file.txt"))
 
     # ------------------------------------------------------------------
 

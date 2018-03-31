@@ -8,7 +8,7 @@ Python Koans
 Python Koans is a port of Edgecase's "Ruby Koans" which can be found
 at http://rubykoans.com/.
 
-.. image:: http://i442.photobucket.com/albums/qq150/gregmalcolm/PythonKoansScreenshot.png
+.. image:: https://user-images.githubusercontent.com/2614930/28401740-ec6214b2-6cd0-11e7-8afd-30ed3102bfd6.png
 
 Python Koans is an interactive tutorial for learning the Python programming
 language by making tests pass.
@@ -63,7 +63,7 @@ You can download Python from here:
     http://www.python.org/download
 
 After installing Python make sure the folder containing the python executable
-is in the system path. In other words, you need to be able to be able to run
+is in the system path. In other words, you need to be able to run
 Python from a command console. With Python 2 it will be called `python`
 or `python.exe` depending on the operating system. For Python 3 it will either
 be `python3` or for windows it will be `python.exe`.
@@ -99,7 +99,7 @@ or::
 In my case I'm using Python 3 with windows, so I fire up my command
 shell (cmd.exe) and run this:
 
-.. image:: http://i442.photobucket.com/albums/qq150/gregmalcolm/GettingStarted.png
+.. image:: https://user-images.githubusercontent.com/2614930/28401747-f723ff00-6cd0-11e7-9b9a-a6993b753cf6.png
 
 Apparently a test failed::
 
@@ -122,7 +122,7 @@ expected value should be. For example::
 This is where the Python Command Line can come in handy. In this case I can
 fire up the command line, recreate the scenario and run queries:
 
-.. image:: http://i442.photobucket.com/albums/qq150/gregmalcolm/DebuggingPython.png
+.. image:: https://user-images.githubusercontent.com/2614930/28401750-f9dcb296-6cd0-11e7-98eb-c20318eada33.png
 
 Sniffer Support
 ---------------
@@ -145,6 +145,11 @@ On Linux::
 On Windows::
 
     $ pip install pywin32
+    
+(If that failed, try::
+    
+    $ pip install pypiwin32
+)
 
 On Mac OS X::
 

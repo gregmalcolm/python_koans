@@ -7,14 +7,18 @@ from runner.koan import *
 class AboutNewStyleClasses(Koan):
     class OldStyleClass:
         "An old style class"
-        # Original class style have been phased out in Python 3.
+        # Original style classes from Python 2.1 and earlier, also known as
+        # "classic classes", have been phased out in Python 3.
 
     class NewStyleClass(object):
         "A new style class"
-        # Introduced in Python 2.2
+        # Introduced in Python 2.2 to unify types and classes.
+        #
+        # If you want to learn more, see:
+        # https://www.python.org/download/releases/2.2.3/descrintro/
         #
         # Aside from this set of tests, Python Koans sticks exclusively to this
-        # kind of class
+        # kind of class.
         pass
 
     def test_new_style_classes_inherit_from_object_base_class(self):
@@ -46,7 +50,7 @@ class AboutNewStyleClasses(Koan):
 
     def test_new_style_classes_have_same_class_as_type(self):
         new_style = self.NewStyleClass()
-        self.assertEqual(__, self.NewStyleClass.__class__)
+        self.assertEqual(__, self.NewStyleClass.__class__.__name__)
         self.assertEqual(
             __,
             type(self.NewStyleClass) == self.NewStyleClass.__class__)

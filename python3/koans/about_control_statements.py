@@ -65,7 +65,7 @@ class AboutControlStatements(Koan):
             ("Lancelot", "Blue"),
             ("Galahad", "I don't know!"),
             ("Robin", "Blue! I mean Green!"),
-            ("Arthur", "Is that an African Swallow or Amazonian Swallow?")
+            ("Arthur", "Is that an African Swallow or European Swallow?")
         ]
         result = []
         for knight, answer in round_table:
@@ -73,8 +73,8 @@ class AboutControlStatements(Koan):
 
         text = "Green"
 
-        self.assertRegexpMatches(result[2], text)
+        self.assertRegex(result[2], text)
 
-        self.assertNoRegexpMatches(result[0], text)
-        self.assertNoRegexpMatches(result[1], text)
-        self.assertNoRegexpMatches(result[3], text)
+        self.assertNotRegex(result[0], text)
+        self.assertNotRegex(result[1], text)
+        self.assertNotRegex(result[3], text)
