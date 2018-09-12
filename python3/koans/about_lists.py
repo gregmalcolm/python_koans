@@ -10,7 +10,7 @@ from runner.koan import *
 class AboutLists(Koan):
     def test_creating_lists(self):
         empty_list = list()
-        self.assertEqual(list, type(empty_list))
+        self.assertEqual(__, type(empty_list))
         self.assertEqual(__, len(empty_list))
 
     def test_list_literals(self):
