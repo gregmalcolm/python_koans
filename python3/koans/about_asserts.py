@@ -74,5 +74,5 @@ class AboutAsserts(Koan):
 
         # Need an illustration? More reading can be found here:
         #
-        #   https://github.com/gregmalcolm/python_koans/wiki/Class-Attribute_
+        #   https://github.com/gregmalcolm/python_koans/wiki/Class-Attribute
 
