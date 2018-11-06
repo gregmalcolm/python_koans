@@ -65,8 +65,8 @@ class AboutIteration(Koan):
         self.assertEqual(__, even_numbers)
 
     def test_filter_returns_all_items_matching_criterion(self):
-       def is_big_name(item):
-           return len(item) > 4
+        def is_big_name(item):
+             return len(item) > 4
 
         names = ["Jim", "Bill", "Clarence", "Doug", "Eli", "Elizabeth"]
         iterator = filter(is_big_name, names)
