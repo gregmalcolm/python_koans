@@ -9,7 +9,7 @@ class AboutStringManipulation(Koan):
         value1 = 'one'
         value2 = 2
         string = "The values are {0} and {1}".format(value1, value2)
-        self.assertEqual(__, string)
+        self.assertEqual(value2, string)
 
     def test_formatted_values_can_be_shown_in_any_order_or_be_repeated(self):
         value1 = 'doh'
