@@ -68,8 +68,8 @@ class AboutStringManipulation(Koan):
         self.assertEqual("Now is the time", ' '.join(words))
 
     def test_strings_can_change_case(self):
-        self.assertEqual(__, 'guido'.capitalize())
-        self.assertEqual(__, 'guido'.upper())
-        self.assertEqual(__, 'TimBot'.lower())
-        self.assertEqual(__, 'guido van rossum'.title())
-        self.assertEqual(__, 'ToTaLlY aWeSoMe'.swapcase())
+        self.assertEqual('Guido', 'guido'.capitalize())
+        self.assertEqual('GUIDO', 'guido'.upper())
+        self.assertEqual('timbot', 'TimBot'.lower())
+        self.assertEqual('Guido Van Rossum', 'guido van rossum'.title())
+        self.assertEqual('tOtAlLy AwEsOmE', 'ToTaLlY aWeSoMe'.swapcase())
