@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-
+import math
 from runner.koan import *
+
 
 class AboutStringManipulation(Koan):
 
@@ -9,20 +10,19 @@ class AboutStringManipulation(Koan):
         value1 = 'one'
         value2 = 2
         string = "The values are {0} and {1}".format(value1, value2)
-        self.assertEqual(__, string)
+        self.assertEqual('The values are one and 2', string)
 
     def test_formatted_values_can_be_shown_in_any_order_or_be_repeated(self):
         value1 = 'doh'
         value2 = 'DOH'
         string = "The values are {1}, {0}, {0} and {1}!".format(value1, value2)
-        self.assertEqual(__, string)
+        self.assertEqual('The values are DOH, doh, doh and DOH!', string)
 
     def test_any_python_expression_may_be_interpolated(self):
         import math # import a standard python module with math functions
 
         decimal_places = 4
-        string = "The square root of 5 is {0:.{1}f}".format(math.sqrt(5),
-            decimal_places)
+        string = "The square root of 5 is {0:.{1}f}".format(math.sqrt(5), decimal_places)
         self.assertEqual(__, string)
 
     def test_you_can_get_a_substring_from_a_string(self):
