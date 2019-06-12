@@ -105,7 +105,7 @@ Apparently a test failed::
 
     AssertionError: False is not True
 
-It also tells me exactly where the problem in, its an assert on line 12
+It also tells me exactly where the problem is, it's an assert on line 12
 of .\\koans\\about_asserts.py. This one is easy, just change False to True to
 make the test pass.
 
