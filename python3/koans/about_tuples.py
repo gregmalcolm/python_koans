@@ -39,8 +39,8 @@ class AboutTuples(Koan):
     def test_tuples_of_one_look_peculiar(self):
         self.assertEqual(__, (1).__class__)
         self.assertEqual(__, (1,).__class__)
-        self.assertEqual(__, ("I'm a tuple",))
-        self.assertEqual(__, ("Not a tuple"))
+        self.assertEqual(__, ("I'm a tuple",).__class__)
+        self.assertEqual(__, ("Not a tuple").__class__)
 
     def test_tuple_constructor_can_be_surprising(self):
         self.assertEqual(__, tuple("Surprise!"))
