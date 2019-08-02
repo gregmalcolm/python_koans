@@ -28,12 +28,12 @@ class AboutClasses(Koan):
 
     def test_init_method_is_the_constructor(self):
         dog = self.Dog2()
-        self.assertEqual(__, dog._name)
+        self.assertEqual("Paul", dog._name)
 
     def test_private_attributes_are_not_really_private(self):
         dog = self.Dog2()
         dog.set_name("Fido")
-        self.assertEqual(__, dog._name)
+        self.assertEqual("Fido", dog._name)
         # The _ prefix in _name implies private ownership, but nothing is truly
         # private in Python.
 
