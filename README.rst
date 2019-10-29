@@ -124,6 +124,15 @@ fire up the command line, recreate the scenario and run queries:
 
 .. image:: https://user-images.githubusercontent.com/2614930/28401750-f9dcb296-6cd0-11e7-98eb-c20318eada33.png
 
+##GA SEIR Homework - 10/29
+[x] koans.about_asserts.AboutAsserts
+[] koans.about_strings.AboutStrings
+[] koans.about_lists.AboutLists
+[] koans.about_list_assignments.AboutListAssignments
+[] koans.about_dictionaries.AboutDictionaries
+[] koans.about_string_manipulation.AboutStringManipulation
+[] koans.about_control_statements.AboutControlStatements
+
 Sniffer Support
 ---------------
 
