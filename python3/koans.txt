@@ -38,3 +38,4 @@ koans.about_proxy_object_project.AboutProxyObjectProject
 koans.about_proxy_object_project.TelevisionTest
 koans.about_extra_credit.AboutExtraCredit
 koans.about_regex.AboutRegex
+koans.about_coroutines.AboutCoroutines
