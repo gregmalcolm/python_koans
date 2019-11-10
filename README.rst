@@ -2,8 +2,8 @@
 Python Koans
 ============
 
-.. image:: https://travis-ci.org/gregmalcolm/python_koans.png?branch=master
-   :target: http://travis-ci.org/gregmalcolm/python_koans
+.. image:: https://travis-ci.org/gregmalcolm/python_koans.svg?branch=master
+    :target: https://travis-ci.org/gregmalcolm/python_koans
 
 Python Koans is a port of Edgecase's "Ruby Koans" which can be found
 at http://rubykoans.com/.
@@ -33,13 +33,13 @@ a taste of Test Driven Development (TDD).
 Downloading Python Koans
 ------------------------
 
-Python Koans is available through git on Github:
+Python Koans is available through git on GitHub:
 
-    http://github.com/gregmalcolm/python_koans
+    https://github.com/gregmalcolm/python_koans
 
-It is also mirrored on bitbucket for Mercurial users:
+It is also mirrored on Bitbucket for Mercurial users:
 
-    http://bitbucket.org/gregmalcolm/python_koans
+    https://bitbucket.org/gregmalcolm/python_koans
 
 Either site will allow you to download the source as a zip/gz/bz2.
 
@@ -60,7 +60,7 @@ likely give you problems.
 
 You can download Python from here:
 
-    http://www.python.org/download
+    https://www.python.org/downloads/
 
 After installing Python make sure the folder containing the python executable
 is in the system path. In other words, you need to be able to run
@@ -70,7 +70,7 @@ be `python3` or for windows it will be `python.exe`.
 
 If you have problems, this may help:
 
-    http://www.python.org/about/gettingstarted
+    https://www.python.org/about/gettingstarted/
 
 Windows users may also want to update the line in the batch file `run.bat` to
 set the python path::
@@ -83,7 +83,7 @@ Getting Started
 
 Jake Hebbert has created a couple of screencasts available here:
 
-http://www.youtube.com/watch?v=e2WXgXEjbHY&list=PL5Up_u-XkWgNcunP_UrTJG_3EXgbK2BQJ&index=1
+https://www.youtube.com/watch?v=e2WXgXEjbHY&list=PL5Up_u-XkWgNcunP_UrTJG_3EXgbK2BQJ&index=1
 
 Or if you prefer to read:
 
@@ -151,7 +151,7 @@ On Windows::
     $ pip install pypiwin32
 )
 
-On Mac OS X::
+On macOS::
 
     $ pip install MacFSEvents
 
@@ -193,8 +193,8 @@ Finding More Koan Projects
 --------------------------
 
 There are number of other great Koan projects out there for various languages
-and frameworks. Most of them can be found in github. Also there is a little
-koans activity on bitbucket.
+and frameworks. Most of them can be found in GitHub. Also there is a little
+koans activity on Bitbucket.
 
 * Github koan projects:
     https://github.com/search?q=koans&ref=cmdform
