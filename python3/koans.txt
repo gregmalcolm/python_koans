@@ -1,8 +1,8 @@
 # Lines starting with # are ignored.
 # koans.about_asserts.AboutAsserts
- koans.about_strings.AboutStrings
+# koans.about_strings.AboutStrings
 # koans.about_none.AboutNone
-# koans.about_lists.AboutLists
+  koans.about_lists.AboutLists
 # koans.about_list_assignments.AboutListAssignments
 # koans.about_dictionaries.AboutDictionaries
 # koans.about_string_manipulation.AboutStringManipulation
