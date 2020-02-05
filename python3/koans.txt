@@ -4,8 +4,8 @@
 # koans.about_none.AboutNone
 # koans.about_lists.AboutLists
 # koans.about_list_assignments.AboutListAssignments
-  koans.about_dictionaries.AboutDictionaries
-# koans.about_string_manipulation.AboutStringManipulation
+# koans.about_dictionaries.AboutDictionaries
+  koans.about_string_manipulation.AboutStringManipulation
 # koans.about_tuples.AboutTuples
 # koans.about_methods.AboutMethods
 # koans.about_control_statements.AboutControlStatements
