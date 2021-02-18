@@ -1,7 +1,11 @@
 language: python
 
 python:
+<<<<<<< HEAD
     - 3.2
+=======
+    - 2.7
+>>>>>>> travis probably doesn't need to test pre 3.3 either
     - 3.3
     - 3.4
     - 3.5
