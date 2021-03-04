@@ -145,15 +145,11 @@ On Linux::
 On Windows::
 
     $ pip install pywin32
+
+    Also available here:
     
-(If that failed, try::
-    
-    $ pip install pypiwin32
- 
- then grab a proper version of pypiwin32 installer and install it::
- 
     https://github.com/mhammond/pywin32/releases
-)
+
 
 On Mac OS X::
 
