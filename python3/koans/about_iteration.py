@@ -64,21 +64,23 @@ class AboutIteration(Koan):
 
         self.assertEqual(__, even_numbers)
 
-    def test_just_return_first_item_found(self):
+    def test_filter_returns_all_items_matching_criterion(self):
         def is_big_name(item):
-            return len(item) > 4
+             return len(item) > 4
 
-        names = ["Jim", "Bill", "Clarence", "Doug", "Eli"]
-        name = None
-
+        names = ["Jim", "Bill", "Clarence", "Doug", "Eli", "Elizabeth"]
         iterator = filter(is_big_name, names)
+
+        self.assertEqual(__, next(iterator))
+        self.assertEqual(__, next(iterator))
+
         try:
-            name = next(iterator)
+            next(iterator)
+            pass
         except StopIteration:
             msg = 'Ran out of big names'
 
-        self.assertEqual(__, name)
-
+        self.assertEquals(__, msg)
 
     # ------------------------------------------------------------------
 
@@ -120,18 +122,11 @@ class AboutIteration(Koan):
         result = map(self.add_ten, range(1,4))
         self.assertEqual(__, list(result))
 
-        try:
-            file = open("example_file.txt")
+    def test_lines_in_a_file_are_iterable_sequences_too(self):
+        def make_upcase(line):
+            return line.strip().title()
 
-            try:
-                def make_upcase(line):
-                    return line.strip().upper()
-                upcase_lines = map(make_upcase, file.readlines())
-                self.assertEqual(__, list(upcase_lines))
-            finally:
-                # Arg, this is ugly.
-                # We will figure out how to fix this later.
-                file.close()
-        except IOError:
-            # should never happen
-            self.fail()
+        file = open("example_file.txt")
+        upcase_lines = map(make_upcase, file.readlines())
+        self.assertEqual(__, list(upcase_lines))
+        file.close()
