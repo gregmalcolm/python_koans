@@ -50,10 +50,8 @@ Installing Python Koans
 Aside from downloading or checking out the latest version of Python Koans, you
 need to install the Python interpreter.
 
-At this time of writing, there are two versions of the Python Koans:
-
-* one for use with Python 2.7 (earlier versions are no longer supported)
-* one for Python 3.3+
+At this time of writing, we support Python3. The policy is to try to keep
+current with the latest production version.
 
 You should be able to work with newer Python versions, but older ones will
 likely give you problems.
@@ -63,10 +61,8 @@ You can download Python from here:
     http://www.python.org/download
 
 After installing Python make sure the folder containing the python executable
-is in the system path. In other words, you need to be able to run
-Python from a command console. With Python 2 it will be called `python`
-or `python.exe` depending on the operating system. For Python 3 it will either
-be `python3` or for windows it will be `python.exe`.
+is in the system path. In other words, you need to be able to run Python from a
+command console. It will either be `python3` or for windows it will be `python.exe`.
 
 If you have problems, this may help:
 
@@ -75,7 +71,7 @@ If you have problems, this may help:
 Windows users may also want to update the line in the batch file `run.bat` to
 set the python path::
 
-    SET PYTHON_PATH=C:\Python37
+    SET PYTHON_PATH=C:\Python39
 
 
 Getting Started
@@ -147,7 +143,7 @@ On Windows::
     $ pip install pywin32
 
     Also available here:
-    
+
     https://github.com/mhammond/pywin32/releases
 
 On Mac OS X::
