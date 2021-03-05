@@ -37,10 +37,6 @@ Python Koans is available through git on Github:
 
     http://github.com/gregmalcolm/python_koans
 
-It is also mirrored on bitbucket for Mercurial users:
-
-    http://bitbucket.org/gregmalcolm/python_koans
-
 Either site will allow you to download the source as a zip/gz/bz2.
 
 
@@ -83,8 +79,7 @@ http://www.youtube.com/watch?v=e2WXgXEjbHY&list=PL5Up_u-XkWgNcunP_UrTJG_3EXgbK2B
 
 Or if you prefer to read:
 
-From a \*nix terminal or windows command prompt go to the python
-koans\\python_VERSION folder and run::
+From a \*nix terminal or windows command prompt run::
 
     python contemplate_koans.py
 
