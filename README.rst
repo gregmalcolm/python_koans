@@ -146,10 +146,9 @@ On Windows::
 
     $ pip install pywin32
 
-(If that failed, try::
-
-    $ pip install pypiwin32
-)
+    Also available here:
+    
+    https://github.com/mhammond/pywin32/releases
 
 On Mac OS X::
 
