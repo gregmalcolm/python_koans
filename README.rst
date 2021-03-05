@@ -37,10 +37,6 @@ Python Koans is available through git on Github:
 
     http://github.com/gregmalcolm/python_koans
 
-It is also used to be mirrored on bitbucket for Mercurial users (deprecated):
-
-    http://bitbucket.org/gregmalcolm/python_koans
-
 Either site will allow you to download the source as a zip/gz/bz2.
 
 
