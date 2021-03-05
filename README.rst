@@ -1,4 +1,3 @@
-use the latest one
 ============
 Python Koans
 ============
