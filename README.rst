@@ -75,7 +75,7 @@ If you have problems, this may help:
 Windows users may also want to update the line in the batch file `run.bat` to
 set the python path::
 
-    SET PYTHON_PATH=C:\Python27
+    SET PYTHON_PATH=C:\Python37
 
 
 Getting Started
@@ -149,7 +149,6 @@ On Windows::
     Also available here:
     
     https://github.com/mhammond/pywin32/releases
-
 
 On Mac OS X::
 
