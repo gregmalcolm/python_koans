@@ -1,10 +1,7 @@
 language: python
 
 python:
-    - 3.2
-    - 3.3
-    - 3.4
-    - 3.5
+    - 3.9
 
 script:
     - PYTHON_VER=`python -c 'import sys; print(sys.version_info[0])'`
