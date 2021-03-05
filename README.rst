@@ -197,6 +197,14 @@ koans activity on bitbucket.
 * Bitbucket koan projects:
     https://bitbucket.org/repo/all?name=koans
 
+Translations
+------------
+
+Translations are always welcome! Feel free to add one to this README
+if you happen to work on one:
+
+https://github.com/mswell/python_koans_br
+
 Acknowledgments
 ---------------
 
@@ -209,3 +217,6 @@ headstart by taking over a code base initiated by the combined Mikes of
 FPIP. So here's a little plug for their very cool Python podcast:
 
   http://frompythonimportpodcast.com/
+
+A big thanks also to Mike Pirnat @pirnat and Kevin Chase @kjc have pitched in
+as co-maintainers at various times
