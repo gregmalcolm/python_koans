@@ -70,3 +70,6 @@ class AboutScoringProject(Koan):
     def test_ones_not_left_out(self):
         self.assertEqual(300, score([1,2,2,2]))
         self.assertEqual(350, score([1,5,2,2,2]))
+
+    def test_score_of_five_1s_is_1200(self):
+        self.assertEqual(1200, score([1,1,1,1,1]))
