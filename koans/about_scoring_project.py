@@ -73,3 +73,6 @@ class AboutScoringProject(Koan):
 
     def test_score_of_five_1s_is_1200(self):
         self.assertEqual(1200, score([1,1,1,1,1]))
+
+    def test_score_of_five_5s_is_600(self):
+        self.assertEqual(600, score([5,5,5,5,5]))
