@@ -9,7 +9,6 @@ Python Koans
     :target: https://gitpod.io/#https://github.com/gregmalcolm/python_koans
 
 <h2>One click installation:</h2>
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io#https://github.com/4GeeksAcademy/python-http-requests-api-tutorial-exercises.git)
 
 .. image:: https://gitpod.io/button/open-in-gitpod.svg
     :target: https://gitpod.io/#https://github.com/gregmalcolm/python_koans
