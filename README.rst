@@ -8,7 +8,8 @@ Python Koans
 .. image:: https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod
     :target: https://gitpod.io/#https://github.com/gregmalcolm/python_koans
 
-<h2>One click installation:</h2>
+One click installation:
+-----------------------
 
 .. image:: https://gitpod.io/button/open-in-gitpod.svg
     :target: https://gitpod.io/#https://github.com/gregmalcolm/python_koans
