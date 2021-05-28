@@ -5,7 +5,8 @@ Python Koans
 .. image:: https://travis-ci.org/gregmalcolm/python_koans.png?branch=master
    :target: http://travis-ci.org/gregmalcolm/python_koans
 
-[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/gregmalcolm/python_koans)
+.. image:: https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod
+    :target: https://gitpod.io/#https://github.com/gregmalcolm/python_koans
 
 <a href="https://gitpod.io/#https://github.com/gregmalcolm/python_koans"><img src="https://gitpod.io/button/open-in-gitpod.svg" /></a>
 
