@@ -8,7 +8,9 @@ Python Koans
 .. image:: https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod
     :target: https://gitpod.io/#https://github.com/gregmalcolm/python_koans
 
-<a href="https://gitpod.io/#https://github.com/gregmalcolm/python_koans"><img src="https://gitpod.io/button/open-in-gitpod.svg" /></a>
+This project is ready to code in gitpod.
+.. image:: ttps://gitpod.io/button/open-in-gitpod.svg
+    :target: https://gitpod.io/#https://github.com/gregmalcolm/python_koans
 
 Python Koans is a port of Edgecase's "Ruby Koans" which can be found
 at http://rubykoans.com/.
