@@ -6,13 +6,13 @@ Python Koans
    :target: http://travis-ci.org/gregmalcolm/python_koans
 
 .. image:: https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod
-    :target: https://gitpod.io/#https://github.com/gregmalcolm/python_koans
+    :target: https://gitpod.io/#https://github.com/brootware/python_koans
 
 One click installation:
 -----------------------
 
 .. image:: https://gitpod.io/button/open-in-gitpod.svg
-    :target: https://gitpod.io/#https://github.com/gregmalcolm/python_koans
+    :target: https://gitpod.io/#https://github.com/brootware/python_koans
 
 Python Koans is a port of Edgecase's "Ruby Koans" which can be found
 at http://rubykoans.com/.
