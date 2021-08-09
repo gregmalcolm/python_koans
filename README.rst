@@ -6,19 +6,19 @@ Python Koans
    :target: http://travis-ci.org/gregmalcolm/python_koans
 
 .. image:: https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod
-    :target: https://gitpod.io/#https://github.com/brootware/python_koans
+    :target: https://gitpod.io/#https://github.com/gregmalcolm/python_koans
     
 .. image:: https://www.eclipse.org/che/contribute.svg
-    :target: https://workspaces.openshift.com/f?url=https://github.com/brootware/python_koans
+    :target: https://workspaces.openshift.com/f?url=https://gitpod.io/#https://github.com/gregmalcolm/python_koans
 
 One click installation:
 -----------------------
 
 .. image:: https://www.eclipse.org/che/contribute.svg
-    :target: https://workspaces.openshift.com/f?url=https://github.com/brootware/python_koans
+    :target: https://workspaces.openshift.com/f?url=https://gitpod.io/#https://github.com/gregmalcolm/python_koans
 |   or
 .. image:: https://gitpod.io/button/open-in-gitpod.svg
-    :target: https://gitpod.io/#https://github.com/brootware/python_koans
+    :target: https://gitpod.io/#https://gitpod.io/#https://github.com/gregmalcolm/python_koans
 
 |
 
