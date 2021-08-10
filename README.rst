@@ -5,6 +5,23 @@ Python Koans
 .. image:: https://travis-ci.org/gregmalcolm/python_koans.png?branch=master
    :target: http://travis-ci.org/gregmalcolm/python_koans
 
+.. image:: https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod
+    :target: https://gitpod.io/#https://github.com/gregmalcolm/python_koans
+    
+.. image:: https://www.eclipse.org/che/contribute.svg
+    :target: https://workspaces.openshift.com/f?url=https://gitpod.io/#https://github.com/gregmalcolm/python_koans
+
+One click installation:
+-----------------------
+
+.. image:: https://www.eclipse.org/che/contribute.svg
+    :target: https://workspaces.openshift.com/f?url=https://gitpod.io/#https://github.com/gregmalcolm/python_koans
+|   or
+.. image:: https://gitpod.io/button/open-in-gitpod.svg
+    :target: https://gitpod.io/#https://gitpod.io/#https://github.com/gregmalcolm/python_koans
+
+|
+
 Python Koans is a port of Edgecase's "Ruby Koans" which can be found
 at http://rubykoans.com/.
 
