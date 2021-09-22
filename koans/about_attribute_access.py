@@ -1,13 +1,6 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
+import unittest
 
-#
-# Partially based on AboutMessagePassing in the Ruby Koans
-#
-
-from runner.koan import *
-
-class AboutAttributeAccess(Koan):
+class AboutAttributeAccess(unittest.TestCase):
 
     class TypicalObject:
         pass
@@ -208,3 +201,6 @@ class AboutAttributeAccess(Koan):
         setter = self.ScarySetter()
 
         self.assertEqual(__, setter._num_of_private_coconuts)
+
+if __name__ == "__main__":
+    unittest.main()
