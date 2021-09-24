@@ -32,7 +32,7 @@ class AboutDictionaries(Koan):
         expected = { 'two': 'dos', 'one': __ }
         self.assertDictEqual(expected, babel_fish)
 
-    def test_dictionary_is_ordered(self):
+    def test_comparing_dictionaries_with_different_order_of_keys(self):
         dict1 = { 'one': 'uno', 'two': 'dos' }
         dict2 = { 'two': 'dos', 'one': 'uno' }
 
