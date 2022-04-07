@@ -103,9 +103,7 @@ class AboutAttributeAccess(Koan):
                 # Guess what happens when self.no_of_getattribute_calls is
                 # accessed?
 
-            # Using 'object' directly because using super() here will also
-            # trigger a __getattribute__() call.
-            return object.__getattribute__(self, attr_name)
+            return super().__getattribute__(attr_name)
 
         def my_method(self):
             pass
@@ -158,7 +156,7 @@ class AboutAttributeAccess(Koan):
             elif attr_name[-3:] == 'pie':
                 new_attr_name = "a_" + new_attr_name
 
-            object.__setattr__(self, new_attr_name, value)
+            super().__setattr__(new_attr_name, value)
 
     def test_setattr_intercepts_attribute_assignments(self):
         fanboy = self.PossessiveSetter()
@@ -188,7 +186,7 @@ class AboutAttributeAccess(Koan):
             if attr_name[0] != '_':
                 new_attr_name = "altered_" + new_attr_name
 
-            object.__setattr__(self, new_attr_name, value)
+            super().__setattr__(new_attr_name, value)
 
     def test_it_modifies_external_attribute_as_expected(self):
         setter = self.ScarySetter()
