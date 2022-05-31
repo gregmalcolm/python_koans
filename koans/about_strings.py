@@ -61,34 +61,34 @@ world!
 
     def test_plus_concatenates_strings(self):
         string = "Hello, " + "world"
-        self.assertEqual(__, string)
+        self.assertEqual("Hello, world", string)
 
     def test_adjacent_strings_are_concatenated_automatically(self):
         string = "Hello" ", " "world"
-        self.assertEqual(__, string)
+        self.assertEqual("Hello, world", string)
 
     def test_plus_will_not_modify_original_strings(self):
         hi = "Hello, "
         there = "world"
         string = hi + there
-        self.assertEqual(__, hi)
-        self.assertEqual(__, there)
+        self.assertEqual("Hello, ", hi)
+        self.assertEqual("world", there)
 
     def test_plus_equals_will_append_to_end_of_string(self):
         hi = "Hello, "
         there = "world"
         hi += there
-        self.assertEqual(__, hi)
+        self.assertEqual("Hello, world", hi)
 
     def test_plus_equals_also_leaves_original_string_unmodified(self):
         original = "Hello, "
         hi = original
         there = "world"
         hi += there
-        self.assertEqual(__, original)
+        self.assertEqual("Hello, ", original)
 
     def test_most_strings_interpret_escape_characters(self):
         string = "\n"
         self.assertEqual('\n', string)
         self.assertEqual("""\n""", string)
-        self.assertEqual(__, len(string))
+        self.assertEqual(1, len(string))
