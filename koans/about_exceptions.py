@@ -3,8 +3,8 @@
 
 from runner.koan import *
 
-class AboutExceptions(Koan):
 
+class AboutExceptions(Koan):
     class MySpecialError(RuntimeError):
         pass
 
@@ -29,8 +29,10 @@ class AboutExceptions(Koan):
         self.assertEqual(__, isinstance(ex2, Exception))
         self.assertEqual(__, isinstance(ex2, RuntimeError))
 
-        self.assertTrue(issubclass(RuntimeError, Exception), \
-            "RuntimeError is a subclass of Exception")
+        self.assertTrue(
+            issubclass(RuntimeError, Exception),
+            "RuntimeError is a subclass of Exception",
+        )
 
         self.assertEqual(__, ex2.args[0])
 
@@ -56,7 +58,6 @@ class AboutExceptions(Koan):
             result = 'no damage done'
 
         self.assertEqual(__, result)
-
 
     def test_finally_clause(self):
         result = None

@@ -6,7 +6,8 @@ from runner.koan import *
 from . import jims
 from . import joes
 
-counter = 0 # Global
+counter = 0  # Global
+
 
 class AboutScope(Koan):
     #
@@ -16,7 +17,8 @@ class AboutScope(Koan):
     #
 
     def test_dog_is_not_available_in_the_current_scope(self):
-        with self.assertRaises(___): fido = Dog()
+        with self.assertRaises(___):
+            fido = Dog()
 
     def test_you_can_reference_nested_classes_using_the_scope_operator(self):
         fido = jims.Dog()
@@ -83,16 +85,20 @@ class AboutScope(Koan):
 
     def local_access(self):
         stuff = 'eels'
+
         def from_the_league():
             stuff = 'this is a local shop for local people'
             return stuff
+
         return from_the_league()
 
     def nonlocal_access(self):
         stuff = 'eels'
+
         def from_the_boosh():
             nonlocal stuff
             return stuff
+
         return from_the_boosh()
 
     def test_getting_something_locally(self):

@@ -10,11 +10,11 @@
 
 from runner.koan import *
 
-class AboutGenerators(Koan):
 
+class AboutGenerators(Koan):
     def test_generating_values_on_the_fly(self):
         result = list()
-        bacon_generator = (n + ' bacon' for n in ['crunchy','veggie','danish'])
+        bacon_generator = (n + ' bacon' for n in ['crunchy', 'veggie', 'danish'])
 
         for bacon in bacon_generator:
             result.append(bacon)
@@ -22,13 +22,14 @@ class AboutGenerators(Koan):
         self.assertEqual(__, result)
 
     def test_generators_are_different_to_list_comprehensions(self):
-        num_list = [x*2 for x in range(1,3)]
-        num_generator = (x*2 for x in range(1,3))
+        num_list = [x * 2 for x in range(1, 3)]
+        num_generator = (x * 2 for x in range(1, 3))
 
         self.assertEqual(2, num_list[0])
 
         # A generator has to be iterated through.
-        with self.assertRaises(___): num = num_generator[0]
+        with self.assertRaises(___):
+            num = num_generator[0]
 
         self.assertEqual(__, list(num_generator)[0])
 
@@ -74,7 +75,7 @@ class AboutGenerators(Koan):
             yield x * x
 
     def test_generator_method_with_parameter(self):
-        result = self.square_me(range(2,5))
+        result = self.square_me(range(2, 5))
         self.assertEqual(__, list(result))
 
     # ------------------------------------------------------------------
@@ -87,7 +88,7 @@ class AboutGenerators(Koan):
             yield value
 
     def test_generator_keeps_track_of_local_variables(self):
-        result = self.sum_it(range(2,5))
+        result = self.sum_it(range(2, 5))
         self.assertEqual(__, list(result))
 
     # ------------------------------------------------------------------

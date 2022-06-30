@@ -7,6 +7,7 @@
 
 from runner.koan import *
 
+
 class AboutMultipleInheritance(Koan):
     class Nameable:
         def __init__(self):

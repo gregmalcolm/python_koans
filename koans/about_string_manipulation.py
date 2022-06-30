@@ -3,8 +3,8 @@
 
 from runner.koan import *
 
-class AboutStringManipulation(Koan):
 
+class AboutStringManipulation(Koan):
     def test_use_format_to_interpolate_variables(self):
         value1 = 'one'
         value2 = 2
@@ -18,11 +18,12 @@ class AboutStringManipulation(Koan):
         self.assertEqual(__, string)
 
     def test_any_python_expression_may_be_interpolated(self):
-        import math # import a standard python module with math functions
+        import math  # import a standard python module with math functions
 
         decimal_places = 4
-        string = "The square root of 5 is {0:.{1}f}".format(math.sqrt(5),
-            decimal_places)
+        string = "The square root of 5 is {0:.{1}f}".format(
+            math.sqrt(5), decimal_places
+        )
         self.assertEqual(__, string)
 
     def test_you_can_get_a_substring_from_a_string(self):
@@ -43,7 +44,7 @@ class AboutStringManipulation(Koan):
         self.assertListEqual([__, __, __], words)
 
     def test_strings_can_be_split_with_different_patterns(self):
-        import re #import python regular expression library
+        import re  # import python regular expression library
 
         string = "the,rain;in,spain"
         pattern = re.compile(',|;')

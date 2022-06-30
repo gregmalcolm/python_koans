@@ -3,6 +3,7 @@
 
 from runner.koan import *
 
+
 class AboutInheritance(Koan):
     class Dog:
         def __init__(self, name):
@@ -40,7 +41,8 @@ class AboutInheritance(Koan):
         self.assertEqual(__, chico.wag())
 
         fido = self.Dog("Fido")
-        with self.assertRaises(___): fido.wag()
+        with self.assertRaises(___):
+            fido.wag()
 
     def test_subclasses_can_modify_existing_behavior(self):
         chico = self.Chihuahua("Chico")
@@ -82,7 +84,8 @@ class AboutInheritance(Koan):
 
     def test_base_init_does_not_get_called_automatically(self):
         snoopy = self.Pug("Snoopy")
-        with self.assertRaises(___): name = snoopy.name
+        with self.assertRaises(___):
+            name = snoopy.name
 
     def test_base_init_has_to_be_called_explicitly(self):
         boxer = self.Greyhound("Boxer")

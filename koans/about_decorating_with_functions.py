@@ -22,6 +22,7 @@ class AboutDecoratingWithFunctions(Koan):
     def xmltag(fn):
         def func(*args):
             return '<' + fn(*args) + '/>'
+
         return func
 
     @xmltag

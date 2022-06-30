@@ -3,20 +3,20 @@
 
 from runner.koan import *
 
-class AboutIteration(Koan):
 
+class AboutIteration(Koan):
     def test_iterators_are_a_type(self):
-        it = iter(range(1,6))
+        it = iter(range(1, 6))
 
         total = 0
 
         for num in it:
             total += num
 
-        self.assertEqual(__ , total)
+        self.assertEqual(__, total)
 
     def test_iterating_with_next(self):
-        stages = iter(['alpha','beta','gamma'])
+        stages = iter(['alpha', 'beta', 'gamma'])
 
         try:
             self.assertEqual(__, next(stages))
@@ -66,7 +66,7 @@ class AboutIteration(Koan):
 
     def test_filter_returns_all_items_matching_criterion(self):
         def is_big_name(item):
-             return len(item) > 4
+            return len(item) > 4
 
         names = ["Jim", "Bill", "Clarence", "Doug", "Eli", "Elizabeth"]
         iterator = filter(is_big_name, names)
@@ -84,14 +84,15 @@ class AboutIteration(Koan):
 
     # ------------------------------------------------------------------
 
-    def add(self,accum,item):
+    def add(self, accum, item):
         return accum + item
 
-    def multiply(self,accum,item):
+    def multiply(self, accum, item):
         return accum * item
 
     def test_reduce_will_blow_your_mind(self):
         import functools
+
         # As of Python 3 reduce() has been demoted from a builtin function
         # to the functools module.
 
@@ -110,7 +111,7 @@ class AboutIteration(Koan):
     # ------------------------------------------------------------------
 
     def test_use_pass_for_iterations_with_no_body(self):
-        for num in range(1,5):
+        for num in range(1, 5):
             pass
 
         self.assertEqual(__, num)
@@ -119,7 +120,7 @@ class AboutIteration(Koan):
 
     def test_all_iteration_methods_work_on_any_sequence_not_just_lists(self):
         # Ranges are an iterable sequence
-        result = map(self.add_ten, range(1,4))
+        result = map(self.add_ten, range(1, 4))
         self.assertEqual(__, list(result))
 
     def test_lines_in_a_file_are_iterable_sequences_too(self):

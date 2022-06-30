@@ -5,9 +5,10 @@ from runner.koan import *
 
 import functools
 
+
 class AboutDecoratingWithClasses(Koan):
     def maximum(self, a, b):
-        if a>b:
+        if a > b:
             return a
         else:
             return b
@@ -19,8 +20,8 @@ class AboutDecoratingWithClasses(Koan):
         """
         max = functools.partial(self.maximum)
 
-        self.assertEqual(__, max(7,23))
-        self.assertEqual(__, max(10,-10))
+        self.assertEqual(__, max(7, 23))
+        self.assertEqual(__, max(10, -10))
 
     def test_partial_that_wrappers_first_arg(self):
         max0 = functools.partial(self.maximum, 0)
@@ -70,11 +71,11 @@ class AboutDecoratingWithClasses(Koan):
     # ------------------------------------------------------------------
 
     def sound_check(self):
-        #Note: no decorator
+        # Note: no decorator
         return "Testing..."
 
     def test_what_a_decorator_is_doing_to_a_function(self):
-        #wrap the function with the decorator
+        # wrap the function with the decorator
         self.sound_check = self.doubleit(self.sound_check)
 
         self.assertEqual(__, self.sound_check())
@@ -98,10 +99,11 @@ class AboutDecoratingWithClasses(Koan):
     @documenter("Increments a value by one. Kind of.")
     def count_badly(self, num):
         num += 1
-        if num==3:
+        if num == 3:
             return 5
         else:
             return num
+
     @documenter("Does nothing")
     def idler(self, num):
         "Idler"
@@ -125,4 +127,3 @@ class AboutDecoratingWithClasses(Koan):
     def test_we_can_chain_decorators(self):
         self.assertEqual(__, self.homer())
         self.assertEqual(__, self.homer.__doc__)
-

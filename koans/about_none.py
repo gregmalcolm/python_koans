@@ -7,8 +7,8 @@
 
 from runner.koan import *
 
-class AboutNone(Koan):
 
+class AboutNone(Koan):
     def test_none_is_an_object(self):
         "Unlike NULL in a lot of languages"
         self.assertEqual(__, isinstance(None, object))

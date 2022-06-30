@@ -3,8 +3,8 @@
 
 from runner.koan import *
 
-class AboutControlStatements(Koan):
 
+class AboutControlStatements(Koan):
     def test_if_then_else_statements(self):
         if True:
             result = 'true value'
@@ -39,7 +39,8 @@ class AboutControlStatements(Koan):
         i = 1
         result = 1
         while True:
-            if i > 10: break
+            if i > 10:
+                break
             result = result * i
             i += 1
         self.assertEqual(__, result)
@@ -49,7 +50,8 @@ class AboutControlStatements(Koan):
         result = []
         while i < 10:
             i += 1
-            if (i % 2) == 0: continue
+            if (i % 2) == 0:
+                continue
             result.append(i)
         self.assertEqual(__, result)
 
@@ -65,7 +67,7 @@ class AboutControlStatements(Koan):
             ("Lancelot", "Blue"),
             ("Galahad", "I don't know!"),
             ("Robin", "Blue! I mean Green!"),
-            ("Arthur", "Is that an African Swallow or European Swallow?")
+            ("Arthur", "Is that an African Swallow or European Swallow?"),
         ]
         result = []
         for knight, answer in round_table:

@@ -23,6 +23,7 @@ from runner.koan import *
 #         __init__.py
 #         a_module.py
 
+
 class AboutPackages(Koan):
     def test_subfolders_can_form_part_of_a_module_package(self):
         # Import ./a_package_folder/a_module.py

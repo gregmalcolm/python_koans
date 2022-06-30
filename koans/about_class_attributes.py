@@ -7,6 +7,7 @@
 
 from runner.koan import *
 
+
 class AboutClassAttributes(Koan):
     class Dog:
         pass
@@ -40,7 +41,7 @@ class AboutClassAttributes(Koan):
 
     def test_defining_functions_on_individual_objects(self):
         fido = self.Dog()
-        fido.wag = lambda : 'fidos wag'
+        fido.wag = lambda: 'fidos wag'
 
         self.assertEqual(__, fido.wag())
 
@@ -50,9 +51,11 @@ class AboutClassAttributes(Koan):
 
         def wag():
             return 'fidos wag'
+
         fido.wag = wag
 
-        with self.assertRaises(___): rover.wag()
+        with self.assertRaises(___):
+            rover.wag()
 
     # ------------------------------------------------------------------
 
@@ -74,7 +77,9 @@ class AboutClassAttributes(Koan):
         def growl(cls):
             return "classmethod growl, arg: cls=" + cls.__name__
 
-    def test_since_classes_are_objects_you_can_define_singleton_methods_on_them_too(self):
+    def test_since_classes_are_objects_you_can_define_singleton_methods_on_them_too(
+        self,
+    ):
         self.assertRegex(self.Dog2.growl(), __)
 
     def test_classmethods_are_not_independent_of_instance_methods(self):
@@ -114,7 +119,8 @@ class AboutClassAttributes(Koan):
 
     def test_classmethods_can_not_be_used_as_properties(self):
         fido = self.Dog3()
-        with self.assertRaises(___): fido.name = "Fido"
+        with self.assertRaises(___):
+            fido.name = "Fido"
 
     def test_classes_and_instances_do_not_share_instance_attributes(self):
         fido = self.Dog3()
@@ -149,6 +155,8 @@ class AboutClassAttributes(Koan):
 
     # ------------------------------------------------------------------
 
-    def test_heres_an_easy_way_to_explicitly_call_class_methods_from_instance_methods(self):
+    def test_heres_an_easy_way_to_explicitly_call_class_methods_from_instance_methods(
+        self,
+    ):
         fido = self.Dog4()
         self.assertEqual(__, fido.__class__.a_class_method())

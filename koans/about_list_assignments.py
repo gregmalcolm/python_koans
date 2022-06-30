@@ -7,6 +7,7 @@
 
 from runner.koan import *
 
+
 class AboutListAssignments(Koan):
     def test_non_parallel_assignment(self):
         names = ["John", "Smith"]
@@ -40,4 +41,3 @@ class AboutListAssignments(Koan):
         first_name, last_name = last_name, first_name
         self.assertEqual(__, first_name)
         self.assertEqual(__, last_name)
-

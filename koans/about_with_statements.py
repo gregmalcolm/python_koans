@@ -7,7 +7,8 @@
 
 from runner.koan import *
 
-import re # For regular expression string comparisons
+import re  # For regular expression string comparisons
+
 
 class AboutWithStatements(Koan):
     def count_lines(self, file_name):
@@ -66,7 +67,7 @@ class AboutWithStatements(Koan):
     ## following code:
     ##
 
-    class FileContextManager():
+    class FileContextManager:
         def __init__(self, file_name):
             self._file_name = file_name
             self._file = None

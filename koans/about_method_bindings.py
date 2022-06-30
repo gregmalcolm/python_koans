@@ -3,15 +3,19 @@
 
 from runner.koan import *
 
+
 def function():
     return "pineapple"
+
 
 def function2():
     return "tractor"
 
+
 class Class:
     def method(self):
         return "parrot"
+
 
 class AboutMethodBindings(Koan):
     def test_methods_are_bound_to_an_object(self):
@@ -38,7 +42,8 @@ class AboutMethodBindings(Koan):
 
     def test_setting_attributes_on_a_bound_method_directly(self):
         obj = Class()
-        with self.assertRaises(___): obj.method.cherries = 3
+        with self.assertRaises(___):
+            obj.method.cherries = 3
 
     def test_setting_attributes_on_methods_by_accessing_the_inner_function(self):
         obj = Class()
@@ -51,7 +56,8 @@ class AboutMethodBindings(Koan):
 
     def test_inner_functions_are_unbound(self):
         function2.get_fruit = function
-        with self.assertRaises(___): cls = function2.get_fruit.__self__
+        with self.assertRaises(___):
+            cls = function2.get_fruit.__self__
 
     # ------------------------------------------------------------------
 
@@ -87,4 +93,3 @@ class AboutMethodBindings(Koan):
         self.assertEqual(None, self.color.choice)
         self.color = 'purple'
         self.assertEqual(__, self.color.choice)
-

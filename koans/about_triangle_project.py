@@ -6,6 +6,7 @@ from runner.koan import *
 # You need to write the triangle method in the file 'triangle.py'
 from .triangle import *
 
+
 class AboutTriangleProject(Koan):
     def test_equilateral_triangles_have_equal_sides(self):
         self.assertEqual('equilateral', triangle(2, 2, 2))
