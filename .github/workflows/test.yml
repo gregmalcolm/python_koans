@@ -1,0 +1,42 @@
+name: Test
+
+on: [push, pull_request, workflow_dispatch]
+
+env:
+  FORCE_COLOR: 1
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["pypy3.8", "3.7", "3.8", "3.9", "3.10", "3.11", "3.12-dev"]
+        os: [windows-latest, macos-latest, ubuntu-latest]
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Test
+        run: |
+          python _runner_tests.py
+#         python contemplate_koans.py                          # Run all the koans
+#         python contemplate_koans.py about_asserts about_none # Run a subset of
+#                                                              # koans
+#
+#   Working through Python Koans in a fork? Want to use GitHub Actions to show which
+#   koans you've passed? Then comment out one of the above "contemplate_koans"
+#   lines above!
+
+  success:
+    needs: test
+    runs-on: ubuntu-latest
+    name: Test successful
+    steps:
+      - name: Success
+        run: echo Test successful

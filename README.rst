@@ -2,8 +2,8 @@
 Python Koans
 ============
 
-.. image:: https://travis-ci.org/gregmalcolm/python_koans.png?branch=master
-   :target: http://travis-ci.org/gregmalcolm/python_koans
+.. image:: https://github.com/gregmalcolm/python_koans/actions/workflows/test.yml/badge.svg
+    :target: https://github.com/gregmalcolm/python_koans/actions/workflows/test.yml
 
 .. image:: https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod
     :target: https://gitpod.io/#https://github.com/gregmalcolm/python_koans
