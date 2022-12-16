@@ -88,7 +88,7 @@ If you have problems, this may help:
 Windows users may also want to update the line in the batch file ``run.bat`` to
 set the python path::
 
-    SET PYTHON_PATH=C:\Python39
+    SET PYTHON_PATH=C:\Python311
 
 
 Getting Started
