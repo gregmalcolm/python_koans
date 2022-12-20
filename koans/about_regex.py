@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-
 
 from runner.koan import *
 
@@ -11,7 +10,7 @@ class AboutRegex(Koan):
         These koans are based on Ben's book: Regular Expressions in 10
         minutes. I found this book very useful, so I decided to write
         a koan file in order to practice everything it taught me.
-        http://www.forta.com/books/0672325667/
+        https://forta.com/books/0672325667/
     """
 
     def test_matching_literal_text(self):
@@ -55,7 +54,7 @@ class AboutRegex(Koan):
         """
             Lesson 1 -- Matching Literal String non case sensitivity.
             Most regex implementations also support matches that are not
-            case sensitive. In python you can use re.IGNORECASE, in
+            case sensitive. In Python, you can use re.IGNORECASE, in
             Javascript you can specify the optional i flag. In Ben's
             book you can see more languages.
 
