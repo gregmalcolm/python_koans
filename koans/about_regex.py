@@ -19,11 +19,11 @@ class AboutRegex(Koan):
             Lesson 1 Matching Literal String
         """
         string = "Hello, my name is Felix and these koans are based " + \
-        "on Ben's book: Regular Expressions in 10 minutes."
+                 "on Ben's book: Regular Expressions in 10 minutes."
         m = re.search(__, string)
         self.assertTrue(
             m and m.group(0) and
-                m.group(0) == 'Felix',
+            m.group(0) == 'Felix',
             "I want my name")
 
     def test_matching_literal_text_how_many(self):
@@ -44,8 +44,8 @@ class AboutRegex(Koan):
                                 matches, and return them as an iterator.
         """
         string = ("Hello, my name is Felix and these koans are based " +
-            "on Ben's book: Regular Expressions in 10 minutes. " +
-            "Repeat My name is Felix")
+                  "on Ben's book: Regular Expressions in 10 minutes. " +
+                  "Repeat My name is Felix")
         m = re.match('Felix', string)  # TIP: match may not be the best option
 
         # I want to know how many times my name appears
@@ -74,11 +74,11 @@ class AboutRegex(Koan):
             and punctuation.
         """
         string = "pecks.xlx\n"    \
-                + "orders1.xls\n" \
-                + "apec1.xls\n"   \
-                + "na1.xls\n"     \
-                + "na2.xls\n"     \
-                + "sa1.xls"
+                 + "orders1.xls\n" \
+                 + "apec1.xls\n"   \
+                 + "na1.xls\n"     \
+                 + "na2.xls\n"     \
+                 + "sa1.xls"
 
         # I want to find all uses of myArray
         change_this_search_string = 'a..xlx'
@@ -95,14 +95,14 @@ class AboutRegex(Koan):
             any single one of the set members will match.
         """
         string = "sales.xlx\n"    \
-                + "sales1.xls\n"  \
-                + "orders3.xls\n" \
-                + "apac1.xls\n" \
-                + "sales2.xls\n"  \
-                + "na1.xls\n"  \
-                + "na2.xls\n"  \
-                + "sa1.xls\n"  \
-                + "ca1.xls"
+                 + "sales1.xls\n"  \
+                 + "orders3.xls\n" \
+                 + "apac1.xls\n" \
+                 + "sales2.xls\n"  \
+                 + "na1.xls\n"  \
+                 + "na2.xls\n"  \
+                 + "sa1.xls\n"  \
+                 + "ca1.xls"
         # I want to find all files for North America(na) or South
         # America(sa), but not (ca) TIP you can use the pattern .a.
         # which matches in above test but in this case matches more than
@@ -121,17 +121,17 @@ class AboutRegex(Koan):
 
         """
         string = "sales.xlx\n"    \
-                + "sales1.xls\n"  \
-                + "orders3.xls\n" \
-                + "apac1.xls\n" \
-                + "sales2.xls\n"  \
-                + "sales3.xls\n"  \
-                + "europe2.xls\n"  \
-                + "sam.xls\n"  \
-                + "na1.xls\n"  \
-                + "na2.xls\n"  \
-                + "sa1.xls\n"  \
-                + "ca1.xls"
+                 + "sales1.xls\n"  \
+                 + "orders3.xls\n" \
+                 + "apac1.xls\n" \
+                 + "sales2.xls\n"  \
+                 + "sales3.xls\n"  \
+                 + "europe2.xls\n"  \
+                 + "sam.xls\n"  \
+                 + "na1.xls\n"  \
+                 + "na2.xls\n"  \
+                 + "sa1.xls\n"  \
+                 + "ca1.xls"
 
         # I want to find the name 'sam'
         change_this_search_string = '[^nc]am'
