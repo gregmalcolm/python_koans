@@ -7,7 +7,7 @@ Python Koans
 
 .. image:: https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod
     :target: https://gitpod.io/#https://github.com/gregmalcolm/python_koans
-    
+
 .. image:: https://www.eclipse.org/che/contribute.svg
     :target: https://workspaces.openshift.com/f?url=https://gitpod.io/#https://github.com/gregmalcolm/python_koans
 
@@ -23,7 +23,7 @@ One click installation:
 |
 
 Python Koans is a port of Edgecase's "Ruby Koans" which can be found
-at http://rubykoans.com/.
+at https://github.com/edgecase/ruby_koans.
 
 .. image:: https://user-images.githubusercontent.com/2614930/28401740-ec6214b2-6cd0-11e7-8afd-30ed3102bfd6.png
 
