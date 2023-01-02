@@ -17,9 +17,6 @@ class AboutSets(Koan):
         self.assertEqual(__, set())
 
     def test_dictionaries_and_sets_use_same_curly_braces(self):
-        # Note: Literal sets using braces were introduced in python 3.
-        #       They were also backported to python 2.7.
-
         self.assertEqual(__, {1, 2, 3}.__class__)
         self.assertEqual(__, {'one': 1, 'two': 2}.__class__)
 

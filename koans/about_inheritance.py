@@ -26,11 +26,8 @@ class AboutInheritance(Koan):
     def test_subclasses_have_the_parent_as_an_ancestor(self):
         self.assertEqual(__, issubclass(self.Chihuahua, self.Dog))
 
-    def test_all_classes_in_python_3_ultimately_inherit_from_object_class(self):
+    def test_all_classes_ultimately_inherit_from_object_class(self):
         self.assertEqual(__, issubclass(self.Chihuahua, object))
-
-        # Note: This isn't the case in Python 2. In that version you have
-        # to inherit from a built in class or object explicitly
 
     def test_instances_inherit_behavior_from_parent_class(self):
         chico = self.Chihuahua("Chico")
@@ -56,7 +53,6 @@ class AboutInheritance(Koan):
     class BullDog(Dog):
         def bark(self):
             return super().bark() + ", GRR"
-            # Note, super() is much simpler to use in Python 3!
 
     def test_subclasses_can_invoke_parent_behavior_via_super(self):
         ralph = self.BullDog("Ralph")
