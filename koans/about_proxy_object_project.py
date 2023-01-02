@@ -121,7 +121,8 @@ class Television:
     def is_on(self):
         return self._power == 'on'
 
-# Tests for the Television class.  All of theses tests should pass.
+
+# Tests for the Television class.  All of these tests should pass.
 class TelevisionTest(Koan):
     def test_it_turns_on(self):
         tv = Television()

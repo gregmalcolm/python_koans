@@ -136,6 +136,6 @@ class AboutMultipleInheritance(Koan):
         self.assertRegex(next.here(), __)
 
         # Hang on a minute?!? That last class name might be a super class of
-        # the 'jeff' object, but its hardly a superclass of Pig, is it?
+        # the 'jeff' object, but it's hardly a superclass of Pig, is it?
         #
         # To avoid confusion it may help to think of super() as next_mro().

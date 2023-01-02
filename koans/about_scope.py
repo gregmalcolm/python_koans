@@ -51,13 +51,13 @@ class AboutScope(Koan):
 
     def test_constants_are_defined_with_an_initial_uppercase_letter(self):
         self.assertAlmostEqual(_____, self.PI)
-        # Note, floating point numbers in python are not precise.
+        # Note, floating point numbers in Python are not precise.
         # assertAlmostEqual will check that it is 'close enough'
 
     def test_constants_are_assumed_by_convention_only(self):
         self.PI = "rhubarb"
         self.assertEqual(_____, self.PI)
-        # There aren't any real constants in python. Its up to the developer
+        # There aren't any real constants in Python. It's up to the developer
         # to keep to the convention and not modify them.
 
     # ------------------------------------------------------------------

@@ -31,7 +31,7 @@ class AboutRegex(Koan):
             Lesson 1 -- How many matches?
 
             The default behaviour of most regular expression engines is
-            to return just the first match. In python you have the
+            to return just the first match. In Python you have the
             following options:
 
                 match()    -->  Determine if the RE matches at the
@@ -55,8 +55,8 @@ class AboutRegex(Koan):
         """
             Lesson 1 -- Matching Literal String non case sensitivity.
             Most regex implementations also support matches that are not
-            case sensitive. In python you can use re.IGNORECASE, in
-            Javascript you can specify the optional i flag. In Ben's
+            case sensitive. In Python you can use re.IGNORECASE, in
+            JavaScript you can specify the optional i flag. In Ben's
             book you can see more languages.
 
         """
