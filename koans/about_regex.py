@@ -11,7 +11,7 @@ class AboutRegex(Koan):
         These koans are based on Ben's book: Regular Expressions in 10
         minutes. I found this book very useful, so I decided to write
         a koan file in order to practice everything it taught me.
-        http://www.forta.com/books/0672325667/
+        https://forta.com/books/0672325667/
     """
 
     def test_matching_literal_text(self):
