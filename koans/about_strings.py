@@ -3,6 +3,7 @@
 
 from runner.koan import *
 
+
 class AboutStrings(Koan):
 
     def test_double_quoted_strings_are_strings(self):

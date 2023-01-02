@@ -7,6 +7,7 @@
 
 from runner.koan import *
 
+
 class AboutListAssignments(Koan):
     def test_non_parallel_assignment(self):
         names = ["John", "Smith"]

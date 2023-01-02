@@ -18,6 +18,7 @@
 
 from runner.koan import *
 
+
 class Proxy:
     def __init__(self, target_object):
         # WRITE CODE HERE
@@ -26,6 +27,7 @@ class Proxy:
         self._obj = target_object
 
     # WRITE CODE HERE
+
 
 # The proxy object should pass the following Koan:
 #
@@ -59,7 +61,6 @@ class AboutProxyObjectProject(Koan):
         with self.assertRaises(AttributeError):
             tv.no_such_method()
 
-
     def test_proxy_reports_methods_have_been_called(self):
         tv = Proxy(Television())
 
@@ -91,6 +92,7 @@ class AboutProxyObjectProject(Koan):
 
         self.assertEqual(["Py", "Ohio", "2010"], result)
         self.assertEqual(['upper', 'split'], proxy.messages())
+
 
 # ====================================================================
 # The following code is to support the testing of the Proxy class.  No

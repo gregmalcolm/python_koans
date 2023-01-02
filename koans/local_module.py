@@ -3,7 +3,7 @@
 
 class Duck:
     def __init__(self):
-        self._password = 'password' # Genius!
+        self._password = 'password'  # Genius!
 
     @property
     def name(self):
