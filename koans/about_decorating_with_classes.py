@@ -106,7 +106,7 @@ class AboutDecoratingWithClasses(Koan):
 
     @documenter("Does nothing")
     def idler(self, num):
-        "Idler"
+        """Idler"""
         pass
 
     def test_decorator_with_an_argument(self):
