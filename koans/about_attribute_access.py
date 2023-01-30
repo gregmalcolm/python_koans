@@ -105,7 +105,7 @@ class AboutAttributeAccess(Koan):
 
             # Using 'object' directly because using super() here will also
             # trigger a __getattribute__() call.
-            return object.__getattribute__(self, attr_name)
+            return super().__getattribute__(attr_name)
 
         def my_method(self):
             pass
