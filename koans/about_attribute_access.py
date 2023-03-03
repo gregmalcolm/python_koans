@@ -15,7 +15,7 @@ class AboutAttributeAccess(Koan):
     def test_calling_undefined_functions_normally_results_in_errors(self):
         typical = self.TypicalObject()
 
-        with self.assertRaises(___): typical.foobar()
+        with self.assertRaises(__): typical.foobar()
 
     def test_calling_getattribute_causes_an_attribute_error(self):
         typical = self.TypicalObject()
