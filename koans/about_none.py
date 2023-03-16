@@ -47,5 +47,5 @@ class AboutNone(Koan):
         """
         None is distinct from other things which are False.
         """
-        self.assertEqual(__, None is not 0)
-        self.assertEqual(__, None is not False)
+        self.assertEqual(__, None != 0)
+        self.assertEqual(__, None != False)
