@@ -47,7 +47,7 @@ class AboutTuples(Koan):
 
     def test_creating_empty_tuples(self):
         self.assertEqual(__ , ())
-        self.assertEqual(__ , tuple()) #Sometimes less confusing
+        self.assertEqual(__ , tuple())  # Sometimes less confusing
 
     def test_tuples_can_be_embedded(self):
         lat = (37, 14, 6, 'N')
