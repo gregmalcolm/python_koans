@@ -36,7 +36,7 @@ class AboutDictionaries(Koan):
         dict1 = { 'one': 'uno', 'two': 'dos' }
         dict2 = { 'two': 'dos', 'one': 'uno' }
 
-        self.assertEqual(__, dict1 == dict2)
+        self.assertEqual(__, enumerate(dict1) == enumerate(dict2))
 
 
     def test_dictionary_keys_and_values(self):
