@@ -6,10 +6,12 @@ class Goose:
     def name(self):
         return "Mr Stabby"
 
+
 class Hamster:
     @property
     def name(self):
         return "Phil"
+
 
 class _SecretSquirrel:
     @property

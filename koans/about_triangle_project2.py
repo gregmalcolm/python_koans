@@ -1,10 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from runner.koan import *
+from runner.koan import Koan
 
 # You need to finish implementing triangle() in the file 'triangle.py'
-from .triangle import *
+from .triangle import triangle, TriangleError
+
 
 class AboutTriangleProject2(Koan):
     # The first assignment did not talk about how to handle errors.
@@ -21,5 +22,3 @@ class AboutTriangleProject2(Koan):
             triangle(1, 1, 3)
         with self.assertRaises(TriangleError):
             triangle(2, 5, 2)
-
-

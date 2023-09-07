@@ -29,13 +29,13 @@ class AboutPackages(Koan):
         from .a_package_folder.a_module import Duck
 
         duck = Duck()
-        self.assertEqual(__, duck.name)
+        self.assertEqual("Donald", duck.name)
 
     def test_subfolders_become_modules_if_they_have_an_init_module(self):
         # Import ./a_package_folder/__init__.py
         from .a_package_folder import an_attribute
 
-        self.assertEqual(__, an_attribute)
+        self.assertEqual(1984, an_attribute)
 
     # ------------------------------------------------------------------
 
@@ -43,7 +43,7 @@ class AboutPackages(Koan):
         # Import /contemplate_koans.py
         import contemplate_koans
 
-        self.assertEqual(__, contemplate_koans.__name__)
+        self.assertEqual("contemplate_koans", contemplate_koans.__name__)
 
         # contemplate_koans.py is the root module in this package because it's
         # the first python module called in koans.
@@ -57,4 +57,4 @@ class AboutPackages(Koan):
         # Import contemplate_koans.py/koans/a_package_folder/a_module.py
         from koans.a_package_folder.a_module import Duck
 
-        self.assertEqual(__, Duck.__module__)
+        self.assertEqual("koans.a_package_folder.a_module", Duck.__module__)

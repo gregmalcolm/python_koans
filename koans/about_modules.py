@@ -6,10 +6,14 @@
 # Our AboutMultipleInheritance class is a little more comparable
 #
 
-from runner.koan import *
+from runner.koan import Koan
+from .another_local_module import Goose, Hamster, _SecretSquirrel
+from .local_module_with_all_defined import Goat, _Velociraptor, SecretDuck
 
-from .another_local_module import *
-from .local_module_with_all_defined import *
+def methodname(self, arg):
+    pass
+
+
 
 
 class AboutModules(Koan):
@@ -17,21 +21,21 @@ class AboutModules(Koan):
         from . import local_module  # local_module.py
 
         duck = local_module.Duck()
-        self.assertEqual(__, duck.name)
+        self.assertEqual("Daffy", duck.name)
 
     def test_importing_attributes_from_classes_using_from_keyword(self):
         from .local_module import Duck
 
         duck = Duck()  # no module qualifier needed this time
-        self.assertEqual(__, duck.name)
+        self.assertEqual("Daffy", duck.name)
 
     def test_we_can_import_multiple_items_at_once(self):
         from . import jims, joes
 
         jims_dog = jims.Dog()
         joes_dog = joes.Dog()
-        self.assertEqual(__, jims_dog.identify())
-        self.assertEqual(__, joes_dog.identify())
+        self.assertEqual("jims dog", jims_dog.identify())
+        self.assertEqual("joes dog", joes_dog.identify())
 
     def test_importing_all_module_attributes_at_once(self):
         """
@@ -43,18 +47,18 @@ class AboutModules(Koan):
         goose = Goose()
         hamster = Hamster()
 
-        self.assertEqual(__, goose.name)
-        self.assertEqual(__, hamster.name)
+        self.assertEqual("Mr Stabby", goose.name)
+        self.assertEqual("Phil", hamster.name)
 
     def test_modules_hide_attributes_prefixed_by_underscores(self):
-        with self.assertRaises(___):
+        with self.assertRaises(NameError):
             private_squirrel = _SecretSquirrel()
 
     def test_private_attributes_are_still_accessible_in_modules(self):
         from .local_module import Duck  # local_module.py
 
         duck = Duck()
-        self.assertEqual(__, duck._password)
+        self.assertEqual('password', duck._password)
         # module level attribute hiding doesn't affect class attributes
         # (unless the class itself is hidden).
 
@@ -66,12 +70,12 @@ class AboutModules(Koan):
 
         # 'Goat' is on the __all__ list
         goat = Goat()
-        self.assertEqual(__, goat.name)
+        self.assertEqual('George', goat.name)
 
         # How about velociraptors?
         lizard = _Velociraptor()
-        self.assertEqual(__, lizard.name)
+        self.assertEqual('Cuddles', lizard.name)
 
         # SecretDuck? Never heard of her!
-        with self.assertRaises(___):
+        with self.assertRaises(NameError):
             duck = SecretDuck()

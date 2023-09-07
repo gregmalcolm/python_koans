@@ -17,8 +17,21 @@
 #   about_triangle_project_2.py
 #
 def triangle(a, b, c):
-    # DELETE 'PASS' AND WRITE THIS CODE
-    pass
+    type = len(set({a,b,c}))
+
+    if (a + b + c) == 0:
+        raise TriangleError
+    elif a <= 0 or b <= 0 or c <= 0:
+        raise TriangleError
+    elif (a+b) < c or (a+c) < b or (b+c) < a:
+        raise TriangleError
+    
+    if type == 3:
+        return 'scalene'    
+    elif type == 2:
+        return 'isosceles'
+    else: 
+        return 'equilateral'
 
 # Error class used in part 2.  No need to change this code.
 class TriangleError(Exception):
