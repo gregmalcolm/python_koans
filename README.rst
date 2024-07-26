@@ -86,7 +86,9 @@ If you have problems, this may help:
 * https://www.python.org/about/gettingstarted/
 
 Windows users may also want to update the line in the batch file ``run.bat`` to
-set the python path::
+set the python path:
+
+.. code-block:: sh
 
     SET PYTHON_PATH=C:\Python39
 
@@ -98,9 +100,9 @@ Jake Hebbert has created a couple of screencasts available here:
 
 https://www.youtube.com/watch?v=e2WXgXEjbHY&list=PL5Up_u-XkWgNcunP_UrTJG_3EXgbK2BQJ&index=1
 
-Or if you prefer to read:
+Or, if you prefer to read:
 
-From a \*nix terminal or Windows command prompt run::
+From a \*nix terminal or Windows command prompt, run:
 
 .. code-block:: sh
 
@@ -170,9 +172,9 @@ On Windows:
 
     python3 -m pip install pywin32
 
-    Also available here:
+Also available here:
 
-    https://github.com/mhammond/pywin32/releases
+https://github.com/mhammond/pywin32/releases
 
 On macOS:
 
@@ -186,7 +188,7 @@ Once it is set up, you just run:
 
     sniffer
 
-Just modify one of the koans files and you'll see that the tests are triggered
+Just modify one of the koans files, and the tests will be triggered
 automatically. Sniffer is controlled by ``scent.py``.
 
 Getting the Most From the Koans
