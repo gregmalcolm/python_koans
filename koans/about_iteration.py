@@ -80,7 +80,7 @@ class AboutIteration(Koan):
         except StopIteration:
             msg = 'Ran out of big names'
 
-        self.assertEquals(__, msg)
+        self.assertEqual(__, msg)
 
     # ------------------------------------------------------------------
 
