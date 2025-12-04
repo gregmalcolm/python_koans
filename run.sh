@@ -1,4 +1,3 @@
 #!/bin/sh
 
-python3 -B contemplate_koans.py
-
+PYTHON_COLORS=0 python3 -B contemplate_koans.py
