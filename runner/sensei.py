@@ -60,7 +60,7 @@ class Sensei(MockableTestResult):
         table = list()
         for test, err in self.failures:
             if helper.cls_name(test) ==  testClassName:
-                m = re.search("(?<= line )\d+" ,err)
+                m = re.search(r"(?<= line )\d+" ,err)
                 if m:
                     tup = (int(m.group(0)), test, err)
                     table.append(tup)
@@ -146,7 +146,7 @@ class Sensei(MockableTestResult):
             if m and m.group(0):
                 stack_text += '\n' + line
 
-            m = re.search("^    \w(\w)+.*$",line)
+            m = re.search(r"^    \w(\w)+.*$",line)
             if m and m.group(0):
                 stack_text += sep + line
 
