@@ -116,7 +116,22 @@ In my case I'm using Python 3 with Windows, so I fire up my command
 shell (cmd.exe) and run this:
 
 .. image:: https://user-images.githubusercontent.com/2614930/28401747-f723ff00-6cd0-11e7-9b9a-a6993b753cf6.png
+Skipping to a Specific Lesson
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+If you have already completed earlier koans or want to work on a specific
+lesson, you can start the koans from that lesson by passing the lesson name as
+an argument.
+
+For example::
+
+    python contemplate_koans.py about_strings
+
+or:
+
+    python3 contemplate_koans.py about_strings
+
+This starts the koans from ``about_strings`` instead of the first lesson.
 Apparently a test failed::
 
     AssertionError: False is not True
