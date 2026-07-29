@@ -116,7 +116,22 @@ In my case I'm using Python 3 with Windows, so I fire up my command
 shell (cmd.exe) and run this:
 
 .. image:: https://user-images.githubusercontent.com/2614930/28401747-f723ff00-6cd0-11e7-9b9a-a6993b753cf6.png
+Skipping to a Specific Lesson
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+If you have already completed earlier koans or want to work on a specific
+lesson, you can start the koans from that lesson by passing the lesson name as
+an argument.
+
+For example::
+
+    python contemplate_koans.py about_strings
+
+or:
+
+    python3 contemplate_koans.py about_strings
+
+This starts the koans from ``about_strings`` instead of the first lesson.
 Apparently a test failed::
 
     AssertionError: False is not True
@@ -228,13 +243,12 @@ https://github.com/mswell/python_koans_br
 Acknowledgments
 ---------------
 
-Thanks go to Jim Weirich and Joe O'Brien for the original Ruby Koans that the
-Python Koans is based on! Also the Ruby Koans in turn borrows from Metakoans
-so thanks also go to Ara Howard for that!
+Thanks to **Jim Weirich** and **Joe O'Brien** for creating the original **Ruby Koans**, which inspired **Python Koans**. Ruby Koans itself was inspired by **Metakoans**, so special thanks also go to **Ara Howard** for that foundation.
 
-Also thanks to everyone who has contributed to Python Koans! I got a great
-headstart by taking over a code base initiated by the combined Mikes of
-FPIP. So here's a little plug for their very cool Python podcast:
+A heartfelt thank you to everyone who has contributed to **Python Koans** over the years. This project benefited greatly from the work started by the talented team at **FPIP**, giving it an excellent foundation to build upon.
+
+If you're interested in learning more, be sure to check out the FPIP team's excellent Python podcast!
+
 
 * https://www.frompythonimportpodcast.com/
 

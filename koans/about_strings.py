@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+
+
 from runner.koan import *
 
 class AboutStrings(Koan):
@@ -26,12 +28,15 @@ class AboutStrings(Koan):
         self.assertEqual(__, isinstance(string, str))
 
     def test_use_single_quotes_to_create_string_with_double_quotes(self):
-        string = 'He said, "Go Away."'
-        self.assertEqual(__, string)
+        single_quoted = 'He said, "Go Away."'
+        double_quoted = "He said, \"Go Away.\""
+        self.assertEqual(__, single_quoted == double_quoted)
 
     def test_use_double_quotes_to_create_strings_with_single_quotes(self):
-        string = "Don't"
-        self.assertEqual(__, string)
+        double_quoted = "Don't"
+        single_quoted = 'Don\'t'
+
+        self.assertEqual(__, single_quoted == double_quoted)
 
     def test_use_backslash_for_escaping_quotes_in_strings(self):
         a = "He said, \"Don't\""
